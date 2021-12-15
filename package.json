@@ -16,12 +16,22 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.13",
     "@docusaurus/preset-classic": "2.0.0-beta.13",
+    "@dxos/config": "^2.19.2",
+    "@dxos/react-client": "^2.19.2",
     "@dxos/react-components": "^2.19.2",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@mdx-js/react": "^1.6.21",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/lab": "^5.0.0-alpha.48",
+    "@mui/material": "^5.0.1",
     "clsx": "^1.1.1",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "setimmediate": "^1.0.5",
+    "webpack": "^5.61.0"
   },
   "browserslist": {
     "production": [
@@ -34,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "fs": false
   }
 }

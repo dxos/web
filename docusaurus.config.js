@@ -16,9 +16,9 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   // TODO(zarco): Try fixing webpack to use DXOS Stack.
-  // plugins: [
-  //   './plugins/webpack-plugin.js'
-  // ],
+  plugins: [
+    './plugins/webpack-plugin.js'
+  ],
 
   presets: [
     [

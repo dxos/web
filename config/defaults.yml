@@ -1,0 +1,13 @@
+app:
+  title: 'Chess App'
+system:
+  storage:
+    persistent: true
+services:
+  signal:
+    server: 'wss://enterprise.kube.dxos.network/dxos/signal'
+  ipfs:
+    server: 'https://ipfs-enterprise.kube.dxos.network/dxos/ipfs/api'
+    gateway: 'https://ipfs-enterprise.kube.dxos.network/dxos/ipfs/gateway/'
+  dxns:
+    server: 'wss://dxns1.kube.dxos.network/dxns/ws'
