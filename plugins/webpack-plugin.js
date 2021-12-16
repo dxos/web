@@ -7,37 +7,9 @@ const { ConfigPlugin } = require('@dxos/config/ConfigPlugin');
 module.exports = function (context, options) {
   return {
     name: 'custom-docusaurus-plugin',
-    configureWebpack(config) {
+    configureWebpack(config, isServer) {
       console.log('- config', config);
       return {
-        module: {
-          rules: [
-            // { 
-            //   test: /\.js$/, 
-            //   exclude: /node_modules/, 
-            //   loader: "babel-loader" 
-            // },
-            // {
-            //   test: /\.css$/i,
-            //   use: ['style-loader', 'css-loader'],
-            // },
-            {
-              test: /\.(png|svg|jpe?g|gif)$/,
-              include: /images/,
-              use: [
-                {
-                  loader: 'file-loader',
-                  options: {
-                    name: '[name].[ext]',
-                    outputPath: 'images/',
-                    publicPath: 'images/'
-                  }
-                }
-              ]
-            },
-          ]
-        },
-      
         plugins: [
           new ConfigPlugin({
             path: path.resolve(__dirname, 'config'),
@@ -63,14 +35,11 @@ module.exports = function (context, options) {
         node: {
           __dirname: true
         },
-        externals: {
+        externals: isServer ? { // Only allow externals dependency when running in server. Otherwise it throws an error.
           fatfs: 'fatfs',
           runtimejs: 'runtimejs',
-          wrtc: 'wrtc',
-          bip32: 'bip32',
-          typeforce: 'typeforce',
-          'sodium-universal': 'sodium-universal'
-        }
+          wrtc: 'wrtc'
+        } : {}
       };
     },
   };

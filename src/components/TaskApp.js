@@ -4,15 +4,28 @@
 import 'setimmediate';
 import React from 'react';
 
-import { TestFrameContainer } from '@dxos/frame-dev-server';
-import { ClientProvider } from '@dxos/react-client';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import { manifest } from '@dxos/tasks-frame';
+const Main = ({ provider, frameContainer, frame }) => {
+  const Provider = provider;
+  const FrameContainer = frameContainer;
+  return (
+    <Provider>
+      <FrameContainer manifest={frame.manifest} />
+    </Provider>
+  )
+}
 
 export const TaskApp = () => {
   return (
-    <ClientProvider>
-      <TestFrameContainer manifest={manifest} />
-    </ClientProvider>
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => {
+        // Load DXOS stack client-only.
+        const ClientProvider = require('@dxos/react-client').ClientProvider;
+        const TestFrameContainer = require('@dxos/frame-dev-server').TestFrameContainer;
+        const Frame = require('@dxos/tasks-frame');
+        return <Main provider={ClientProvider} frameContainer={TestFrameContainer} frame={Frame} />;
+      }}
+    </BrowserOnly>
   );
 };
