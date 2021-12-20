@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Client API
 ---
 
-# Client
+# Client API
 
 ## Initialize the Client
 
@@ -12,18 +13,22 @@ The DXOS Client can be created and initialized programatically using the `@dxos/
 import { Client } from '@dxos/client';
 
 export const Test = async () => {
-  const client = new Client();
+  const client = new Client({
+    ...
+  });
+
   await client.initialize();
-  const profile = await client.halo.createProfile();
+  const profile = await client.halo.createProfile({ usename: 'tester' });
+  console.log(profile.username);
 };
 ```
 
-## Using React hooks
+## Using React
 
 The `@dxos/react-client` package provides hooks to craete and configure the Client.
 
 ```jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ClientProvider, useClient } from '@dxos/react-client';
 
 const App = () => {
@@ -40,8 +45,25 @@ const App = () => {
   );
 };
 
-export const Test = () => (
-  <ClientProvider>
-    <App />
-  </ClientProvider>
-);
+export const Test = () => {
+  const config = {
+    ...
+  };
+
+  return (
+    <ClientProvider config={config}>
+      <App />
+    </ClientProvider>
+  );
+};
+```
+
+## Hooks
+
+### useClient
+
+### useProfile
+
+### useParties
+
+### useSelection

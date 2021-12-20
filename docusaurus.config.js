@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+// https://docusaurus.io/docs/api/docusaurus-config
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -48,7 +50,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'DXOS',
-          src: 'img/dxos-horizontal.svg',
+          src: 'img/dxos-horizontal-white.svg',
         },
         items: [
           {
@@ -57,7 +59,11 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
           {
             href: 'https://github.com/dxos',
             label: 'GitHub',
