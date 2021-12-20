@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/home">
-            DXOS Getting Started - 5min ⏱️
+            DXOS Getting Started
           </Link>
         </div>
       </div>
