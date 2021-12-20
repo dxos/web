@@ -31,6 +31,19 @@ module.exports = function (context, options) {
             fs: false
           },
         },
+        module: {
+          rules: [
+            {
+              test: /\.md$/,
+              oneOf: [
+                {
+                  resourceQuery: /@mui\/markdown/,
+                  use: require.resolve(packagesRoot + 'markdown/loader'),
+                }
+              ],
+            }
+          ]
+        },
         node: {
           __dirname: true
         },
