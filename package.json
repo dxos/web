@@ -5,6 +5,8 @@
     "build:site": "lerna bootstrap && lerna run build"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "@docusaurus/core": "2.0.0-beta.13",
+    "@docusaurus/preset-classic": "2.0.0-beta.13"
   }
 }
