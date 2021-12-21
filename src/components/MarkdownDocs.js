@@ -15,10 +15,7 @@ function MarkdownDocs(props) {
   const { demos = {}, docs, demoComponents } = props;
 
   const userLanguage = 'en';
-  // const t = useTranslate();
-
   const { rendered, headers } = docs[userLanguage];
-  console.log('------ rendered', rendered);
 
   return (
     <Box>
