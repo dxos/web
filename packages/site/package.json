@@ -33,6 +33,7 @@
     "@mui/icons-material": "^5.0.1",
     "@mui/lab": "^5.0.0-alpha.48",
     "@mui/material": "^5.0.1",
+    "@dxos/markdown": "*",
     "clsx": "^1.1.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "prism-react-renderer": "^1.2.1",

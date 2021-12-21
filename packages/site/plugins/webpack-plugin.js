@@ -3,7 +3,6 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const path = require('path');
 const webpack = require('webpack');
 const { ConfigPlugin } = require('@dxos/config/ConfigPlugin');
-const packagesRoot = path.join(__dirname, '../../../packages/');
 
 module.exports = function (context, options) {
   return {
@@ -38,8 +37,8 @@ module.exports = function (context, options) {
               test: /\.md$/,
               oneOf: [
                 {
-                  resourceQuery: /@mui\/markdown/,
-                  use: require.resolve(packagesRoot + 'markdown/loader'),
+                  resourceQuery: /@dxos\/markdown/,
+                  use: require.resolve('@dxos/markdown/loader'),
                 }
               ],
             }
