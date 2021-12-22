@@ -13,7 +13,8 @@
     "src"
   ],
   "dependencies": {
-    "@dxos/react-components": "^2.19.2"
+    "@dxos/react-components": "^2.19.2",
+    "@dxos/react-client": "^2.19.2"
   },
   "devDependencies": {
     "typescript": "^4.5.4",
