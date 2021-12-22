@@ -6,7 +6,7 @@ import React from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-const Main = ({ provider, frameContainer, frame }) => {
+const Main = ({ provider, frameContainer, frame }: any) => {
   const Provider = provider;
   const FrameContainer = frameContainer;
   return (
@@ -16,7 +16,7 @@ const Main = ({ provider, frameContainer, frame }) => {
   )
 }
 
-export const TaskApp = () => {
+export const NoSRRTaskApp = () => {
   return (
     <BrowserOnly fallback={<div>Loading...</div>}>
       {() => {

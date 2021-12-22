@@ -2,11 +2,11 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build:site": "lerna bootstrap && lerna run build"
+    "build:site": "lerna bootstrap && lerna link && lerna run build",
+    "start:site": "lerna bootstrap && lerna link && lerna run start",
+    "clean": "lerna run clean"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
-    "@docusaurus/core": "2.0.0-beta.13",
-    "@docusaurus/preset-classic": "2.0.0-beta.13"
+    "lerna": "^4.0.0"
   }
 }

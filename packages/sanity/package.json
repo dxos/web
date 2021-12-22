@@ -1,0 +1,27 @@
+{
+  "name": "@dxos/sanity",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf ./dist"
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "@mui/material": "^5.0.1"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "*",
+    "react": "*",
+    "react-dom": "*",
+    "@mui/material": "*"
+  }
+}

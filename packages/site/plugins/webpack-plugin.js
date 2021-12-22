@@ -10,10 +10,7 @@ module.exports = function (context, options) {
     configureWebpack(config, isServer) {
       return {
         plugins: [
-          new ConfigPlugin({
-            path: path.resolve(__dirname, 'config'),
-            dynamic: process.env.CONFIG_DYNAMIC
-          }),
+          new ConfigPlugin(),
           /**
            * The package sodium-javascript, used on our packages, has a critical dependency issue.
            * This issue is throwing a warning on the build output, and causing the CI to fail.
