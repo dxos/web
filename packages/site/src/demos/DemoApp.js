@@ -1,8 +1,6 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { Simple, SimpleWithState, MaterialSimple, MaterialWithState, DXOSReactComponents } from '@dxos/sanity';
-// import { Test } from '@dxos/demo-task-app';
-// import { AnotherTest } from '../components/AnotherTest';
+import { Simple, /* SimpleWithClient, */ SimpleWithState, MaterialSimple, MaterialWithState, DXOSReactComponents, SimpleWithRemoteClient } from '@dxos/sanity';
 
 export const DemoApp = () => {
   return (
@@ -13,6 +11,16 @@ export const DemoApp = () => {
       <MaterialSimple />
       <MaterialWithState />
       <DXOSReactComponents />
+      {/* NoSSR Component, needs to be tested. */}
+      {/* <BrowserOnly fallback={<div>Loading...</div>}>
+        {() => {
+          // Load DXOS stack client-only.
+          const ClientProvider = require('@dxos/react-client').ClientProvider;
+          return <SimpleWithRemoteClient clientProvider={ClientProvider} />;
+        }}
+      </BrowserOnly> */}
+      {/* This component crashes the page. */}
+      {/* <SimpleWithClient /> */}
     </div>
   );
 }

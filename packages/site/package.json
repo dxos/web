@@ -17,6 +17,7 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.13",
     "@docusaurus/preset-classic": "2.0.0-beta.13",
+    "@dxos/react-client": "^2.19.2",
     "@dxos/config": "^2.19.2",
     "@dxos/markdown": "*",
     "@dxos/sanity": "*",

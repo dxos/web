@@ -4,20 +4,32 @@
 
 import React, { useState } from 'react';
 
-import { ClientProvider } from '@dxos/react-client';
+import { ClientProvider, useClient } from '@dxos/react-client';
+import { JsonTreeView } from '@dxos/react-components';
+
+
+const Main = () => {
+  const client = useClient();
+  return (
+    <JsonTreeView data={client} />
+  );
+}
 
 export const SimpleWithClient = () => {
   const [count, setCount] = useState(1);
 
   return (
     <ClientProvider>
-      <div>
-        Hello!!
-        <button onClick={() => {
-          setCount(count + 1);
-        }}>click!</button>
-        <p>CLICKs: { count }</p>
-      </div>
+      <Main />
     </ClientProvider>
+  );
+};
+
+export const SimpleWithRemoteClient = ({ clientProvider }: { clientProvider: any }) => {
+  const RemoteClientProvider = clientProvider;
+  return (
+    <RemoteClientProvider>
+      <Main />
+    </RemoteClientProvider>
   );
 };
