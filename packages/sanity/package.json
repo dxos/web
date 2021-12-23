@@ -13,10 +13,10 @@
     "src"
   ],
   "dependencies": {
-    "@dxos/react-components": "^2.19.2",
-    "@dxos/react-client": "^2.19.2"
+    "@dxos/react-components": "^2.19.2"
   },
   "devDependencies": {
+    "@dxos/react-client": "^2.19.2",
     "typescript": "^4.5.4",
     "@mui/material": "^5.0.1"
   },
@@ -24,6 +24,7 @@
     "@docusaurus/core": "*",
     "react": "*",
     "react-dom": "*",
+    "@dxos/react-client": "*",
     "@mui/material": "*"
   }
 }
