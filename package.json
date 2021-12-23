@@ -1,6 +1,12 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/demos/*"
+    ]
+  },
   "scripts": {
     "build:site": "lerna bootstrap && lerna link && lerna run build",
     "start:site": "lerna bootstrap && lerna link && lerna run start",
