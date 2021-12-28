@@ -13,6 +13,9 @@ function noComponent(moduleID) {
 
 function MarkdownDocs(props) {
   const { demos = {}, docs, demoComponents } = props;
+  console.log('-------demos', demos);
+  console.log('-------docs', docs);
+  console.log('-------demoComponents', demoComponents);
 
   const userLanguage = 'en';
   const { rendered, headers } = docs[userLanguage];
