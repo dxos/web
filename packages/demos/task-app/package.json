@@ -1,0 +1,50 @@
+{
+  "name": "@dxos/demo-task-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf ./dist"
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "@docusaurus/core": "2.0.0-beta.14",
+    "@docusaurus/preset-classic": "2.0.0-beta.14",
+    "@mui/material": "^5.0.1",
+    "@dxos/react-client": "^2.19.2",
+    "@dxos/react-components": "^2.19.2",
+    "@dxos/client": "^2.19.2",
+    "@dxos/crypto": "^2.19.2",
+    "@dxos/tasks-frame": "^2.14.3",
+    "@dxos/react-framekit": "^2.14.3",
+    "@dxos/frame-dev-server": "^2.14.3",
+    "@dxos/echo-db": "^2.19.2",
+    "@dxos/object-model": "^2.19.2",
+    "@dxos/react-framework": "^2.19.2"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "*",
+    "@docusaurus/preset-classic": "*",
+    "react": "*",
+    "react-dom": "*",
+    "@dxos/react-client": "*",
+    "@dxos/react-components": "*",
+    "@dxos/client": "*",
+    "@dxos/crypto": "*",
+    "@dxos/tasks-frame": "*",
+    "@dxos/react-framekit": "*",
+    "@dxos/frame-dev-server": "*",
+    "@dxos/echo-db": "*",
+    "@dxos/object-model": "*",
+    "@dxos/react-framework": "*",
+    "@mui/material": "*"
+  }
+}

@@ -2,7 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { alpha, darken, styled } from '@mui/material/styles';
-const blueDark = {
+
+export const blueDark = {
   50: '#E2EDF8',
   100: '#CEE0F3',
   200: '#91B9E3',

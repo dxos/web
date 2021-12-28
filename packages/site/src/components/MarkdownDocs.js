@@ -4,19 +4,12 @@ import { Demo } from './Demo';
 import MarkdownElement from './MarkdownElement';
 import { exactProp } from '@mui/utils';
 import { Box } from '@mui/material';
-
-function noComponent(moduleID) {
-  return function NoComponent() {
-    throw new Error(`No demo component provided for '${moduleID}'`);
-  };
-}
+import { ThemeProvider } from '@mui/styles';
+import { createTheme } from '@mui/material/styles';
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 function MarkdownDocs(props) {
   const { demos = {}, docs, demoComponents } = props;
-  console.log('-------demos', demos);
-  console.log('-------docs', docs);
-  console.log('-------demoComponents', demoComponents);
-
   const userLanguage = 'en';
   const { rendered, headers } = docs[userLanguage];
 
@@ -61,14 +54,29 @@ function MarkdownDocs(props) {
           );
         }
         const demoComponent = demoComponents[demo.module];
+
+        // Get docusaurus theme context and set MUI theme mode.
+        const { isDarkTheme } = useThemeContext();
+        const theme = React.useMemo(() => {
+          const mode = isDarkTheme ? 'dark' : 'light';
+          return createTheme({
+            palette: {
+              mode,
+            },
+          })
+        }, [isDarkTheme]);
+
         return (
-          <Demo
-            key={index}
-            component={demoComponent}
-            rawContent={{
-              js: demo.raw
-            }}
-          />
+          <ThemeProvider theme={theme}>
+            <Demo
+              key={'component-demo-' + index}
+              component={demoComponent}
+              rawContent={{
+                js: demo.raw,
+                ts: demo.rawTS
+              }}
+            />
+          </ThemeProvider>
         );
       })}
     </Box>
