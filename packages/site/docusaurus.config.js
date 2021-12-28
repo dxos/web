@@ -50,7 +50,8 @@ const config = {
       navbar: {
         logo: {
           alt: 'DXOS',
-          src: 'img/dxos-horizontal-white.svg',
+          src: 'img/dxos-horizontal.svg',
+          srcDark: 'img/dxos-horizontal-white.svg'
         },
         items: [
           {
