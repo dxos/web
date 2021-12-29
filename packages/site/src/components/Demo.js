@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
-import { styled, alpha, useTheme, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled, alpha, useTheme } from '@mui/material/styles';
 import { JavaScriptIcon, TypeScriptIcon } from '../icons';
 
 import HighlightedCode from './HighlightedCode';
