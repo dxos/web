@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+
+import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { styled, alpha, useTheme } from '@mui/material/styles';
+import { JavaScriptIcon, TypeScriptIcon } from '../icons';
+
 import HighlightedCode from './HighlightedCode';
 
 const Root = styled('div')(({ theme }) => ({
@@ -66,7 +70,45 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
+const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) => {
+  const theme = useTheme();
+  const toggleButtonStyles = {
+    padding: '5px 10px',
+    color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
+    borderRadius: 0.5,
+    borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.black,
+    '&.Mui-selected, &.Mui-selected:hover': {
+      color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
+      backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
+    }
+  };
+  return (
+    <ToggleButtonGroup
+      sx={{ 
+        margin: '8px 0'
+      }}
+      exclusive
+      value={codeMode}
+      onChange={onCodeModeSelect}
+    >
+      {showJSButton && <ToggleButton
+        sx={toggleButtonStyles}
+        value={'JS'}
+      >
+        <JavaScriptIcon sx={{ fontSize: 20 }} />
+      </ToggleButton>}
+      {showTSButton && <ToggleButton
+        sx={toggleButtonStyles}
+        value={'TS'}
+      >
+        <TypeScriptIcon sx={{ fontSize: 20 }} />
+      </ToggleButton>}
+    </ToggleButtonGroup>
+  );
+}
+
 export const Demo = ({ component, rawContent }) => {
+  const [codeMode, setCodeMode] = React.useState('JS');
   const DemoComponent = component;
   return (
     <Root>
@@ -76,15 +118,30 @@ export const Demo = ({ component, rawContent }) => {
         id={'demo-id'}
       >
         <DemoComponent />
-        {/* { rawContent.js } */}
       </DemoRoot>
-      <div>
-        <Code
+      <DemoToolbar
+        codeMode={codeMode}
+        showJSButton={!!rawContent.js}
+        showTSButton={!!rawContent.ts}
+        onCodeModeSelect={(_, mode) => {
+          if (mode && mode !== codeMode) {
+              setCodeMode(mode);
+            }
+          }
+        }
+      />
+      <Box>
+        {codeMode === 'JS' && !!rawContent.js && <Code
           id={'demo-id'}
           code={rawContent.js}
           language={'jsx'}
-        />
-      </div>
+        />}
+        {codeMode === 'TS' && !!rawContent.ts && <Code
+          id={'demo-id-ts'}
+          code={rawContent.ts}
+          language={'jsx'}
+        />}
+      </Box>
     </Root>
   );
 }

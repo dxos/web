@@ -15,11 +15,12 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.13",
-    "@docusaurus/preset-classic": "2.0.0-beta.13",
-    "@dxos/react-client": "^2.19.2",
+    "@docusaurus/core": "2.0.0-beta.14",
+    "@docusaurus/preset-classic": "2.0.0-beta.14",
     "@dxos/config": "^2.19.2",
+    "@dxos/demo-task-app": "*",
     "@dxos/markdown": "*",
+    "@dxos/react-client": "^2.19.2",
     "@dxos/sanity": "*",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -27,6 +28,7 @@
     "@mui/icons-material": "^5.0.1",
     "@mui/lab": "^5.0.0-alpha.48",
     "@mui/material": "^5.0.1",
+    "@mui/styles": "^5.2.3",
     "clsx": "^1.1.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "prism-react-renderer": "^1.2.1",
