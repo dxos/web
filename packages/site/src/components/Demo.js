@@ -70,44 +70,39 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
-const DemoToolbar = ({codeMode, onCodeModeSelect}) => {
+const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) => {
   const theme = useTheme();
+  const toggleButtonStyles = {
+    padding: '5px 10px',
+    color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
+    borderRadius: 0.5,
+    borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.black,
+    '&.Mui-selected, &.Mui-selected:hover': {
+      color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
+      backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
+    }
+  };
   return (
     <ToggleButtonGroup
       sx={{ 
-        margin: '8px 0',
-        '& .Mui-selected, & .Mui-selected:hover': {
-          color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
-          backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
-        }
+        margin: '8px 0'
       }}
       exclusive
       value={codeMode}
       onChange={onCodeModeSelect}
     >
-      <ToggleButton
-        sx={{
-          padding: '5px 10px',
-          color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
-          borderRadius: 0.5,
-          borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.black
-        }}
+      {showJSButton && <ToggleButton
+        sx={toggleButtonStyles}
         value={'JS'}
       >
         <JavaScriptIcon sx={{ fontSize: 20 }} />
-      </ToggleButton>
-      <ToggleButton
-        sx={{
-          padding: '5px 10px',
-          color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
-          borderRadius: 0.5,
-          borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.black
-        }}
+      </ToggleButton>}
+      {showTSButton && <ToggleButton
+        sx={toggleButtonStyles}
         value={'TS'}
-        
       >
         <TypeScriptIcon sx={{ fontSize: 20 }} />
-      </ToggleButton>
+      </ToggleButton>}
     </ToggleButtonGroup>
   );
 }
@@ -124,19 +119,24 @@ export const Demo = ({ component, rawContent }) => {
       >
         <DemoComponent />
       </DemoRoot>
-      <DemoToolbar codeMode={codeMode} onCodeModeSelect={(_, mode) => {
-        if (mode && mode !== codeMode) {
-          setCodeMode(mode);
+      <DemoToolbar
+        codeMode={codeMode}
+        showJSButton={!!rawContent.js}
+        showTSButton={!!rawContent.ts}
+        onCodeModeSelect={(_, mode) => {
+          if (mode && mode !== codeMode) {
+              setCodeMode(mode);
+            }
+          }
         }
-
-      }} />
+      />
       <Box>
-        {codeMode === 'JS' && <Code
+        {codeMode === 'JS' && !!rawContent.js && <Code
           id={'demo-id'}
           code={rawContent.js}
           language={'jsx'}
         />}
-        {codeMode === 'TS' && <Code
+        {codeMode === 'TS' && !!rawContent.ts && <Code
           id={'demo-id-ts'}
           code={rawContent.ts}
           language={'jsx'}
