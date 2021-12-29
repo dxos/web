@@ -74,7 +74,13 @@ const DemoToolbar = ({codeMode, onCodeModeSelect}) => {
   const theme = useTheme();
   return (
     <ToggleButtonGroup
-      sx={{ margin: '8px 0' }}
+      sx={{ 
+        margin: '8px 0',
+        '& .Mui-selected, & .Mui-selected:hover': {
+          color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
+          backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
+        }
+      }}
       exclusive
       value={codeMode}
       onChange={onCodeModeSelect}
@@ -119,7 +125,10 @@ export const Demo = ({ component, rawContent }) => {
         <DemoComponent />
       </DemoRoot>
       <DemoToolbar codeMode={codeMode} onCodeModeSelect={(_, mode) => {
-        setCodeMode(mode);
+        if (mode && mode !== codeMode) {
+          setCodeMode(mode);
+        }
+
       }} />
       <Box>
         {codeMode === 'JS' && <Code
