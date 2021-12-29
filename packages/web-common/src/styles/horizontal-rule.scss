@@ -1,0 +1,13 @@
+//
+// Copyright 2020 DXOS.org
+//
+
+.dxos-horizontal-rule {
+  border: 0;
+  height: 1px;
+  background-color: $gray-900;
+}
+
+.dxos-horizontal-rule.variant-light {
+  background-color: $gray-600;
+}

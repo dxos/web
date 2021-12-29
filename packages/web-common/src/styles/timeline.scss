@@ -1,0 +1,46 @@
+//
+// Copyright 2020 DXOS.org
+//
+
+.dxos-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dxos-timeline-item {
+  position: relative;
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 14px;
+  list-style: none;
+}
+
+.dxos-timeline-item-tail {
+  position: absolute;
+  top: 30px;
+  left: 7px;
+  height: 100%;
+  border-left: 1px solid $gray-700;
+}
+
+.dxos-timeline-item:last-of-type .dxos-timeline-item-tail {
+  display: none;
+}
+
+.dxos-timeline-item-head {
+  position: absolute;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  background-color: $white;
+  border: 2px solid transparent;
+  border-radius: 100px;
+}
+
+.dxos-timeline-item-content {
+  position: relative;
+  top: -7px;
+  margin: 0 0 0 26px;
+  word-break: break-word;
+}

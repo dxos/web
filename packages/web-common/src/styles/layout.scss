@@ -1,0 +1,30 @@
+//
+// Copyright 2020 DXOS.org
+//
+
+// Utility sizing classes
+.dxos-height-100vh {
+  min-height: 100%; // Fallback for browsers who do not support vh unit
+  min-height: 100vh;
+}
+
+.dxos-height-50vh {
+  min-height: 50%; // Fallback for browsers who do not support vh unit
+  min-height: 50vh;
+}
+
+.dxos-height-25vh {
+  min-height: 25%; // Fallback for browsers who do not support vh unit
+  min-height: 25vh;
+}
+
+.dxos-vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Optical adjustment for round items (like avatars)
+.dxos-optical-left-small {
+  margin-left: -2px;
+}

@@ -1,0 +1,62 @@
+//
+// Copyright 2020 DXOS.org
+//
+
+// Typescale, Standard
+// $f0: 12px;
+// $f1: 14px;
+// $f2: 16px;
+// $f3: 20px;
+// $f4: 24px;
+// $f5: 32px;
+// $f6: 48px;
+// $f7: 66px;
+// $f8: 96px;
+
+// Typescale in figma:
+$f0: 14.5px;
+$f1: 16px;
+$f2: 23.5px;
+$f3: 30px;
+$f4: 52.5px;
+$f5: 84.945px;
+$f6: 137.433px;
+$f7: 18px;
+
+// Typefaces
+$sans-serif: "DM Sans", sans-serif;
+$heading: "Sharp Sans", sans-serif;
+$monospace: "DM Mono", monospace;
+
+// Colors
+$black: rgb(0, 0, 0);
+$black-10: rgba(0, 0, 0, 0.1);
+$black-20: rgba(0, 0, 0, 0.2);
+$black-30: rgba(0, 0, 0, 0.3);
+$black-40: rgba(0, 0, 0, 0.4);
+$black-50: rgba(0, 0, 0, 0.5);
+$black-60: rgba(0, 0, 0, 0.6);
+$black-70: rgba(0, 0, 0, 0.7);
+$black-80: rgba(0, 0, 0, 0.8);
+$black-90: rgba(0, 0, 0, 0.9);
+
+$white: rgb(255, 255, 255);
+$white-10: rgba(255, 255, 255, 0.1);
+$white-20: rgba(255, 255, 255, 0.2);
+$white-30: rgba(255, 255, 255, 0.3);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-50: rgba(255, 255, 255, 0.5);
+$white-60: rgba(255, 255, 255, 0.6);
+$white-70: rgba(255, 255, 255, 0.7);
+$white-80: rgba(255, 255, 255, 0.8);
+$white-90: rgba(255, 255, 255, 0.9);
+
+$gray-100: #f7f7f7;
+$gray-200: #e0e4e6;
+$gray-300: #bfc3c5;
+$gray-400: #9a9ea2;
+$gray-500: #798186;
+$gray-600: #5c6266;
+$gray-700: #383c3e;
+$gray-800: #1d1f20;
+$gray-900: #212529;

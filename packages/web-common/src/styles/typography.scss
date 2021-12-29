@@ -1,0 +1,221 @@
+//
+// Copyright 2020 DXOS.org
+//
+
+// Set some basics for nice type
+body {
+  font-family: $sans-serif !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+}
+
+p {
+  line-height: 1.5; // Normalize default line height for paragraphs
+}
+
+// Styles for type overrides
+.dxos-sans-serif {
+  font-family: $sans-serif !important;
+}
+.dxos-serif {
+  font-family: $heading !important;
+}
+.dxos-monospace {
+  font-family: $monospace !important;
+}
+.dxos-all-caps {
+  font-variant: all-small-caps;
+}
+
+a,
+a:visited {
+  color: $black-90;
+}
+a:hover {
+  color: $black-60;
+}
+
+// Utility classes for type sizes
+.dxos-f0 {
+  font-size: $f0;
+}
+.dxos-f1 {
+  font-size: $f1;
+}
+.dxos-f2 {
+  font-size: $f2;
+}
+.dxos-f3 {
+  font-size: $f3;
+}
+.dxos-f4 {
+  font-size: $f4;
+}
+.dxos-f5 {
+  font-size: $f5;
+}
+.dxos-f6 {
+  font-size: $f6;
+}
+.dxos-f7 {
+  font-size: $f7;
+}
+
+// Utility classes for weights
+.dxos-fw-100 {
+  font-weight: 100 !important;
+}
+.dxos-fw-200 {
+  font-weight: 200 !important;
+}
+.dxos-fw-300 {
+  font-weight: 300 !important;
+}
+.dxos-fw-400 {
+  font-weight: 400 !important;
+}
+.dxos-fw-500 {
+  font-weight: 500 !important;
+}
+.dxos-fw-600 {
+  font-weight: 600 !important;
+}
+.dxos-fw-700 {
+  font-weight: 700 !important;
+}
+.dxos-fw-normal {
+  font-weight: normal !important;
+}
+
+// Helper for letter-spacing
+.dxos-tracked-minimal {
+  letter-spacing: 0.01em;
+}
+.dxos-tracked-tight {
+  letter-spacing: 0.05em;
+}
+.dxos-tracked {
+  letter-spacing: 0.08em;
+}
+.dxos-tracked-loose {
+  letter-spacing: 0.21em;
+}
+
+// Helpers for line-height
+.dxos-lh-tight {
+  line-height: 1;
+}
+.dxos-lh-normal {
+  line-height: 1.15;
+}
+.dxos-lh-loose {
+  line-height: 1.35;
+}
+.dxos-lh-very-loose {
+  p,
+  & {
+    line-height: 1.5;
+  }
+}
+
+.dxos-lh-extra-loose {
+  p,
+  & {
+    line-height: 1.8;
+  }
+}
+
+// Renders a horizontal line beside a header
+.dxos-header-with-line {
+  width: 100%;
+  overflow: hidden;
+}
+
+// Wrapping
+// Extend bootstrap: https://getbootstrap.com/docs/4.0/utilities/text/#text-wrapping-and-overflow
+.dxos-text-wrap-break-word {
+  word-wrap: break-word;
+}
+
+// Force no underline
+.dxos-no-underline {
+  text-decoration: none !important;
+}
+
+.dxos-header-with-line:after,
+.dxos-header-with-line:before {
+  background-color: $black-30;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  margin-bottom: 0.15em;
+}
+
+.dxos-header-with-line.variant-light:before,
+.dxos-header-with-line.variant-light:after {
+  background-color: $white-30;
+}
+
+// Position for left headers
+.dxos-header-with-line-left:after {
+  width: 100%;
+  left: 1em;
+  margin-right: -100%;
+}
+
+.dxos-header-with-line-left.dxos-header-with-line--animate-ready {
+  &:after {
+    transition: 3s ease-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+.dxos-header-with-line-left.dxos-header-with-line--animate-in {
+  &:after {
+    transform: scaleX(1);
+  }
+}
+// Position for centered headers
+.dxos-header-with-line-center {
+  text-align: center;
+}
+
+.dxos-header-with-line-center:before,
+.dxos-header-with-line-center:after {
+  width: 50%;
+}
+.dxos-header-with-line-center:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.dxos-header-with-line-center:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+// Position for right headers
+.dxos-header-with-line-right {
+  text-align: right;
+}
+.dxos-header-with-line-right:before {
+  width: 100%;
+  right: 0.5em;
+  margin-left: -100%;
+}
+
+// Blockquotes
+.dxos-block-quote > p {
+  margin-bottom: 0 !important;
+}
