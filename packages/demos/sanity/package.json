@@ -13,7 +13,6 @@
     "src"
   ],
   "dependencies": {
-    "bootstrap": "^5.1.3"
   },
   "devDependencies": {
     "@dxos/react-client": "^2.19.2",
