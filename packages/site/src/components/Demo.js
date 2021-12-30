@@ -1,9 +1,11 @@
 import * as React from 'react';
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
 import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { styled, alpha, useTheme } from '@mui/material/styles';
-import { JavaScriptIcon, TypeScriptIcon } from '../icons';
 
+import { JavaScriptIcon, TypeScriptIcon } from '../icons';
 import HighlightedCode from './HighlightedCode';
 
 const Root = styled('div')(({ theme }) => ({
@@ -109,7 +111,6 @@ const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) =
 
 export const Demo = ({ component, rawContent }) => {
   const [codeMode, setCodeMode] = React.useState('JS');
-  const DemoComponent = component;
   return (
     <Root>
       <DemoRoot
@@ -117,7 +118,13 @@ export const Demo = ({ component, rawContent }) => {
         bg={'outlined'}
         id={'demo-id'}
       >
-        <DemoComponent />
+        <BrowserOnly fallback={<div>Loading...</div>}>
+          {() => {
+            // const LibComponent = require('some-lib').LibComponent;
+            const DemoComponent = component().default;
+            return <DemoComponent />;
+          }}
+        </BrowserOnly>
       </DemoRoot>
       <DemoToolbar
         codeMode={codeMode}
