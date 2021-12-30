@@ -143,18 +143,20 @@ module.exports = async function demoLoader() {
     return moduleIDToJSIdentifier(moduleID);
   }
 
-  const transformed = `
-    ${Array.from(demoModuleIDs)
-      .map((moduleID) => {
-        return `import ${getDemoIdentifier(moduleID)} from '${moduleID}';`;
-      })
-      .join('\n')}
+  // ${Array.from(demoModuleIDs)
+  //   .map((moduleID) => {
+  //     return `import ${getDemoIdentifier(moduleID)} from '${moduleID}';`;
+  //   })
+  //   .join('\n')}
 
+  const transformed = `
     export const docs = ${JSON.stringify(docs, null, 2)};
     export const demos = ${JSON.stringify(demos, null, 2)};
     export const demoComponents = {${Array.from(demoModuleIDs)
       .map((moduleID) => {
-        return `${JSON.stringify(moduleID)}: ${getDemoIdentifier(moduleID)},`;
+        return `${JSON.stringify(moduleID)}: () => {
+          return require(${JSON.stringify(moduleID)})
+        },`;
       })
       .join('\n')}};
   `;
