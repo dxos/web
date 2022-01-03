@@ -19,7 +19,23 @@ const config = {
   projectName: 'DXOS',
   // TODO(zarco): Try fixing webpack to use DXOS Stack.
   plugins: [
-    './plugins/webpack-plugin.js'
+    './plugins/webpack-plugin.js',
+    [
+      'docusaurus-plugin-typedoc',
+      // Plugin / TypeDoc options
+      {
+        entryPoints: ['./src/api/index.ts'],
+        tsconfig: './tsconfig.json',
+        // plugin: ['typedoc-plugin-xyz'],
+        // Plugin options
+        out: 'api-test',
+        sidebar: {
+          categoryLabel: 'API TEST',
+          position: 0,
+          fullNames: true
+        },
+      },
+    ]
   ],
 
   presets: [
