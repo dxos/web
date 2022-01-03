@@ -28,7 +28,7 @@ Code links: (Puts Foo inside `<code>` tags)
 
 #### Defined in
 
-index.ts:38
+[index.ts:38](https://github.com/dxos/web/blob/6b34294/packages/site/src/api/index.ts#L38)
 
 ## Properties
 
@@ -42,4 +42,4 @@ Foo.member
 
 #### Defined in
 
-index.ts:37
+[index.ts:37](https://github.com/dxos/web/blob/6b34294/packages/site/src/api/index.ts#L37)

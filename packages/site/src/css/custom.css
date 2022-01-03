@@ -24,6 +24,8 @@
   --ifm-color-primary-light: #a7c0cd;
   --ifm-color-primary-lighter: #a7c0cd;
   --ifm-color-primary-lightest: #a7c0cd;
+  --ifm-heading-font-family: 'DM Sans';
+  --ifm-heading-font-weight: var(--ifm-font-weight-semibold);
   --ifm-code-font-size: 95%;
 }
 
