@@ -19,6 +19,12 @@ $ yarn
 
 ### Local Development
 
+- Get JSON data from '@dxos/protocols'
+- Store it under: packages/site/src/data/dxos-api.json.
+- This will render all the references.
+- We can even create versioning directories?
+  - Example: packages/site/src/data/2.0.1/dxos-api.json
+
 ```
 $ yarn start
 ```

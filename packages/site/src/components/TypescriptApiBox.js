@@ -233,7 +233,7 @@ export class TypescriptApiBox extends Component {
       signature: this._signature(rawData, parameters),
       summary: _summary(rawData),
       groups,
-      repo: 'apollographql/apollo-client',
+      repo: 'dxos/protocols',
       branch: 'main',
       filepath: rawData.sources[0].fileName,
       lineno: rawData.sources[0].line

@@ -33,4 +33,4 @@ the square root if `x` is non-negative or `NaN` if `x` is negative.
 
 #### Defined in
 
-[index.ts:7](https://github.com/dxos/web/blob/6b34294/packages/site/src/api/index.ts#L7)
+[index.ts:7](https://github.com/dxos/web/blob/cac8ff6/packages/site/src/api/index.ts#L7)
