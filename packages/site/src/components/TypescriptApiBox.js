@@ -182,7 +182,6 @@ export class TypescriptApiBox extends Component {
     
     traverse(docs);
 
-    console.log('dataByKey', dataByKey);
     return dataByKey;
   }
 
