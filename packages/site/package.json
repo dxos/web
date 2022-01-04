@@ -33,7 +33,6 @@
     "@mui/styles": "^5.2.3",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
-    "docusaurus-plugin-typedoc": "^0.16.6",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
@@ -44,8 +43,6 @@
     "remark-react": "^5.0.1",
     "sass": "^1.45.1",
     "setimmediate": "^1.0.5",
-    "typedoc": "^0.22.10",
-    "typedoc-plugin-markdown": "^3.11.8",
     "webpack": "^5.61.0"
   },
   "devDependencies": {

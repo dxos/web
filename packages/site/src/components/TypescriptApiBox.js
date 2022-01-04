@@ -136,7 +136,6 @@ function _typeId(type) {
 }
 
 function isReadableName(name) {
-  console.log('--------- name', name);
   return name.substring(0, 2) !== '__';
 }
 
@@ -183,7 +182,7 @@ export class TypescriptApiBox extends Component {
     
     traverse(docs);
 
-
+    console.log('dataByKey', dataByKey);
     return dataByKey;
   }
 
