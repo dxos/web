@@ -5,7 +5,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
-import { JavaScriptIcon, TypeScriptIcon } from '../icons';
+import { JavaScriptIcon, TypeScriptIcon } from '../../icons';
 import { HighlightedCode } from './HighlightedCode';
 
 const Root = styled('div')(({ theme }) => ({

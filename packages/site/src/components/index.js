@@ -3,4 +3,4 @@
 //
 
 export * from './HomepageFeatures';
-export * from './TypescriptApiBox';
+export * from './showcase';

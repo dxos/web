@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import prism from '../utils/prism';
+import prism from '../../utils/prism';
 import { MarkdownElement } from './MarkdownElement';
 
 export const HighlightedCode = React.forwardRef(function HighlightedCode(props, ref) {

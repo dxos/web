@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
-import docs from '../data/dxos-api.json';
+import docs from '../../data/dxos-api.json';
 import extend from 'lodash/extend';
 import partition from 'lodash/partition';
 import remark from 'remark';
 import remark2react from 'remark-react';
 import styled from '@emotion/styled';
 import withProps from 'recompose/withProps';
-// import {smallCaps} from 'gatsby-theme-apollo-core';
+
 export const smallCaps = {
   letterSpacing: '0.142em',
   textTransform: 'uppercase'
