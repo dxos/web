@@ -38,6 +38,15 @@ module.exports = function (context, options) {
                   use: require.resolve('@dxos/markdown/loader'),
                 }
               ],
+            },
+            {
+              test: /\.js$/,
+              oneOf: [
+                {
+                  resourceQuery: /@dxos\/showcase/,
+                  use: require.resolve('@dxos/showcase/loader'),
+                }
+              ],
             }
           ]
         },

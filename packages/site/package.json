@@ -21,6 +21,7 @@
     "@dxos/config": "^2.19.2",
     "@dxos/demo-task-app": "*",
     "@dxos/markdown": "*",
+    "@dxos/showcase": "*",
     "@dxos/react-client": "^2.19.2",
     "@dxos/sanity": "*",
     "@dxos/typefaces": "1.0.0-beta.19",

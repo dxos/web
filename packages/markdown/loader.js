@@ -160,6 +160,7 @@ module.exports = async function demoLoader() {
       })
       .join('\n')}};
   `;
+  // console.log('--- transformed', transformed);
 
   // WARNING: Make sure the returned code is compatible with our .browserslistrc.
   return transformed;

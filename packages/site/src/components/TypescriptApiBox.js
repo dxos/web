@@ -136,6 +136,7 @@ function _typeId(type) {
 }
 
 function isReadableName(name) {
+  // Something like: `__namedParameters` won't be marked as readableName.
   return name.substring(0, 2) !== '__';
 }
 
@@ -335,11 +336,11 @@ export class TypescriptApiBox extends Component {
 
     let typeName = this._typeName(type);
     if (!typeName) {
-      console.error(
-        'unknown type name for',
-        data.name,
-        'using the type name `any`'
-      );
+      // console.error(
+      //   'unknown type name for',
+      //   data.name,
+      //   'using the type name `any`'
+      // );
       // console.trace();
       typeName = 'any';
     }
@@ -405,7 +406,6 @@ export class TypescriptApiBox extends Component {
 
     return signature.parameters.map(param => {
       let name;
-      
       try {
         if (isReadableName(param.name)) {
           name = param.name; // eslint-disable-line prefer-destructuring
@@ -413,7 +413,8 @@ export class TypescriptApiBox extends Component {
           name = param.originalName;
         }
       } catch (error) {
-        // XXX: not sure if this is the correct logic, but it feel OK
+        // Set name of parameter as 'option' if it's not readable.
+        console.log('error', error);
         name = 'options';
       }
 

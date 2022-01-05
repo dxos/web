@@ -4,13 +4,12 @@ sidebar_position: 2
 ---
 
 import {
-  demos,
-  docs,
-  demoComponents,
-} from '../../src/testing/hello/hello.md?@dxos/markdown';
-import MarkdownDocs from '../../src/components/MarkdownDocs';
+  component,
+  rawContent
+} from '../../src/testing/hello/Hello.js?@dxos/showcase';
+import { ShowcaseComponent } from '../../src/components/ShowcaseComponent';
 
-<MarkdownDocs
-  demos={demos}
-  docs={docs}
-  demoComponents={demoComponents} />
+<ShowcaseComponent 
+  component={component} 
+  rawContent={rawContent} 
+/>
