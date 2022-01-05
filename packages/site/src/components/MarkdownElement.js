@@ -271,7 +271,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 }));
 
-const MarkdownElement = React.forwardRef(function MarkdownElement(props, ref) {
+export const MarkdownElement = React.forwardRef(function MarkdownElement(props, ref) {
   const { className, renderedMarkdown, ...other } = props;
   const more = {};
 
@@ -288,5 +288,3 @@ MarkdownElement.propTypes = {
   className: PropTypes.string,
   renderedMarkdown: PropTypes.string,
 };
-
-export default MarkdownElement;

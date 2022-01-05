@@ -31,15 +31,6 @@ module.exports = function (context, options) {
         module: {
           rules: [
             {
-              test: /\.md$/,
-              oneOf: [
-                {
-                  resourceQuery: /@dxos\/markdown/,
-                  use: require.resolve('@dxos/markdown/loader'),
-                }
-              ],
-            },
-            {
               test: /\.js$/,
               oneOf: [
                 {

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import prism from '../../../../packages/markdown/prism';
-import MarkdownElement from './MarkdownElement';
+import prism from '../utils/prism';
+import { MarkdownElement } from './MarkdownElement';
 
-const HighlightedCode = React.forwardRef(function HighlightedCode(props, ref) {
+export const HighlightedCode = React.forwardRef(function HighlightedCode(props, ref) {
   const { code, language, component: Component = MarkdownElement, ...other } = props;
   const renderedCode = React.useMemo(() => {
     return prism(code.trim(), language);
@@ -27,5 +27,3 @@ HighlightedCode.propTypes = {
   component: PropTypes.elementType,
   language: PropTypes.string.isRequired,
 };
-
-export default HighlightedCode;

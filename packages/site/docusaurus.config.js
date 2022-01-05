@@ -84,7 +84,7 @@ const config = {
               },
               {
                 label: 'Reference',
-                to: '/docs/home',
+                to: '/docs/ref-sdk/client',
               },
             ],
           },
