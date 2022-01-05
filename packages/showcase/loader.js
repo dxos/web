@@ -5,11 +5,7 @@ const path = require('path');
  * @type {import('webpack').loader.Loader}
  */
 module.exports = async function demoLoader() {
-  const englishFilepath = this.resourcePath;
-
-  const englishFilename = path.basename(englishFilepath, '.js');
-  
-  const files = await fs.readdir(path.dirname(englishFilepath));
+  const files = await fs.readdir(path.dirname(this.resourcePath));
   const codeFiles = files.filter((fileName) => fileName.includes('.js') || fileName.includes('.tsx') || fileName.includes('.tsx'));
   let rawContent = {
     js: null,
