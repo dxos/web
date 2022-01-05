@@ -1,0 +1,38 @@
+---
+title: 'Example'
+sidebar_position: 2
+---
+
+import * as Hello from '../../src/testing/hello/Hello.js?@dxos/showcase';
+import * as Sanity from '../../src/testing/sanity/Sanity.js?@dxos/showcase';
+import { ShowcaseComponent } from '../../src/components/ShowcaseComponent';
+import { TypescriptApiBox } from '../../src/components/TypescriptApiBox';
+
+## Components
+
+### Hello Component
+<ShowcaseComponent 
+  component={Hello.component} 
+  rawContent={Hello.rawContent} 
+/>
+
+### Sanity Component
+<ShowcaseComponent 
+  component={Sanity.component} 
+  rawContent={Sanity.rawContent} 
+/>
+
+## Hooks
+
+### useClient
+<TypescriptApiBox name='useClient' />
+
+### useProfile
+<TypescriptApiBox name='useProfile' />
+
+### useParties
+<TypescriptApiBox name='useParties' />
+
+### useSelection
+<TypescriptApiBox name='useSelection' />
+

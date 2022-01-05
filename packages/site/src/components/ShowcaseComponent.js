@@ -25,9 +25,4 @@ export const ShowcaseComponent = ({ component, rawContent }) => {
       />
     </ThemeProvider>
   );
-  // return (
-  //   <div>
-  //     helllo
-  //   </div>
-  // );
 };
