@@ -111,6 +111,11 @@ const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) =
 
 export const Demo = ({ component, rawContent }) => {
   const [codeMode, setCodeMode] = React.useState('JS');
+  React.useEffect(() => {
+    if (!rawContent.js && rawContent.ts) {
+      setCodeMode('TS');
+    }
+  }, []);
   return (
     <Root>
       <DemoRoot

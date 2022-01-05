@@ -38,6 +38,24 @@ module.exports = function (context, options) {
                   use: require.resolve('@dxos/showcase/loader'),
                 }
               ],
+            },
+            {
+              test: /\.ts$/,
+              oneOf: [
+                {
+                  resourceQuery: /@dxos\/showcase/,
+                  use: require.resolve('@dxos/showcase/loader'),
+                }
+              ],
+            },
+            {
+              test: /\.tsx$/,
+              oneOf: [
+                {
+                  resourceQuery: /@dxos\/showcase/,
+                  use: require.resolve('@dxos/showcase/loader'),
+                }
+              ],
             }
           ]
         },
