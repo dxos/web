@@ -67,9 +67,8 @@ function MarkdownDocs(props) {
         }, [isDarkTheme]);
         
         return (
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme} key={'component-demo-' + index}>
             <Demo
-              key={'component-demo-' + index}
               component={demoComponent}
               rawContent={{
                 js: demo.raw,

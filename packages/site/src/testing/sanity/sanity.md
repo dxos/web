@@ -1,3 +1,0 @@
-## Sanity
-
-{{"demo": "Sanity.js"}}

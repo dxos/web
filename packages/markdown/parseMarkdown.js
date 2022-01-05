@@ -76,7 +76,8 @@ function getTitle(markdown) {
   const matches = markdown.match(titleRegExp);
 
   if (!matches || !matches[1]) {
-    throw new Error('Missing title in the page');
+    // Don't need a title if we use this loader inside an mdx file from docusaurus.
+    return '';
   }
 
   return matches[1].replace(/`/g, '');
