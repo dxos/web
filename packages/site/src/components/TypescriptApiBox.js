@@ -414,7 +414,7 @@ export class TypescriptApiBox extends Component {
         }
       } catch (error) {
         // Set name of parameter as 'option' if it's not readable.
-        console.log('error', error);
+        // console.error(error);
         name = 'options';
       }
 
