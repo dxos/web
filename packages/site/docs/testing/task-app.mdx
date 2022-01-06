@@ -1,0 +1,19 @@
+---
+title: 'Task App'
+---
+
+import * as TaskApp from '@dxos/demo-task-app/src/TaskApp.js?@dxos/showcase';
+import * as TaskFrame from '@dxos/tasks-frame/src/Main.tsx?@dxos/showcase';
+import { ShowcaseComponent } from '../../src/components';
+
+### Showing Frame Container Code
+<ShowcaseComponent 
+  component={TaskApp.component} 
+  rawContent={TaskApp.rawContent} 
+/>
+
+### Showing Frame Code
+<ShowcaseComponent 
+  component={TaskApp.component} 
+  rawContent={TaskFrame.rawContent} 
+/>

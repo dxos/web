@@ -1821,15 +1821,15 @@
     pump "^3.0.0"
     through2 "^3.0.1"
 
-"@dxos/frame-dev-server@^2.14.3":
-  version "2.14.3"
-  resolved "https://registry.yarnpkg.com/@dxos/frame-dev-server/-/frame-dev-server-2.14.3.tgz#1f0d663458e8248d1514d502e9cc75ac5b5ba085"
-  integrity sha512-GOUqZF57ujYiiaXGHiCFWBZUyxSO6bLLNvTOjyFEhU0xjM+toCrFvrHi22GsGkvOWhC0m2IiQErAThKp8v4wwQ==
+"@dxos/frame-dev-server@^2.14.4":
+  version "2.14.4"
+  resolved "https://registry.yarnpkg.com/@dxos/frame-dev-server/-/frame-dev-server-2.14.4.tgz#11e1352f2664167abe607a41aa3085816c155e95"
+  integrity sha512-9lq55RCqi8oc+MHweQtsOirLl+C65vdgBOJ2uc2fad3FCgOJbAwHkfdGOBCDKjISLCZ8MBcI/LXkn/7+pB5lKQ==
   dependencies:
     "@dxos/client" "~2.19.2"
     "@dxos/echo-db" "~2.19.2"
     "@dxos/react-client" "~2.19.2"
-    "@dxos/react-framekit" "2.14.3"
+    "@dxos/react-framekit" "2.14.4"
     "@dxos/react-registry-client" "~2.19.2"
     "@dxos/registry-client" "~2.19.2"
     js-yaml "~4.1.0"
@@ -2013,10 +2013,10 @@
     string-hash "~1.1.3"
     url-join "^4.0.1"
 
-"@dxos/react-framekit@2.14.3", "@dxos/react-framekit@^2.14.3":
-  version "2.14.3"
-  resolved "https://registry.yarnpkg.com/@dxos/react-framekit/-/react-framekit-2.14.3.tgz#5b873222e8d0d47da98173de95890c0daa4c953c"
-  integrity sha512-U7DXoS4JBvad09mgJhSIGF3E6sbJUmDUnwVU3neGpTH/v38tPhz3RkKkWIySCE4prlqF1N/0Tsy+dpSiiXQ9mg==
+"@dxos/react-framekit@2.14.4", "@dxos/react-framekit@^2.14.4":
+  version "2.14.4"
+  resolved "https://registry.yarnpkg.com/@dxos/react-framekit/-/react-framekit-2.14.4.tgz#ac90ea0ea2d1ae133022eded1a0ef6960345a762"
+  integrity sha512-/zEkJACiupm10wHfAhpWFfxqkZeE8Sng4jSLnWHVbz/HE0npIdAVIcIBOTXAGTorYgo7/WtuHBxYKBHsdNLPog==
   dependencies:
     "@dxos/debug" "~2.19.2"
     "@dxos/util" "~2.19.2"
@@ -2085,10 +2085,10 @@
     "@dxos/debug" "2.19.3"
     debug "^4.3.3"
 
-"@dxos/tasks-frame@^2.14.3":
-  version "2.14.3"
-  resolved "https://registry.yarnpkg.com/@dxos/tasks-frame/-/tasks-frame-2.14.3.tgz#88ef93b150400dff842af8978291ee17f23579f0"
-  integrity sha512-vidtrmc+drDPIxVMGPKkoAphf6ni8p/SG2LKw57kHd2XGIc0rl21VOIgLIFSrt7ngSWgjWfmmj+rRIbWumuU9A==
+"@dxos/tasks-frame@^2.14.4":
+  version "2.14.4"
+  resolved "https://registry.yarnpkg.com/@dxos/tasks-frame/-/tasks-frame-2.14.4.tgz#35f49647266c1e1269f0e977f5012e0423ac316f"
+  integrity sha512-XlgXCgAeXYcvQt32W2D8EXTUFiT4+FV4QcoQ2EDW4zbIBjfB7Hzva7NqOiy4HEylXZG2db2oi7H3WBch4EcC8A==
   dependencies:
     react-device-detect "~2.1.2"
 

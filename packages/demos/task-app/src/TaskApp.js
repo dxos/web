@@ -13,7 +13,9 @@ import { manifest } from "@dxos/tasks-frame";
 export const Main = () => {
   return (
     <ClientProvider>
-      <TestFrameContainer manifest={manifest} />
+      <TestFrameContainer 
+        manifest={manifest}
+      />
     </ClientProvider>
   )
 };
