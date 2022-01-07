@@ -11,6 +11,13 @@ lerna bootstrap
 ## Run the site
 
 ```
-cd packages/site
-yarn start
+yarn dev:site
+```
+
+## Build the site
+
+```
+yarn build:site
+cd packages/site/
+yarn serve
 ```
