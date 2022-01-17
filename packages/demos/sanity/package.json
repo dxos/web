@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "dev": "tsc --watch",
     "clean": "rimraf ./dist"
   },
   "main": "dist/src/index.js",
