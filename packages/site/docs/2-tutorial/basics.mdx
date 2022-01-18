@@ -90,7 +90,7 @@ export const Primary = () => (
 );  
 ```
 
-*There are the 2 main components we need to pay atention to:*
+*There are the components we need to pay atention to:*
 
 #### ClientProvider
 
@@ -102,7 +102,7 @@ export const Primary = () => (
 
 Gets the `manifest` from the frame and creates a "virtual" environment so we can mount our frame, without the need to set a profile, party or any DB items.
 It takes care of setting them by reading the `manifest`.<br/>
-In a real-world scenario, `TestFrameContainer` will actually be an app. We usually call them `Host Apps`.
+In a real-world scenario, `TestFrameContainer` will be an app. We usually call them `Host Apps`.
 
 ```tsx
 //
@@ -120,6 +120,7 @@ export const manifest: FrameManifest = {
 
 As you can see `Main` is the main component from our frame. 
 Which it gets passed to the `createFrame` function that adapts the component to the DXOS stack.
+
 
 
 
