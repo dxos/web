@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 # Full-stack Tutorial
 
@@ -50,9 +51,41 @@ yarn
 ```
 yarn book
 ```
+> `yarn book` will spin up our esbook tool which is really similar to Storybooks but using esbuild to speed up bundling and compiling.
 
-Great! Now you have a basic frame up and running.
-Let's create a To Do list using our stack now.
+Browse: http://localhost:8080 and you will see our esbook displaying one single frame.
+It's under Frame -> Primary.
+You can open it in a separate browser tab by clicking the <OpenInNewIcon /> icon.
+
+Now you are visualizing the frame without the navigation sidebar.
+
+Let's take a quick look in `FrameContainer.stories.tsx` which is our entry point for the storybook.
+
+```tsx
+//
+// Copyright 2021 DXOS.org
+//
+
+import React from 'react';
+
+import { TestFrameContainer } from '@dxos/frame-dev-server';
+import { ClientProvider } from '@dxos/react-client';
+import { FullScreen } from '@dxos/react-components';
+
+import { manifest } from '../src';
+
+export default {
+  title: 'template-frame/Frame'
+};
+
+export const Primary = () => (
+  <ClientProvider>
+    <FullScreen>
+        <TestFrameContainer manifest={manifest} />
+    </FullScreen>
+  </ClientProvider>
+);  
+```
 
 <!-- 
 ## Link to reference docs

@@ -151,7 +151,7 @@ export const Demo = ({ component, rawContent }) => {
         {codeMode === 'TS' && !!rawContent.ts && <Code
           id={'demo-id-ts'}
           code={rawContent.ts}
-          language={'jsx'}
+          language={'tsx'}
         />}
       </Box>
     </Root>
