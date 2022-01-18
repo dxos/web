@@ -3,3 +3,81 @@ sidebar_position: 1
 ---
 
 # Full-stack Tutorial
+
+Get involved by creating a frame that can be deployed to our network. It will allow you to quick use all our stack.
+
+## Install CLI
+
+```
+yarn add global @dxos/cli
+```
+
+## Install Devtools
+Our tool to debug what's happening under the hood. <a href="https://github.com/dxos/protocols/blob/main/packages/devtools/devtools-extension/README.md" target="_blank">Follow this instructions</a>
+
+<!--
+Could we use the dx CLI to download the artifact and then lead to Google Extension guide?
+Something like:
+```
+dx devtools download
+
+# DONE - Please follow this guide to add it as extension to Chrome: https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/
+# DONE - Please follow this guide to add it as extension to Firefox: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing
+```
+-->
+
+## Create a frame
+
+### What's a frame?
+A frame is a javascript module which can be remotely loaded and included in another app.<br/>
+It primary consists of a React component plus some additional metadata.
+
+### Creation
+
+Create a frame based on the frame-template repo:
+```
+dx app create --template https://github.com/dxos/frame-template/tree/master --path ./test-frame
+```
+
+### Installation
+```
+cd ./test-frame
+yarn
+```
+
+### Run the frame locally
+
+```
+yarn book
+```
+
+Great! Now you have a basic frame up and running.
+Let's create a To Do list using our stack now.
+
+<!-- 
+## Link to reference docs
+?? 
+-->
+
+## Deploy the frame
+
+Requirements:
+- <a href="/docs/ref-cli/installation" target="_blank">Create your profile</a>
+- <a href="/docs/ref-cli/profile-keys-setup" target="_blank">Set up your profile keys</a>
+- <a href="/docs/ref-cli/profile-authority" target="_blank">Claim your profile authority</a>
+
+To deploy frames we need a number of steps:
+
+- build: This generates the ditribution files along with configuration specific for the given `app.yml`
+- publish: Upload the dist folder to IPFS. Update the hash in the `app.yml`
+- register: Use `app.yml` to generate a record in DXNS.
+
+All this operations can be resumed with one command:
+
+```
+dx app deploy --domain "test" --name "frame.example"
+```
+
+## Run the frame in Braneframe
+
+<!-- TODO(zarco): josiah maybe you can explain this? -->
