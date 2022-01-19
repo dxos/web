@@ -23,7 +23,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/home">
-            DXOS Getting Started
+            Get Started
           </Link>
         </div>
       </div>

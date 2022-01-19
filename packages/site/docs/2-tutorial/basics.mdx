@@ -1,5 +1,148 @@
 ---
 sidebar_position: 1
 ---
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { TypescriptApiBox } from '../../src/components';
 
 # Full-stack Tutorial
+
+Get involved by creating a frame that can be deployed to our network. It will allow you to quick use all our stack.
+
+## Install CLI
+
+```bash
+yarn add global @dxos/cli
+```
+
+## Install Devtools
+Our tool to debug what's happening under the hood. <a href="https://github.com/dxos/protocols/blob/main/packages/devtools/devtools-extension/README.md" target="_blank">Follow this instructions</a>
+
+<!--
+Could we use the dx CLI to download the artifact and then lead to Google Extension guide?
+Something like:
+```
+dx devtools download
+
+# DONE - Please follow this guide to add it as extension to Chrome: https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/
+# DONE - Please follow this guide to add it as extension to Firefox: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing
+```
+-->
+
+## Create a frame
+
+### What's a frame?
+A frame is a javascript module which can be remotely loaded and included in another app.<br/>
+It primary consists of a React component plus some additional metadata.
+
+### Creation
+
+Create a frame based on the frame-template repo:
+```bash
+dx app create --template https://github.com/dxos/frame-template/tree/master --path ./test-frame
+```
+
+### Installation
+```bash
+cd ./test-frame
+yarn
+```
+
+### Run the frame locally
+
+```bash
+yarn book
+```
+> `yarn book` will spin up our esbook tool which is really similar to Storybooks but using esbuild to speed up bundling and compiling.
+
+Browse <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> and you will see our esbook displaying one single frame.
+It's under Frame -> Primary.
+You can open it in a separate browser tab by clicking the <OpenInNewIcon /> icon.
+
+Now you are visualizing the frame without the navigation sidebar.
+
+### How it works?
+
+Let's take a quick look in `FrameContainer.stories.tsx` which is our entry point for the storybook.
+
+```tsx
+//
+// Copyright 2021 DXOS.org
+//
+
+import React from 'react';
+
+import { TestFrameContainer } from '@dxos/frame-dev-server';
+import { ClientProvider } from '@dxos/react-client';
+import { FullScreen } from '@dxos/react-components';
+
+import { manifest } from '../src';
+
+export default {
+  title: 'template-frame/Frame'
+};
+
+export const Primary = () => (
+  <ClientProvider>
+    <FullScreen>
+      <TestFrameContainer manifest={manifest} />
+    </FullScreen>
+  </ClientProvider>
+);  
+```
+
+*There are the components we need to pay atention to:*
+
+#### ClientProvider
+
+> A frame can't be mounted without a `ClientProvider`. Think it as our core context.
+
+<TypescriptApiBox name='ClientProvider' />
+
+#### TestFrameContainer
+
+Gets the `manifest` from the frame and creates a "virtual" environment so we can mount our frame, without the need to set a profile, party or any DB items.
+It takes care of setting them by reading the `manifest`.<br/>
+In a real-world scenario, `TestFrameContainer` will be an app. We usually call them `Host Apps`.
+
+```tsx
+//
+// Copyright 2021 DXOS.org
+//
+
+import { createFrame, FrameManifest } from '@dxos/react-framekit';
+
+import { Main } from './Main';
+
+export const manifest: FrameManifest = {
+  component: createFrame(Main)
+};
+```
+
+As you can see `Main` is the main component from our frame. 
+Which it gets passed to the `createFrame` function that adapts the component to the DXOS stack.
+
+
+
+
+## Deploy the frame
+
+Requirements:
+- <a href="/docs/ref-cli/installation" target="_blank">Create your profile</a>
+- <a href="/docs/ref-cli/profile-keys-setup" target="_blank">Set up your profile keys</a>
+- <a href="/docs/ref-cli/profile-authority" target="_blank">Claim your profile authority</a>
+
+To deploy frames we need a number of steps:
+
+- build: This generates the ditribution files along with configuration specific for the given `app.yml`
+- publish: Upload the dist folder to IPFS. Update the hash in the `app.yml`
+- register: Use `app.yml` to generate a record in DXNS.
+
+All this operations can be resumed with one command:
+
+```bash
+dx app deploy --domain "test" --name "frame.example"
+```
+
+## Discover your frame in Braneframe
+
+<!-- TODO(zarco): josiah maybe you can explain this? -->
