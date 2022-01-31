@@ -1,8 +1,5 @@
 {
-  "include": ["src"],
-  "files": [
-    "src/data/dxos-api.json"
-  ],
+  "include": ["src", "loader.js"],
   "exclude": [
     ".git",
     ".github",
@@ -20,7 +17,7 @@
     "esModuleInterop": true,
     "lib": [
       "DOM",
-      "ESNext"
+      "ES2015"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -31,6 +28,6 @@
     "sourceMap": true,
     "strict": true,
     "allowJs": true,
-    "target": "ES2018"
+    "target": "es2015"
   }
 }
