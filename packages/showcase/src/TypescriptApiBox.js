@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
-import docs from './data/dxos-api.json';
+import docs from './data/dxos-api.json'; // TODO(zarco): Set it up dinamically.
 import extend from 'lodash/extend';
 import partition from 'lodash/partition';
 import remark from 'remark';
