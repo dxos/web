@@ -1,0 +1,11 @@
+{
+  "name": "@dxos/showcase-loader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "./loader.js",
+  "exports": {
+    "./loader": "./loader.js"
+  },
+  "dependencies": {}
+}

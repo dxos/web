@@ -6,7 +6,7 @@ const path = require('path');
  */
 module.exports = async function demoLoader() {
   const files = await fs.readdir(path.dirname(this.resourcePath));
-  const codeFiles = files.filter((fileName) => fileName.includes('.js') || fileName.includes('.ts') || fileName.includes('.tsx'));
+  const codeFiles = files.filter((fileName) => fileName.includes('.js') || fileName.includes('.tsx') || fileName.includes('.tsx'));
   let rawContent = {
     js: null,
     ts: null
