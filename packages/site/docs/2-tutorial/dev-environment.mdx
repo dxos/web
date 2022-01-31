@@ -1,0 +1,60 @@
+---
+sidebar_position: 3
+sidebar_label: Developer Environment
+---
+
+# Developer Environment Setup
+
+In order to create domains and deploy to the DXNS registry you need to create a developer account. All of the actions taken in this section will be done using the DXOS CLI, so we will start by installing that.
+
+## Install CLI
+
+You can install the CLI globally using your favorite package manager, here we will use `yarn`:
+
+```bash
+yarn add --global @dxos/cli
+```
+
+Once the CLI is installed you should be able to run the following to see the version you installed:
+
+```bash
+dx version
+```
+
+The CLI has extensions which can be installed based on your needs. In this section we will make use of the DXNS extension, which can be installed by running the following:
+
+```bash
+dx extension install @dxos/cli-dxns
+```
+
+## Setup Profile
+
+TODO: Update based on https://github.com/dxos/protocols/issues/860.
+
+Profiles contain configuration for connecting with various DXOS services, allowing you to connect to specify which service provider you wish to use and quickly switch between them.
+
+You can initialize our default profile with the following command:
+
+```bash
+dx profile init --name enterprise --template-url https://bit.ly/3A642xB
+```
+
+Once the profile has been initialized, set it as the current profile:
+
+```bash
+dx profile set enterprise
+```
+
+## Devtools
+
+Similar to React, DXOS has a devtools web extension. The devtools are not required to use DXOS or complete this tutorial but they will give extra insight into what is going on under the hood as you delve deeper into the DXOS ecosystem.
+
+You can download a copy of the extension using the following command:
+
+```bash
+dx devtools download --from `dx dxns record get dxos:file.devtools --json | jq -r .data.hash`
+```
+
+This will download a zip file which can be [loaded as an unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked) to any Chromium-based browser.
+
+TODO: Link to devtools overview
