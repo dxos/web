@@ -35,7 +35,7 @@ module.exports = function (context, options) {
               oneOf: [
                 {
                   resourceQuery: /@dxos\/showcase/,
-                  use: require.resolve('@dxos/showcase/loader'),
+                  use: require.resolve('@dxos/showcase/src/Loader.js'),
                 }
               ],
             },
@@ -44,7 +44,7 @@ module.exports = function (context, options) {
               oneOf: [
                 {
                   resourceQuery: /@dxos\/showcase/,
-                  use: require.resolve('@dxos/showcase/loader'),
+                  use: require.resolve('@dxos/showcase/src/Loader.js'),
                 }
               ],
             },
@@ -53,7 +53,7 @@ module.exports = function (context, options) {
               oneOf: [
                 {
                   resourceQuery: /@dxos\/showcase/,
-                  use: require.resolve('@dxos/showcase/loader'),
+                  use: require.resolve('@dxos/showcase/src/Loader.js'),
                 }
               ],
             }
