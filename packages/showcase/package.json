@@ -1,7 +1,7 @@
 {
   "name": "@dxos/showcase",
+  "description": "Components that display other components and references to APIs.",
   "version": "1.0.0",
-  "private": true,
   "license": "AGPL-3.0",
   "author": "DXOS.org",
   "main": "dist/src/index.js",
