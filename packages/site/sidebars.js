@@ -18,13 +18,15 @@ const sidebars = {
     // {type: 'autVogenerated', dirName: '.'},
     {
       type: 'doc',
-      id: 'home',
-      label: 'Introduction'
+      id: 'home'
     },
     {
       type: 'doc',
-      id: 'architecture',
-      label: 'Architecture'
+      id: 'architecture'
+    },
+    {
+      type: 'doc',
+      id: 'community'
     },
     {
       type: 'category',
