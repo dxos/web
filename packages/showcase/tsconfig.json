@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "lib": [
       "DOM",
-      "ES2015"
+      "ESNext"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -28,6 +28,6 @@
     "sourceMap": true,
     "strict": true,
     "allowJs": true,
-    "target": "es2015"
+    "target": "es5"
   }
 }

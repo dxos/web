@@ -18,6 +18,7 @@ export const TableWrapper = styled.div({
 });
 
 const tableBorder = `1px solid black`;
+
 export const StyledTable = styled.table({
   border: tableBorder,
   borderSpacing: 0,
