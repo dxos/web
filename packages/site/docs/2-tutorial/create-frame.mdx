@@ -7,13 +7,15 @@ sidebar_label: Create A Frame
 
 We're going to be building a simple but practical example of a tasks list.
 
-In this section we will make use of another CLI extension, the app extension. If you skipped the [development environment setup](./dev-environment), you'll need to do that now. You can install this extension by running:
+In this section we will make use of another CLI extension, the app extension. If you have not completed the [development environment setup](./dev-environment), you'll need to do that now. You can install this extension by running:
 
 ```bash
 dx extension install @dxos/cli-app
 ```
 
 ## What Is A Frame?
+
+TODO simplify, true but don't get into the details
 
 A frame is Javascript module which can be loaded dynamically into a host application and interoperate with the host. At minimum a frame consists of a React component, then optionally defines additional functionality to facilitate interacting the host application and ECHO. Similar to how React components are composed to build a larger application, frames can be composed in a host application expand it's functionality.
 
@@ -23,11 +25,14 @@ TODO link to frame architecture docs
 
 The easiest way to get started building a frame is to clone the frame template:
 
+TODO make JS frame template
+TODO use api box to show both ts and js examples
+
 ```bash
 dx app create --template https://github.com/dxos/templates/tree/main/frame-template --path dxos-intro
 ```
 
-Once you've cloned the template you'll want to install the dependencies:
+Once we've cloned the template we'll want to install the dependencies:
 
 ```bash
 cd dxos-intro
@@ -36,7 +41,7 @@ yarn
 
 > Note: `yarn` is required here due to a dependency issue with `wrtc` which causes `npm install` to fail.
 
-After the dependencies are installed you can run the storybook to see the placeholder frame content:
+After the dependencies are installed we can run the storybook to see the placeholder frame content:
 
 ```bash
 yarn book
@@ -46,19 +51,60 @@ yarn book
 
 ## Update Dependencies
 
-The first thing we need to do is add a couple of additional DXOS dependencies that we will need: `@dxos/object-model` and `@dxos/echo-db`. We want to match the version of the `@dxos/react-client` for these dependencies and they should be added to the `devDependencies` and `peerDependencies`. The reason we aren't adding these to the regular dependencies list is that we expect that they will be provided by the frame host whenever the frame is loaded. If they were non-standard dependencies we would want to add them to the `dependencies` list and bundle them with the frame.
+TODO update template frame so that this section can be omitted from this basic tutorial
 
-TODO: Link to framekit docs on dependencies.
+The first thing we need to do is add a couple of additional DXOS dependencies that we will need: `@dxos/object-model` and `@dxos/echo-db`. We want to match the version of the `@dxos/react-client` for these dependencies and they should be added to the `devDependencies` and `peerDependencies`. The reason we aren't adding these to the regular dependencies list is that we expect that they will be provided by the frame host whenever the frame is loaded. If they were non-standard dependencies we would want to add them to the `dependencies` list and bundle them with the frame.
 
 After adding those dependencies to the `package.json`, don't forget to run `yarn` again to install them.
 
 ## Frame Manifest
 
-The first thing we want to do is update our frame's manifest. In order to make an interactive frame we need to implement the `register` and `createRootItem` functions in the manifest. The `register` function should register any item models that the frame depends on, this will be called when the frame is loaded. The `createRootItem` function should create an item which corresponds to a single instance of the frame.
+The first thing we need to do is update our frame's manifest. The manifest of a frame is what is loaded by applications using the frame, telling them what the frame is capable of. Let's walk through the manifest that comes with the template frame.
 
-```tsx
+TODO link to frame manifest api reference
+
+This is about the simplest manifest that we can create, it provides only the `component` which is used to render the frame. Frames always wrap their main component in `createDynamicFrame` which provides the frames with necessary React contexts to operate.
+
+TODO createDynamicFrame vs createFrame
+
+```ts
+import { createDynamicFrame, FrameManifest } from '@dxos/react-framekit';
+
+import { Main } from './Main';
+
+export const manifest: FrameManifest = {
+  component: createDynamicFrame(Main)
+};
+```
+
+In order to make an interactive frame we need to implement the `register` and `createRootItem` functions in the manifest -- we'll start with `register`. The `register` function registers ECHO models that our frames rely on, but creating your own models is a more advanced ECHO topic. To get started we can simply always register the `ObjectModel` which causes the items in ECHO to behave the same as Javascript objects. 
+
+```ts
 import { ObjectModel } from '@dxos/object-model';
 
+export const manifest: FrameManifest = {
+  component: createDynamicFrame(Main),
+  register: async (client) => {
+    client.registerModel(ObjectModel);
+  }
+};
+```
+
+Two key concepts of ECHO are parties and items. In short, a party is a shared database containing queryable graph of items. The `createRootItem` function should create an item which corresponds to a single instance of the frame. It will be called with the party which the item should be created in and the initial properties of that item.
+
+TODO link to ECHO docs on parties/items.
+
+We need to pass a few options to `createItem`, let's walk through what those are:
+
+- `type`: a string defined by us which will we can use to query for items later.
+- `model`: defines the structure of the item (`ObjectModel` is the most common model, it behaves analogously to a Javascript object).
+- `props`: initial state of the item.
+
+Finally, we need to return the item we've created.
+
+> Note: ECHO APIs which mutate data, such as creating an item or setting a property, are async and return promises.
+
+```ts
 const TYPE_TASKS_LIST = 'example:type.tasks.list';
 
 export const manifest: FrameManifest = {
@@ -68,8 +114,8 @@ export const manifest: FrameManifest = {
   },
   createRootItem: async (party, props) => {
     const item = await party.database.createItem({
-      model: ObjectModel,
       type: TYPE_TASKS_LIST,
+      model: ObjectModel,
       props
     });
 
@@ -80,7 +126,9 @@ export const manifest: FrameManifest = {
 
 ## Implement Tasks List
 
-Once we've got our dependencies updated we can start to work on implementing our tasks list. To start we'll add all the React and MUI dependencies we'll need.
+### Material UI
+
+Once we've got our dependencies updated we can start to work on implementing our tasks list. To start we'll add all the React and Material UI (MUI) dependencies we'll need. We'll use MUI to build our frame in order to create a nice user experience without needing to focus on the interface too much.
 
 ```tsx
 import React, { ChangeEvent, useState } from 'react';
@@ -113,20 +161,15 @@ return (
 );
 ```
 
-Next we want to make our text field useful and add some tasks. The most important piece here is the `useFrameContext` hook. The frame context makes available an ECHO party and item to the frame -- parties and items are both ECHO primitives. In short, a party is a shared database containing queryable graph of items, while the item provided is the specific item relevant to your frame.
+### Create Tasks
 
-TODO link to ECHO docs on parties/items.
+Next we want to make our text field useful and add some tasks. The most important piece here is the `useFrameContext` hook. The frame context makes available an ECHO party and item to the frame, the item provided is the specific item relevant to our frame.
 
 We'll need both the party and item in order for the frame to operate properly so if either are missing we won't render anything for now.
 
 There's also one other piece of state we need and that will be used to manage the new task input. With that in place we just need to go about creating tasks.
 
-The last piece is an event handler which will create a new item in the party. This item has a few properties which we'll look at now:
-
-- `type`: a string defined by us which will we can use to query for items later.
-- `model`: defines the structure of the item (`ObjectModel` is the most common model, it behaves analogously to a Javascript object).
-- `parent`: connects items in a parent-child relationship (eg. task list -> tasks)
-- `props`: initial state of the item
+The last piece is an event handler which will create a new item in the party. The aside from using a different type, the only difference between this and the root item is that this item references the root item as it's parent.
 
 ```tsx
 import { ObjectModel } from '@dxos/object-model';
@@ -189,7 +232,9 @@ return (
 );
 ```
 
-With that in place you'll be able to create new tasks, but it still appears as if nothing is happening. We need to query the database to retrieve the tasks we create and render them. To query the database, we'll use the selection API from the party and the `useSelection` hook which returns a reactive result of the query.
+### Render Tasks
+
+With that in place we'll be able to create new tasks, but it still appears as if nothing is happening. We need to query the database to retrieve the tasks we create and render them. To query the database, we'll use the selection API from the party and the `useSelection` hook which returns a reactive result of the query.
 
 TODO link to ECHO api reference for `useSelection`
 
@@ -208,6 +253,8 @@ const tasks = useSelection(party?.database.select(selection => selection
 ), [party, item]) ?? [];
 ```
 
+When creating a new task we set the `title` property on that item with the value of that task. Here we will read that property from the item in order to display the task.
+
 ```tsx
 <Box>
   {tasks.map((item) => (
@@ -218,7 +265,9 @@ const tasks = useSelection(party?.database.select(selection => selection
 </Box>
 ```
 
-We're able to add tasks to our task list now, but a task list isn't very useful if you can't mark them as completed. Let's add a checkbox beside each of our tasks so that we can mark them as completed.
+### Complete Tasks
+
+We're able to add tasks to our task list now, but a task list isn't very useful if we can't mark them as completed. Let's add a checkbox beside each of our tasks so that we can mark them as completed.
 
 We'll store whether or not each task has been completed as a property on that item, similar to the title. When the checkbox is toggled correspondingly we'll toggle the completed property.
 
@@ -227,8 +276,8 @@ import type { Item } from '@dxos/echo-db';
 
 // ...
 
-const handleToggleComplete = (item: Item<ObjectModel>) => async (event: ChangeEvent<HTMLInputElement>) => {
-  await item.model.setProperty('complete', event.target.checked);
+const handleToggleComplete = async (item: Item<ObjectModel>, complete: boolean) => {
+  await item.model.setProperty('complete', complete);
 };
 
 // ...
@@ -237,7 +286,7 @@ const handleToggleComplete = (item: Item<ObjectModel>) => async (event: ChangeEv
   <ListItemIcon>
     <Checkbox
       checked={item.model.getProperty('complete') || false}
-      onChange={handleToggleComplete(item)}
+      onChange={(event) => handleToggleComplete(item, event.target.checked)}
     />
   </ListItemIcon>
   <ListItemText primary={item.model.getProperty('title')} />

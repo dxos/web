@@ -7,7 +7,7 @@ sidebar_label: Account Setup
 
 TODO: Update based on https://github.com/dxos/protocols/issues/860.
 
-We're going to setup a DXNS developer account and register a domain. This will require your [development environment to be setup](./dev-environment), so you need to complete that first if you skipped it.
+In order to be able to publish anything to the DXNS registry you need to create a developer account. We're going to setup a DXNS developer account and register a domain. This will require your [development environment to be setup](./dev-environment), so make sure you complete that first.
 
 ## Create Developer Account
 
@@ -29,6 +29,8 @@ address   5EpqhyY9AfHgmrqwFs7tFh3V89ktNamgTP3TWM5zgeQM8y7a
 In order to finish setting up your profile, copy the mnemonic and add it to your current profile. You can find your profile file in `~/.dx/profile/enterprise.yml`. Enter the mnemonic in the field `runtime.services.dxns.accountUri`.
 
 ## Fund Account
+
+TODO if faucet step doesn't become automatic, then what is faucet?
 
 We will now add funds to your registry account so that you can purchase a domain. In order to do this you need the address of a faucet and an account address. You can find the address of your faucet in your profile config file, while your account address is taken from the output when you generated your account.
 
@@ -54,20 +56,22 @@ balance  1000000000000
 
 Now that you have funds in your account you'll be able to create domains in the registry. All records registered in the registry are created under a domain.
 
-In order to registry a domain on DXNS you need to create an auction for it. [Why do I need to do this?]
+In order to registry a domain on DXNS you need to create an auction for it.
+
+TODO explain auctions
 
 ```bash
-dx dxns auction create my-domain 1000000
+dx dxns auction create example 1000000
 ```
 
 After some time (approximately 10 minutes), you should be able to close the auction and claim that domain, assuming no one else has outbid you:
 
 ```bash
-dx dxns auction close my-domain
-dx dxns auction claim my-domain
+dx dxns auction close example
+dx dxns auction claim example
 ```
 
-It should prompt out a domain key:
+It should prompt out a domain key, this is simply an indication that it was successful and we don't need this key for anything.
 
 ```bash
 key        value

@@ -12,13 +12,13 @@ Once you've [created your frame](./create-frame), we can move on to the next ste
 Circling back to your domain, if you haven't claimed it yet, now you can do so. If you missed that step you'll need to go through [Account Setup](./account-setup) before continuing.
 
 ```bash
-dx dxns auction close my-domain
-dx dxns auction claim my-domain
+dx dxns auction close example
+dx dxns auction claim example
 ```
 
 ## Update Config
 
-Before deploying the frame you'll need to update the config file `dx.yml`.
+Before deploying the frame you'll need to update the config file `dx.yml`. This file defines the static configuration for a DXNS record.
 
 There's a few fields in particular which need to be updated from the template:
 
@@ -26,6 +26,7 @@ There's a few fields in particular which need to be updated from the template:
 - `description`: what your frame is.
 - `author`: your name or organization.
 - `repository`: where the source of your frame is published.
+- `contentType`: a list of the types of items the frame is able to load.
 
 ```diff
  module:
@@ -33,12 +34,16 @@ There's a few fields in particular which need to be updated from the template:
 -  name: example:frame.template
 -  description: Frame Starter Template
 -  author: DXOS.org
-+  name: my-domain:frame.tasks
++  name: example:frame.tasks
 +  description: Tasks List
 +  author: Your Name
    license: AGPL-3.0
 -  repository: 'https://github.com/dxos/braneframe/packages/frames/template-frame'
 +  repository: 'https://github.com/my-account/tasks-frame'
++  record:
++    app:
++      contentType:
++        - example:type.tasks.list
 ```
 
 ## Deploy
@@ -55,11 +60,11 @@ dx dxns deploy --tag latest
 
 Your frame is now deployed, let's try it out!
 
-TODO <!-- <FrameDisplay /> -->
+TODO FrameDisplay
 
 ## What's Next?
 
-- Try extending your tasks list frame to support deleting or editing tasks.
+- Try extending your tasks list frame to support editing tasks.
 - Learn about more advanced ECHO functionality for building out more complex applications.
   - TODO link to ECHO guide
 - Learn about extending your frame's functionality with custom icons, settings and actions.
