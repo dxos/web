@@ -21,9 +21,9 @@
     "@docusaurus/types": "^2.0.0-beta.14",
     "@dxos/config": "^2.19.2",
     "@dxos/demo-task-app": "*",
-    "@dxos/showcase": "*",
     "@dxos/react-client": "^2.19.2",
     "@dxos/sanity": "*",
+    "@dxos/showcase": "*",
     "@dxos/typefaces": "1.0.0-beta.19",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -47,6 +47,7 @@
     "webpack": "^5.61.0"
   },
   "devDependencies": {
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "@tsconfig/docusaurus": "^1.0.4",
     "typescript": "^4.5.4"
   },

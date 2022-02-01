@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build:demos": "lerna bootstrap && lerna run build --scope {'@dxos/demo-task-app,@dxos/sanity'} --stream",
-    "build:site": "lerna bootstrap && lerna run build --scope {'@dxos/typefaces,@dxos/demo-task-app,@dxos/sanity,@dxos/web'} --stream",
-    "dev:site": "lerna bootstrap && lerna run dev --parallel --scope {'@dxos/typefaces,@dxos/demo-task-app,@dxos/sanity,@dxos/web'} --stream",
+    "build:site": "lerna bootstrap && lerna run build --scope {'@dxos/typefaces,@dxos/demo-task-app,@dxos/sanity,@dxos/showcase,@dxos/web'} --stream",
+    "dev:site": "lerna bootstrap && lerna run dev --parallel --scope {'@dxos/typefaces,@dxos/demo-task-app,@dxos/sanity,@dxos/showcase,@dxos/web'} --stream",
     "clean": "lerna run clean"
   },
   "devDependencies": {

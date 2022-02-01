@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
-import docs from '../../data/dxos-api.json';
 import extend from 'lodash/extend';
 import partition from 'lodash/partition';
 import remark from 'remark';
@@ -19,6 +18,7 @@ export const TableWrapper = styled.div({
 });
 
 const tableBorder = `1px solid black`;
+
 export const StyledTable = styled.table({
   border: tableBorder,
   borderSpacing: 0,
@@ -70,15 +70,6 @@ export const StyledTable = styled.table({
     }
   }
 });
-
-function CustomTable(props) {
-  return (
-    <TableWrapper>
-      <StyledTable {...props} />
-    </TableWrapper>
-  );
-}
-
 
 const Header = styled.div({});
 
@@ -157,11 +148,13 @@ function mdToReact(text) {
 
 export class TypescriptApiBox extends Component {
   static propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    docs: PropTypes.any.isRequired
   };
 
   get dataByKey() {
     const dataByKey = {};
+    console.log('---------- this.props', this.props);
 
     function traverse(tree, parentName) {
       let {name} = tree;
@@ -181,7 +174,7 @@ export class TypescriptApiBox extends Component {
       }
     }
     
-    traverse(docs);
+    traverse(this.props.docs);
 
     return dataByKey;
   }
