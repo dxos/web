@@ -8,16 +8,16 @@ npm install --global lerna
 lerna bootstrap
 ```
 
-## Run the site
+## Run the docs
 
 ```
-yarn dev:site
+yarn dev:docs
 ```
 
-## Build the site
+## Build the docs
 
 ```
-yarn build:site
-cd packages/site/
+yarn build:docs
+cd packages/docs/
 yarn serve
 ```
