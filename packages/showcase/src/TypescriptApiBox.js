@@ -154,7 +154,6 @@ export class TypescriptApiBox extends Component {
 
   get dataByKey() {
     const dataByKey = {};
-    console.log('---------- this.props', this.props);
 
     function traverse(tree, parentName) {
       let {name} = tree;
