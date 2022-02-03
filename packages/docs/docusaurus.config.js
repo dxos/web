@@ -66,6 +66,11 @@ const config = {
             position: 'left'
           },
           {
+            to: '/showcase',
+            label: 'Showcase',
+            position: 'left'
+          },
+          {
             href: 'https://github.com/dxos',
             label: 'GitHub',
             position: 'right',
@@ -84,7 +89,7 @@ const config = {
               },
               {
                 label: 'Reference',
-                to: '/docs/ref-sdk/client',
+                to: '/docs/api-reference/client',
               },
             ],
           },
