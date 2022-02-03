@@ -47,6 +47,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+      },
       navbar: {
         logo: {
           alt: 'DXOS',
