@@ -1,3 +1,7 @@
+//
+// Copyright 2022 DXOS.org
+//
+
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
 import extend from 'lodash/extend';
@@ -58,12 +62,13 @@ export const StyledTable = styled.table({
         fontWeight: 'bold',
         marginBottom: '5px'
       },
-      '&:first-child p': {
-        fontSize: '14px',
-        code: {
-          color: 'black'
-        }
-      }
+      // TODO(wittjosiah): Causes run-time error related to server rendering.
+      // '&:first-child p': {
+      //   fontSize: '14px',
+      //   code: {
+      //     color: 'black'
+      //   }
+      // }
     },
     'tr.required td': {
       background: 'black'
@@ -146,6 +151,9 @@ function mdToReact(text) {
   .processSync(sanitized).contents;
 }
 
+/**
+ * Based on https://github.com/apollographql/gatsby-theme-apollo/blob/6e9f6ce4166d495b5768edd30a593c24e8b46dae/packages/gatsby-theme-apollo-docs/src/components/typescript-api-box.js
+ */
 export class TypescriptApiBox extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -154,11 +162,10 @@ export class TypescriptApiBox extends Component {
 
   get dataByKey() {
     const dataByKey = {};
-    console.log('---------- this.props', this.props);
 
     function traverse(tree, parentName) {
       let {name} = tree;
-      if (['Constructor', 'Method', 'Property'].includes(tree.kindString)) {
+      if (['Accessor', 'Constructor', 'Method', 'Property'].includes(tree.kindString)) {
         name = `${parentName}.${tree.name}`;
         // add the parentName to the data so we can reference it for ids
         tree.parentName = parentName;
@@ -217,6 +224,8 @@ export class TypescriptApiBox extends Component {
         type = this._type(rawData);
       }
     }
+    
+    const children = rawData.children?.filter(child => !child.flags.isPrivate) ?? [];
 
     return {
       id: _typeId(rawData),
@@ -228,7 +237,12 @@ export class TypescriptApiBox extends Component {
       repo: 'dxos/protocols',
       branch: 'main',
       filepath: rawData.sources[0].fileName,
-      lineno: rawData.sources[0].line
+      lineno: rawData.sources[0].line,
+      children: {
+        properties: children.filter(child => child.kindString === 'Property'),
+        accessors: children.filter(child => child.kindString === 'Accessor'),
+        methods: children.filter(child => child.kindString === 'Method') 
+      }
     };
   }
 
@@ -310,8 +324,8 @@ export class TypescriptApiBox extends Component {
     }
 
     const isReflected =
-      data.kindString === 'Type alias' || type.type === 'reflection';
-    if (isReflected && type.declaration) {
+      data.kindString === 'Type alias' || type?.type === 'reflection';
+    if (isReflected && type?.declaration) {
       const {declaration} = type;
       if (declaration.signatures) {
         return this._type(declaration.signatures[0]);
@@ -327,7 +341,7 @@ export class TypescriptApiBox extends Component {
       }
     }
 
-    let typeName = this._typeName(type);
+    let typeName = type && this._typeName(type);
     if (!typeName) {
       // console.error(
       //   'unknown type name for',
@@ -338,7 +352,7 @@ export class TypescriptApiBox extends Component {
       typeName = 'any';
     }
 
-    if (type.typeArguments) {
+    if (type?.typeArguments) {
       return (
         typeName +
         _parameterString(type.typeArguments.map(this._typeName), '<', '>')
@@ -507,6 +521,36 @@ export class TypescriptApiBox extends Component {
               </Fragment>
             ))}
         </Body>
+        {args.children.properties.length > 0 && <MainHeading>Properties</MainHeading>}
+        {args.children.properties.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
+        {args.children.accessors.length > 0 && <MainHeading>Accessors</MainHeading>}
+        {args.children.accessors.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
+        {args.children.methods.length > 0 && <MainHeading>Methods</MainHeading>}
+        {args.children.methods.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
       </>
     );
   }
