@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import * as styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
@@ -32,7 +32,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description} : any) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

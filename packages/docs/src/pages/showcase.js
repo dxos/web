@@ -2,7 +2,11 @@ import React from 'react';
 
 import Layout from '@theme/Layout';
 
+import { Box } from '@mui/material';
+
 import { examples } from '../data/showcase';
+
+import { ShowcaseCard } from '../components';
 
 const TITLE = 'DXOS Showcase';
 const DESCRIPTION = 'List of apps & frames people are building with DXOS';
@@ -12,20 +16,28 @@ const EDIT_URL =
 const Showcase = () => {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main>
+      <main className="container margin-vert--lg">
         <section>
           <h1>{TITLE}</h1>
           <p>{DESCRIPTION}</p>
-          <a href={EDIT_URL}>Join us by adding your site!</a>
+          <a className='button button--primary button--lg' href={EDIT_URL}>Join us by adding your site!</a>
         </section>
-        <section>
-          {examples.map(example => (
-            <p key={example.id}>
-              <a href={example.location}>
-                {example.title}
-              </a>
-            </p>
-          ))}
+        <section className='margin-vert--lg'>
+          <Box className='row'>
+            {examples.map(example => (
+              <Box
+                key={example.id}
+                sx={{
+                  display: 'flex',
+                  flex: 1
+                }} 
+                className='col col--4 margin-bottom--md'>
+                <ShowcaseCard
+                  data={example}
+                />
+              </Box>
+            ))}
+          </Box>
         </section>
       </main>
     </Layout>
