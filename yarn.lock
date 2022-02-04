@@ -2499,6 +2499,11 @@
   dependencies:
     react-device-detect "~2.1.2"
 
+"@dxos/typedoc@2.24.1-dev.5bdb00a0":
+  version "2.24.1-dev.5bdb00a0"
+  resolved "https://registry.yarnpkg.com/@dxos/typedoc/-/typedoc-2.24.1-dev.5bdb00a0.tgz#f53632043138a5c60a29bc3b550098b3f55661f5"
+  integrity sha512-ULTmOmICp1fha8akLZ6LvS3oX/Zxm+S40DxzRwXiqdEcPP1V/dUfrhROvnSy0NAJ3RD5EGVDtWNaW2qKbDbQkQ==
+
 "@dxos/util@2.19.3", "@dxos/util@~2.19.2":
   version "2.19.3"
   resolved "https://registry.yarnpkg.com/@dxos/util/-/util-2.19.3.tgz#76b8a31aa360c76328a41ea55df8a31d0e52d725"

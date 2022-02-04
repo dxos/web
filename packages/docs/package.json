@@ -24,6 +24,7 @@
     "@dxos/react-client": "^2.19.2",
     "@dxos/sanity": "*",
     "@dxos/showcase": "*",
+    "@dxos/typedoc": "2.24.1-dev.5bdb00a0",
     "@dxos/typefaces": "1.0.0-beta.19",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
