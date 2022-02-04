@@ -58,7 +58,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
         </CardContent>
         <Box sx={{ flex: 1 }} />
         <CardActions>
-          {data.location && (<Button size="small">VIEW</Button>)}
+          {data.location && (<Button size="small">EXPLORE</Button>)}
         </CardActions>
       </CardActionArea>
     </StyledCard>

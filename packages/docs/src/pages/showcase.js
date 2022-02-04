@@ -2,7 +2,10 @@ import React from 'react';
 
 import Layout from '@theme/Layout';
 
-import { Box } from '@mui/material';
+import { 
+  Box,
+  Button
+} from '@mui/material';
 
 import { examples } from '../data/showcase';
 
@@ -13,16 +16,28 @@ const DESCRIPTION = 'List of apps & frames people are building with DXOS';
 const EDIT_URL =
   'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js';
 
+
+// TODO(zarco): use ThemeProvider to normalize buttons and primary colors.
+
 const Showcase = () => {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className="container margin-vert--lg">
-        <section>
-          <h1>{TITLE}</h1>
-          <p>{DESCRIPTION}</p>
-          <a className='button button--primary button--lg' href={EDIT_URL}>Join us by adding your site!</a>
-        </section>
-        <section className='margin-vert--lg'>
+      <main>
+        <Box sx={{
+          backgroundColor: '#1d1f20',
+          paddingTop: 10,
+          paddingBottom: 10,
+          color: 'white'
+        }}>
+          <Box className='container'>
+              <h1>{TITLE}</h1>
+              <p>{DESCRIPTION}</p>
+              <Button variant='outlined' href={EDIT_URL}>
+                Join us by adding your site!
+              </Button>
+          </Box>
+        </Box>
+        <Box className='container margin-vert--lg'>
           <Box className='row'>
             {examples.map(example => (
               <Box
@@ -38,7 +53,7 @@ const Showcase = () => {
               </Box>
             ))}
           </Box>
-        </section>
+        </Box>
       </main>
     </Layout>
   );
