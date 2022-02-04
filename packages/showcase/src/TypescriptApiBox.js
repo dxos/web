@@ -1,3 +1,7 @@
+//
+// Copyright 2022 DXOS.org
+//
+
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
 import extend from 'lodash/extend';
@@ -27,15 +31,15 @@ export const StyledTable = styled.table({
     padding: 16,
     borderBottom: tableBorder
   },
-  'tbody tr:last-child td': {
-    border: 0
-  },
   th: {
     ...smallCaps,
     fontSize: 13,
     fontWeight: 'normal',
     color: 'black',
-    textAlign: 'inherit'
+    textAlign: 'inherit',
+    '&:last-child': {
+      width: '99%'
+    }
   },
   td: {
     verticalAlign: 'top',
@@ -57,12 +61,6 @@ export const StyledTable = styled.table({
         lineHeight: 'inherit',
         fontWeight: 'bold',
         marginBottom: '5px'
-      },
-      '&:first-child p': {
-        fontSize: '14px',
-        code: {
-          color: 'black'
-        }
       }
     },
     'tr.required td': {
@@ -146,6 +144,8 @@ function mdToReact(text) {
   .processSync(sanitized).contents;
 }
 
+// Based on https://github.com/apollographql/gatsby-theme-apollo/blob/6e9f6ce4166d495b5768edd30a593c24e8b46dae/packages/gatsby-theme-apollo-docs/src/components/typescript-api-box.js
+// TODO(wittjosiah): Rewrite in Typescript, better handle React components, reduce edge cases which fall back to displaying 'any'.
 export class TypescriptApiBox extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -157,7 +157,7 @@ export class TypescriptApiBox extends Component {
 
     function traverse(tree, parentName) {
       let {name} = tree;
-      if (['Constructor', 'Method', 'Property'].includes(tree.kindString)) {
+      if (['Accessor', 'Constructor', 'Method', 'Property'].includes(tree.kindString)) {
         name = `${parentName}.${tree.name}`;
         // add the parentName to the data so we can reference it for ids
         tree.parentName = parentName;
@@ -178,8 +178,8 @@ export class TypescriptApiBox extends Component {
     return dataByKey;
   }
 
-  templateArgs(rawData) {
-    const parameters = this._parameters(rawData, this.dataByKey);
+  templateArgs(rawData, isReact = false) {
+    const parameters = this._parameters(rawData, this.dataByKey, isReact);
     const split = partition(parameters, 'isOptions');
 
     const groups = [];
@@ -191,7 +191,7 @@ export class TypescriptApiBox extends Component {
     }
     if (split[0].length > 0) {
       groups.push({
-        name: 'Options',
+        name: isReact ? 'Props' : 'Options',
         // the properties of the options parameter are the things listed in this group
         members: split[0][0].properties
       });
@@ -216,6 +216,8 @@ export class TypescriptApiBox extends Component {
         type = this._type(rawData);
       }
     }
+    
+    const children = rawData.children?.filter(child => !child.flags.isPrivate) ?? [];
 
     return {
       id: _typeId(rawData),
@@ -225,15 +227,23 @@ export class TypescriptApiBox extends Component {
       summary: _summary(rawData),
       groups,
       repo: 'dxos/protocols',
+      // TODO(wittjosiah): point to release tag.
       branch: 'main',
       filepath: rawData.sources[0].fileName,
-      lineno: rawData.sources[0].line
+      lineno: rawData.sources[0].line,
+      children: {
+        properties: children.filter(child => child.kindString === 'Property'),
+        accessors: children.filter(child => child.kindString === 'Accessor'),
+        methods: children.filter(child => child.kindString === 'Method') 
+      }
     };
   }
 
   // This is just literally the name of the type, nothing fancy, except for references
   _typeName = type => {
-    if (type.type === 'instrinct') {
+    if (type.type === 'array') {
+      return `[${this._typeName(type.elementType)}]`;
+    } else if (type.type === 'intrinsic') {
       if (type.isArray) {
         return '[' + type.name + ']';
       }
@@ -256,7 +266,7 @@ export class TypescriptApiBox extends Component {
     } else if (type.type === 'reference') {
       // check to see if the reference type is a simple type alias
       const referencedData = this.dataByKey[type.name];
-      if (referencedData && referencedData.kindString === 'Type alias') {
+      if (referencedData?.kindString === 'Type alias') {
         // Is it an "objecty" type? We can't display it in one line if so
         if (
           !referencedData.type.declaration ||
@@ -268,7 +278,7 @@ export class TypescriptApiBox extends Component {
 
       // it used to be this: return _link(_typeId(type), type.name);
       return _typeId(type);
-    } else if (type.type === 'stringLiteral') {
+    } else if (type.type === 'literal') {
       return '"' + type.value + '"';
     }
   };
@@ -309,8 +319,8 @@ export class TypescriptApiBox extends Component {
     }
 
     const isReflected =
-      data.kindString === 'Type alias' || type.type === 'reflection';
-    if (isReflected && type.declaration) {
+      data.kindString === 'Type alias' || type?.type === 'reflection';
+    if (isReflected && type?.declaration) {
       const {declaration} = type;
       if (declaration.signatures) {
         return this._type(declaration.signatures[0]);
@@ -326,7 +336,7 @@ export class TypescriptApiBox extends Component {
       }
     }
 
-    let typeName = this._typeName(type);
+    let typeName = type && this._typeName(type);
     if (!typeName) {
       // console.error(
       //   'unknown type name for',
@@ -337,7 +347,7 @@ export class TypescriptApiBox extends Component {
       typeName = 'any';
     }
 
-    if (type.typeArguments) {
+    if (type?.typeArguments) {
       return (
         typeName +
         _parameterString(type.typeArguments.map(this._typeName), '<', '>')
@@ -356,9 +366,12 @@ export class TypescriptApiBox extends Component {
 
     const escapedName = escape(rawData.name);
 
+    if (rawData.kindString === 'Class') {
+      return escapedName;
+    }
+
     // if it is a function, and therefore has arguments
-    const signature =
-      dataForSignature.signatures && dataForSignature.signatures[0];
+    const signature = dataForSignature.signatures?.[0];
     if (signature) {
       const {name} = rawData;
       const parameterString = _parameterString(
@@ -375,7 +388,9 @@ export class TypescriptApiBox extends Component {
       return name + parameterString + returnType;
     }
 
-    return escapedName;
+    const type = this._type(rawData.getSignature?.[0] || rawData, true);
+
+    return `${escapedName}: ${type}`;
   }
 
   _parameter = param => ({
@@ -386,7 +401,7 @@ export class TypescriptApiBox extends Component {
   });
 
   // Takes the data about a function / constructor and parses out the named params
-  _parameters(rawData, dataByKey) {
+  _parameters(rawData, dataByKey, isReact = false) {
     if (_isReflectedProperty(rawData)) {
       return this._parameters(rawData.type.declaration, dataByKey);
     }
@@ -407,7 +422,7 @@ export class TypescriptApiBox extends Component {
       } catch (error) {
         // Set name of parameter as 'option' if it's not readable.
         // console.error(error);
-        name = 'options';
+        name = isReact ? 'props' : 'options';
       }
 
       let properties = [];
@@ -424,7 +439,7 @@ export class TypescriptApiBox extends Component {
 
       return extend(this._parameter(param), {
         name,
-        isOptions: name === 'options',
+        isOptions: name === (isReact ? 'props' : 'options'),
         optional: !!param.defaultValue,
         properties
       });
@@ -439,7 +454,7 @@ export class TypescriptApiBox extends Component {
       return null;
     }
 
-    const args = this.templateArgs(rawData);
+    const args = this.templateArgs(rawData, this.props.react);
     return (
       <>
         <Header>
@@ -506,6 +521,36 @@ export class TypescriptApiBox extends Component {
               </Fragment>
             ))}
         </Body>
+        {args.children.properties.length > 0 && <MainHeading>Properties</MainHeading>}
+        {args.children.properties.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
+        {args.children.accessors.length > 0 && <MainHeading>Accessors</MainHeading>}
+        {args.children.accessors.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
+        {args.children.methods.length > 0 && <MainHeading>Methods</MainHeading>}
+        {args.children.methods.map(child => {
+          return (
+            <TypescriptApiBox
+              key={child.name}
+              docs={this.props.docs}
+              name={`${this.props.name}.${child.name}`}
+            />
+          );
+        })}
       </>
     );
   }

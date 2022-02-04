@@ -47,6 +47,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+      },
       navbar: {
         logo: {
           alt: 'DXOS',
@@ -63,6 +67,11 @@ const config = {
           {
             to: '/blog',
             label: 'Blog',
+            position: 'left'
+          },
+          {
+            to: '/showcase',
+            label: 'Showcase',
             position: 'left'
           },
           {
@@ -84,7 +93,7 @@ const config = {
               },
               {
                 label: 'Reference',
-                to: '/docs/ref-sdk/client',
+                to: '/docs/api-reference/client',
               },
             ],
           },
