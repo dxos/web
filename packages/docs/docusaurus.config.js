@@ -31,6 +31,12 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/dxos/web/edit/main/website/',
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sidebarItems.filter(item =>
+              process.env.NODE_ENV === 'development' ? true : !item.label.startsWith('wip-')
+            );
+          },
         },
         blog: {
           showReadingTime: true,
