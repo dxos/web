@@ -6,6 +6,8 @@ export interface ShowcaseItem {
   tags?: string[]
 }
 
+// TODO(zarco): Use registry to fetch this data.
+// TestRegistryClient
 export const examples: ShowcaseItem[] = [
   {
     id: '0001',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import Layout from '@theme/Layout';
 
@@ -10,18 +10,22 @@ import {
 import { examples } from '../data/showcase';
 
 import { ShowcaseCard } from '../components';
+const Constants = {
+  TITLE: 'DXOS Showcase',
+  DESCRIPTION: 'List of apps & frames people are building with DXOS',
+  EDIT_URL: 'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js'
+}
 
-const TITLE = 'DXOS Showcase';
-const DESCRIPTION = 'List of apps & frames people are building with DXOS';
-const EDIT_URL =
-  'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js';
 
-
+const useShowcaseRecords = () => { 
+  return useMemo(() => examples, []);
+}
 // TODO(zarco): use ThemeProvider to normalize buttons and primary colors.
 
 const Showcase = () => {
+  const examples = useShowcaseRecords();
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout title={Constants.TITLE} description={Constants.DESCRIPTION}>
       <main>
         <Box sx={{
           backgroundColor: '#1d1f20',
@@ -30,9 +34,9 @@ const Showcase = () => {
           color: 'white'
         }}>
           <Box className='container'>
-              <h1>{TITLE}</h1>
-              <p>{DESCRIPTION}</p>
-              <Button variant='outlined' href={EDIT_URL}>
+              <h1>{Constants.TITLE}</h1>
+              <p>{Constants.DESCRIPTION}</p>
+              <Button variant='outlined' href={Constants.EDIT_URL}>
                 Join us by adding your site!
               </Button>
           </Box>

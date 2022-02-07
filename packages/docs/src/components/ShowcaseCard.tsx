@@ -1,31 +1,27 @@
 import * as React from "react";
 import {
   Box,
-  Card as MUICard,
+  Card,
   CardActions,
   CardContent,
   Button,
   Typography,
   CardActionArea,
   Chip,
-  Stack,
-  styled
+  Stack
 } from '@mui/material';
 import { ShowcaseItem } from "../data/showcase";
 
 
-const StyledCard = styled(MUICard)({
-  '& .MuiCardActionArea-root:hover': {
-    color: 'inherit',
-    textDecoration: 'none'
-  }
-});
-
 export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
   return (
-    <StyledCard 
+    <Card 
       sx={{
-        flex: 1
+        flex: 1,
+        '& .MuiCardActionArea-root:hover': {
+          color: 'inherit',
+          textDecoration: 'none'
+        }
       }}
       variant="outlined">
       <CardActionArea
@@ -38,7 +34,8 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
         }} 
         LinkComponent="a"
         href={data.location}
-        target="_blank">
+        target="_blank"
+      >
         <CardContent>
           <Typography variant="h5" component="div">
             {data.title}
@@ -61,6 +58,6 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
           {data.location && (<Button size="small">EXPLORE</Button>)}
         </CardActions>
       </CardActionArea>
-    </StyledCard>
+    </Card>
   );
 };
