@@ -10,8 +10,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 const config = {
   title: 'DXOS',
   tagline: 'The Decentralized Operating System',
-  url: 'https://dxos.org',
-  baseUrl: '/',
+  url: 'https://qa-dxos-docs.netlify.app',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -29,6 +29,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: 'content',
           // Please change this to your repo.
           editUrl: 'https://github.com/dxos/web/edit/main/website/',
         },
@@ -89,11 +90,11 @@ const config = {
             items: [
               {
                 label: 'Home',
-                to: '/docs/home',
+                to: '/content/home',
               },
               {
                 label: 'Reference',
-                to: '/docs/api-reference/client',
+                to: '/content/api-reference/client',
               },
             ],
           },
