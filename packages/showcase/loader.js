@@ -19,6 +19,7 @@ module.exports = async function demoLoader() {
       moduleID
     );
     this.addDependency(moduleFilepath);
+    // TODO(wittjosiah): Trim raw content based on optional comment flags.
     if (moduleID.includes('.js')) {
       rawContent.js = await fs.readFile(moduleFilepath, { encoding: 'utf-8' });
       component = `() => {

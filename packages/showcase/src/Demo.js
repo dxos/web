@@ -126,7 +126,7 @@ export const Demo = ({ component, rawContent }) => {
         <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
             // const LibComponent = require('some-lib').LibComponent;
-            const DemoComponent = component().default;
+            const DemoComponent = component().Main;
             return <DemoComponent />;
           }}
         </BrowserOnly>
@@ -142,6 +142,7 @@ export const Demo = ({ component, rawContent }) => {
           }
         }
       />
+      {/* TODO(wittjosiah): Make codebox collapsible with a prop specifying the default. */}
       <Box>
         {codeMode === 'JS' && !!rawContent.js && <Code
           id={'demo-id'}

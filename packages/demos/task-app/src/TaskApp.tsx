@@ -2,8 +2,6 @@
 // Copyright 2021 DXOS.org
 //
 
-import 'setimmediate';
-
 import React from 'react';
 
 import { ClientProvider } from '@dxos/react-client';
@@ -16,10 +14,4 @@ export const Main = () => {
       <TestFrameContainer manifest={manifest} />
     </ClientProvider>
   )
-};
-
-export const TaskApp = () => {
-  return (
-    <Main />
-  );
 };

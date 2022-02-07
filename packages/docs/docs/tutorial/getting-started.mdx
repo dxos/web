@@ -3,9 +3,18 @@ sidebar_position: 1
 sidebar_label: Getting Started
 ---
 
+import 'setimmediate';
+import * as TaskApp from '@dxos/demo-task-app/src/TaskApp.js?@dxos/showcase';
+import { ShowcaseComponent } from '@dxos/showcase';
+
 # Getting Started
 
 This tutorial assumes zero knowledge of DXOS and is intended to serve as a starting point for building applications with DXOS.
+
+<ShowcaseComponent 
+  component={TaskApp.component} 
+  rawContent={TaskApp.rawContent} 
+/>
 
 ## Before We Start
 

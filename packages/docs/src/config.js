@@ -1,4 +1,5 @@
 import 'regenerator-runtime';
+import 'setimmediate';
 
 import { Config, Envs, Defaults, Dynamics } from '@dxos/config';
 
