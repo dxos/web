@@ -5,12 +5,13 @@
 
 // const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
+const siteUrl = process.env.DXOS_SITE_URL || 'https://dxos.org/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'DXOS',
   tagline: 'The Decentralized Operating System',
-  url: 'https://qa.dxos.org/',
+  url: siteUrl,
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
