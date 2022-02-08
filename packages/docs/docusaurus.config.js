@@ -7,6 +7,9 @@
 const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 const siteUrl = process.env.DXOS_SITE_URL || 'https://dxos.org/';
 
+// TODO(zarco): Remove this:
+console.log('Testt', siteUrl);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'DXOS',
