@@ -125,7 +125,6 @@ export const Demo = ({ component, rawContent }) => {
       >
         <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
-            // const LibComponent = require('some-lib').LibComponent;
             const DemoComponent = component().Main;
             return <DemoComponent />;
           }}

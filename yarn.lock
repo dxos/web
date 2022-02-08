@@ -2189,7 +2189,7 @@
     pump "^3.0.0"
     through2 "^3.0.1"
 
-"@dxos/frame-dev-server@^2.14.8":
+"@dxos/frame-dev-server@~2.14.8":
   version "2.14.8"
   resolved "https://registry.yarnpkg.com/@dxos/frame-dev-server/-/frame-dev-server-2.14.8.tgz#6c66b19c2d461c1d365a6192e630e97d98920b8a"
   integrity sha512-kPAFOrqXj8sxyr6cOOTViD3Sg1au8LUk0dpgsEn6Fd7eQp45d3qeSdNMX5eMIhcyU3mDIWfMvc7rM8mJLtxu6g==
@@ -2370,7 +2370,7 @@
     string-hash "~1.1.3"
     url-join "^4.0.1"
 
-"@dxos/react-framekit@2.14.8", "@dxos/react-framekit@^2.14.8":
+"@dxos/react-framekit@2.14.8", "@dxos/react-framekit@~2.14.8":
   version "2.14.8"
   resolved "https://registry.yarnpkg.com/@dxos/react-framekit/-/react-framekit-2.14.8.tgz#3b8d8400baf1117d08b9e15d8422dbbe5a319238"
   integrity sha512-CWNKPB64jbbcfep1TQ9TuGxeQM4aetdWccjW0ct1uwkSbzlnSNie5COsoSzlr2/yl0G1y4WyUgCZKEfaKhoNwQ==
