@@ -4,6 +4,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardMedia,
   Button,
   Typography,
   CardActionArea,
@@ -37,6 +38,12 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
         href={data.location}
         target="_blank"
       >
+        <CardMedia
+          component="img"
+          height="150"
+          image="/img/showcase/showcase-img-example.png"
+          alt="DXOS Logo"
+        />
         <CardContent>
           <Typography variant="h5" component="div">
             {data.title}
