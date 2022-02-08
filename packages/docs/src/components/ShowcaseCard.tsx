@@ -16,6 +16,7 @@ import { ShowcaseItem } from "../data/showcase";
 export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
   return (
     <Card 
+      variant="outlined"
       sx={{
         flex: 1,
         '& .MuiCardActionArea-root:hover': {
@@ -23,7 +24,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
           textDecoration: 'none'
         }
       }}
-      variant="outlined">
+    >
       <CardActionArea
         sx={{
           display: 'flex',
