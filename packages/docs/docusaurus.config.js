@@ -56,6 +56,8 @@ const config = {
           alt: 'DXOS',
           src: 'img/dxos-horizontal.svg',
           srcDark: 'img/dxos-horizontal-white.svg',
+          // Use `target: "_blank"` to go back to Gatsby Site.
+          // DO NOT REMOVE because it causes issues with the internal redirects
           target: "_blank"
         },
         items: [
