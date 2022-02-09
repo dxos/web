@@ -5,12 +5,13 @@
 
 // const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
+const siteUrl = process.env.DXOS_SITE_URL || 'https://dxos.org/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'DXOS',
   tagline: 'The Decentralized Operating System',
-  url: 'https://dxos.org',
+  url: siteUrl,
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -61,7 +62,10 @@ const config = {
         logo: {
           alt: 'DXOS',
           src: 'img/dxos-horizontal.svg',
-          srcDark: 'img/dxos-horizontal-white.svg'
+          srcDark: 'img/dxos-horizontal-white.svg',
+          // Use `target: "_blank"` to go back to Gatsby Site.
+          // DO NOT REMOVE because it causes issues with the internal redirects
+          target: "_blank"
         },
         items: [
           {
