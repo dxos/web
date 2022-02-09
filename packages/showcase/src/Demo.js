@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { Box, Button, ToggleButtonGroup, ToggleButton, Collapse } from '@mui/material';
+
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
 import { JavaScriptIcon, TypeScriptIcon } from './icons';
@@ -72,7 +73,7 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
-const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) => {
+const DemoToolbar = ({codeMode, onCodeModeSelect, onCollapse, showTSButton, showJSButton, showCollapseButton}) => {
   const theme = useTheme();
   const toggleButtonStyles = {
     padding: '5px 10px',
@@ -85,32 +86,49 @@ const DemoToolbar = ({codeMode, onCodeModeSelect, showTSButton, showJSButton}) =
     }
   };
   return (
-    <ToggleButtonGroup
-      sx={{ 
-        margin: '8px 0'
-      }}
-      exclusive
-      value={codeMode}
-      onChange={onCodeModeSelect}
-    >
-      {showJSButton && <ToggleButton
-        sx={toggleButtonStyles}
-        value={'JS'}
+    <Box sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between' }}>
+      <ToggleButtonGroup
+        sx={{ 
+          margin: '8px 0'
+        }}
+        exclusive
+        value={codeMode}
+        onChange={onCodeModeSelect}
       >
-        <JavaScriptIcon sx={{ fontSize: 20 }} />
-      </ToggleButton>}
-      {showTSButton && <ToggleButton
-        sx={toggleButtonStyles}
-        value={'TS'}
-      >
-        <TypeScriptIcon sx={{ fontSize: 20 }} />
-      </ToggleButton>}
-    </ToggleButtonGroup>
+        {showJSButton && <ToggleButton
+          sx={toggleButtonStyles}
+          value={'JS'}
+        >
+          <JavaScriptIcon sx={{ fontSize: 20 }} />
+        </ToggleButton>}
+        {showTSButton && <ToggleButton
+          sx={toggleButtonStyles}
+          value={'TS'}
+        >
+          <TypeScriptIcon sx={{ fontSize: 20 }} />
+        </ToggleButton>}
+      </ToggleButtonGroup>
+      {showCollapseButton && (
+        <Button
+          sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }}
+          variant='outlined'
+          onClick={() => {
+            onCollapse();
+          }}
+        >
+          Show Code
+        </Button>
+      )}
+    </Box>
   );
 }
 
-export const Demo = ({ component, rawContent }) => {
+export const Demo = ({ component, rawContent, collapsible }) => {
   const [codeMode, setCodeMode] = React.useState('JS');
+  const [open, setOpen] = React.useState(!collapsible);
   React.useEffect(() => {
     if (!rawContent.js && rawContent.ts) {
       setCodeMode('TS');
@@ -132,6 +150,7 @@ export const Demo = ({ component, rawContent }) => {
       </DemoRoot>
       <DemoToolbar
         codeMode={codeMode}
+        showCollapseButton={collapsible}
         showJSButton={!!rawContent.js}
         showTSButton={!!rawContent.ts}
         onCodeModeSelect={(_, mode) => {
@@ -140,9 +159,11 @@ export const Demo = ({ component, rawContent }) => {
             }
           }
         }
+        onCollapse={() => {
+          setOpen(!open);
+        }}
       />
-      {/* TODO(wittjosiah): Make codebox collapsible with a prop specifying the default. */}
-      <Box>
+      <Collapse in={open}>
         {codeMode === 'JS' && !!rawContent.js && <Code
           id={'demo-id'}
           code={rawContent.js}
@@ -153,7 +174,7 @@ export const Demo = ({ component, rawContent }) => {
           code={rawContent.ts}
           language={'tsx'}
         />}
-      </Box>
+      </Collapse>
     </Root>
   );
 }
