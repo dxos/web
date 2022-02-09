@@ -73,7 +73,17 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
-const DemoToolbar = ({codeMode, codeOpen, onCodeModeSelect, onCollapse, showTSButton, showJSButton, showCollapseButton}) => {
+const DemoToolbar = ({
+  codeMode,
+  codeOpen,
+  exampleUrl,
+  onCodeModeSelect,
+  onCollapse,
+  showTSButton,
+  showJSButton,
+  showCollapseButton,
+  showExampleButton
+}) => {
   const theme = useTheme();
   const toggleButtonStyles = {
     padding: '5px 10px',
@@ -108,25 +118,41 @@ const DemoToolbar = ({codeMode, codeOpen, onCodeModeSelect, onCollapse, showTSBu
           <TypeScriptIcon sx={{ fontSize: 20 }} />
         </ToggleButton>}
       </ToggleButtonGroup>
-      {showCollapseButton && (
-        <Button
-          sx={{
-            marginTop: 1,
-            marginBottom: 1
-          }}
-          variant='outlined'
-          onClick={() => {
-            onCollapse();
-          }}
-        >
-          {codeOpen ? 'Hide Code' : 'Show Code'}
-        </Button>
-      )}
+      <Box>
+        {showExampleButton && exampleUrl && (
+          <Button
+            sx={{
+              marginTop: 1,
+              marginBottom: 1,
+              marginRight: 0.5
+            }}
+            variant='outlined'
+            href={exampleUrl}
+            target={'_blank'}
+          >
+            SEE EXAMPLE
+          </Button>
+        )}
+        {showCollapseButton && (
+          <Button
+            sx={{
+              marginTop: 1,
+              marginBottom: 1
+            }}
+            variant='outlined'
+            onClick={() => {
+              onCollapse();
+            }}
+          >
+            {codeOpen ? 'Hide Code' : 'Show Code'}
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 }
 
-export const Demo = ({ component, rawContent, collapsible }) => {
+export const Demo = ({ component, rawContent, collapsible, exampleUrl }) => {
   const [codeMode, setCodeMode] = React.useState('JS');
   const [open, setOpen] = React.useState(!collapsible);
   React.useEffect(() => {
@@ -151,7 +177,9 @@ export const Demo = ({ component, rawContent, collapsible }) => {
       <DemoToolbar
         codeMode={codeMode}
         codeOpen={open}
+        exampleUrl={exampleUrl}
         showCollapseButton={collapsible}
+        showExampleButton={!!exampleUrl}
         showJSButton={!!rawContent.js}
         showTSButton={!!rawContent.ts}
         onCodeModeSelect={(_, mode) => {
