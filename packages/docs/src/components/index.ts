@@ -3,3 +3,4 @@
 //
 
 export * from './HomepageFeatures';
+export * from './ShowcaseCard';
