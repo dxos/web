@@ -73,7 +73,7 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
-const DemoToolbar = ({codeMode, onCodeModeSelect, onCollapse, showTSButton, showJSButton, showCollapseButton}) => {
+const DemoToolbar = ({codeMode, codeOpen, onCodeModeSelect, onCollapse, showTSButton, showJSButton, showCollapseButton}) => {
   const theme = useTheme();
   const toggleButtonStyles = {
     padding: '5px 10px',
@@ -119,7 +119,7 @@ const DemoToolbar = ({codeMode, onCodeModeSelect, onCollapse, showTSButton, show
             onCollapse();
           }}
         >
-          Show Code
+          {codeOpen ? 'Hide Code' : 'Show Code'}
         </Button>
       )}
     </Box>
@@ -150,6 +150,7 @@ export const Demo = ({ component, rawContent, collapsible }) => {
       </DemoRoot>
       <DemoToolbar
         codeMode={codeMode}
+        codeOpen={open}
         showCollapseButton={collapsible}
         showJSButton={!!rawContent.js}
         showTSButton={!!rawContent.ts}
