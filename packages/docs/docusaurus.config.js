@@ -35,7 +35,7 @@ const config = {
           async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
             return sidebarItems.filter(item =>
-              process.env.NODE_ENV === 'development' ? true : !item.label.startsWith('wip-')
+              process.env.HIDE_WIP ? !item.label.startsWith('wip-') : true
             );
           },
         },
