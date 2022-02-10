@@ -2,8 +2,11 @@ import * as React from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import { Box, Button, ToggleButtonGroup, ToggleButton, Collapse } from '@mui/material';
+import { Box, Tooltip, ToggleButtonGroup, ToggleButton, Collapse } from '@mui/material';
 import { MUIStyledCommonProps } from '@mui/system';
+import { IconButton } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
@@ -81,7 +84,6 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
 
 const DemoToolbar = ({
   codeMode,
-  codeOpen,
   exampleUrl,
   onCodeModeSelect,
   onCollapse,
@@ -90,6 +92,7 @@ const DemoToolbar = ({
   showCollapseButton,
   showExampleButton
 }) => {
+  const [firstTimeClicked, setFirstTimeClicked] = React.useState(false);
   const theme = useTheme();
   const toggleButtonStyles = {
     padding: '5px 10px',
@@ -101,71 +104,85 @@ const DemoToolbar = ({
       backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
     }
   };
+  const shouldShowCodeButtons = !showCollapseButton || (showCollapseButton && firstTimeClicked);
   return (
     <Box sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between' }}>
-      <ToggleButtonGroup
-        sx={{ 
-          margin: '8px 0'
-        }}
-        exclusive
-        value={codeMode}
-        onChange={onCodeModeSelect}
-      >
-        {showJSButton && <ToggleButton
-          sx={toggleButtonStyles}
-          value={'JS'}
+      <Box sx={{flex: 1}}>
+        {shouldShowCodeButtons && <ToggleButtonGroup
+          sx={{ 
+            margin: '8px 0'
+          }}
+          exclusive
+          value={codeMode}
+          onChange={onCodeModeSelect}
         >
-          <JavaScriptIcon sx={{ fontSize: 20 }} />
-        </ToggleButton>}
-        {showTSButton && <ToggleButton
-          sx={toggleButtonStyles}
-          value={'TS'}
-        >
-          <TypeScriptIcon sx={{ fontSize: 20 }} />
-        </ToggleButton>}
-      </ToggleButtonGroup>
+          {showJSButton && <ToggleButton
+            sx={toggleButtonStyles}
+            value={'JS'}
+          >
+            <JavaScriptIcon sx={{ fontSize: 20 }} />
+          </ToggleButton>}
+          {showTSButton && <ToggleButton
+            sx={toggleButtonStyles}
+            value={'TS'}
+          >
+            <TypeScriptIcon sx={{ fontSize: 20 }} />
+          </ToggleButton>}
+        </ToggleButtonGroup>}
+      </Box>
       <Box>
-        {showExampleButton && exampleUrl && (
-          <Button
-            sx={{
-              marginTop: 1,
-              marginBottom: 1,
-              marginRight: 0.5
-            }}
-            variant='outlined'
-            href={exampleUrl}
-            target={'_blank'}
-          >
-            SEE EXAMPLE
-          </Button>
-        )}
         {showCollapseButton && (
-          <Button
-            sx={{
-              marginTop: 1,
-              marginBottom: 1
-            }}
-            variant='outlined'
-            onClick={() => {
-              onCollapse();
-            }}
-          >
-            {codeOpen ? 'Hide Code' : 'Show Code'}
-          </Button>
+          <Tooltip title="Show the full source">
+            <IconButton
+              sx={{
+                marginTop: 1,
+                marginBottom: 1
+              }}
+              onClick={() => {
+                onCollapse();
+                if (!firstTimeClicked) {
+                  setFirstTimeClicked(true);
+                }
+              }}
+            >
+              <CodeRoundedIcon />
+            </IconButton>
+          </Tooltip>
+        )}
+        {showExampleButton && exampleUrl && (
+          <Tooltip title="Go to Github">
+            <IconButton
+              sx={{
+                marginTop: 1,
+                marginBottom: 1,
+                marginRight: 0.5
+              }}
+              href={exampleUrl}
+              target={'_blank'}
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Tooltip>
         )}
       </Box>
     </Box>
   );
 }
 
+export enum CodeMode {
+  JS = 'JS',
+  TS = 'TS'
+};
+
 export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOpen }) => {
-  const [codeMode, setCodeMode] = React.useState('JS');
+  const [codeMode, setCodeMode] = React.useState<CodeMode>(CodeMode.JS);
   const [open, setOpen] = React.useState(initialOpen);
   React.useEffect(() => {
     if (!rawContent.js && rawContent.ts) {
-      setCodeMode('TS');
+      setCodeMode(CodeMode.TS);
     }
   }, []);
+  
   return (
     <Root>
       <DemoRoot
@@ -182,7 +199,6 @@ export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOp
       </DemoRoot>
       <DemoToolbar
         codeMode={codeMode}
-        codeOpen={open}
         exampleUrl={exampleUrl}
         showCollapseButton={collapsible}
         showExampleButton={!!exampleUrl}
@@ -199,11 +215,11 @@ export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOp
         }}
       />
       <Collapse in={open}>
-        {codeMode === 'JS' && !!rawContent.js && <Code
+        {codeMode === CodeMode.JS && !!rawContent.js && <Code
           code={rawContent.js}
           language={'jsx'}
         />}
-        {codeMode === 'TS' && !!rawContent.ts && <Code
+        {codeMode === CodeMode.TS && !!rawContent.ts && <Code
           code={rawContent.ts}
           language={'tsx'}
         />}

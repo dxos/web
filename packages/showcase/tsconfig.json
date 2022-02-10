@@ -12,6 +12,8 @@
     "public"
   ],
   "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmit": false,
     "composite": true,
     "outDir": "dist",
     "declarationMap": true,
