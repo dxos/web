@@ -3,6 +3,7 @@ import * as React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 import { Box, Button, ToggleButtonGroup, ToggleButton, Collapse } from '@mui/material';
+import { MUIStyledCommonProps } from '@mui/system';
 
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
@@ -19,9 +20,14 @@ const Root = styled('div')(({ theme }) => ({
   },
 }));
 
+interface DemoRootProps extends MUIStyledCommonProps {
+  hiddenToolbar: any,
+  bg: any
+}
+
 const DemoRoot = styled('div', {
   shouldForwardProp: (prop) => prop !== 'hiddenToolbar' && prop !== 'bg',
-})(({ theme, hiddenToolbar, bg }) => ({
+})<DemoRootProps>(({ theme, hiddenToolbar, bg }) => ({
   position: 'relative',
   outline: 0,
   margin: 'auto',
@@ -89,7 +95,7 @@ const DemoToolbar = ({
     padding: '5px 10px',
     color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
     borderRadius: 0.5,
-    borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.black,
+    borderColor: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
     '&.Mui-selected, &.Mui-selected:hover': {
       color: () => theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,
       backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
@@ -152,9 +158,9 @@ const DemoToolbar = ({
   );
 }
 
-export const Demo = ({ component, rawContent, collapsible, exampleUrl }) => {
+export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOpen }) => {
   const [codeMode, setCodeMode] = React.useState('JS');
-  const [open, setOpen] = React.useState(!collapsible);
+  const [open, setOpen] = React.useState(initialOpen);
   React.useEffect(() => {
     if (!rawContent.js && rawContent.ts) {
       setCodeMode('TS');
@@ -194,12 +200,10 @@ export const Demo = ({ component, rawContent, collapsible, exampleUrl }) => {
       />
       <Collapse in={open}>
         {codeMode === 'JS' && !!rawContent.js && <Code
-          id={'demo-id'}
           code={rawContent.js}
           language={'jsx'}
         />}
         {codeMode === 'TS' && !!rawContent.ts && <Code
-          id={'demo-id-ts'}
           code={rawContent.ts}
           language={'tsx'}
         />}
