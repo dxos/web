@@ -3,7 +3,7 @@
 
 // https://docusaurus.io/docs/api/docusaurus-config
 
-// const lightCodeTheme = require('prism-react-renderer/themes/github');
+const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 const siteUrl = process.env.DXOS_SITE_URL || 'https://dxos.org/';
 
@@ -137,8 +137,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} DXOS.org`,
       },
       prism: {
-        theme: darkCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme
       },
     }),
 };

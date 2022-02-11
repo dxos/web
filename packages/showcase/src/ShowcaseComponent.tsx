@@ -6,7 +6,15 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 
 import { Demo } from './Demo';
 
-export const ShowcaseComponent = ({ component, rawContent }) => {
+interface ShowcaseComponentProps {
+  component: any,
+  rawContent: string,
+  exampleUrl: string,
+  collapsible: boolean,
+  initialOpen: boolean,
+}
+
+export const ShowcaseComponent = ({ component, rawContent, exampleUrl, collapsible = true, initialOpen = true }: ShowcaseComponentProps) => {
   // Get docusaurus theme context and set MUI theme mode.
   const { isDarkTheme } = useThemeContext();
   const theme = React.useMemo(() => {
@@ -22,6 +30,9 @@ export const ShowcaseComponent = ({ component, rawContent }) => {
       <Demo
         component={component}
         rawContent={rawContent}
+        collapsible={collapsible}
+        initialOpen={initialOpen}
+        exampleUrl={exampleUrl}
       />
     </ThemeProvider>
   );

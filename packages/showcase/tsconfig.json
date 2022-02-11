@@ -1,4 +1,5 @@
 {
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
   "include": ["src", "loader.js"],
   "exclude": [
     ".git",
@@ -11,6 +12,8 @@
     "public"
   ],
   "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmit": false,
     "composite": true,
     "outDir": "dist",
     "declarationMap": true,

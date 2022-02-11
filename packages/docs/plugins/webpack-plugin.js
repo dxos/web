@@ -6,7 +6,7 @@ const { ConfigPlugin } = require('@dxos/config/ConfigPlugin');
 
 module.exports = function (context, options) {
   return {
-    name: 'custom-docusaurus-plugin',
+    name: 'dxos-docusaurus-plugin',
     configureWebpack(config, isServer) {
       return {
         plugins: [
