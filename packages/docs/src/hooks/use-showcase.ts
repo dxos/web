@@ -4,7 +4,7 @@
 import 'setimmediate';
 import { ResourceRecord, RegistryDataRecord } from '@dxos/registry-client';
 import { useEffect, useMemo, useState } from 'react';
-import { ShowcaseItem, SHOWCASE_APPS } from '../data';
+import { ShowcaseDemo, SHOWCASE_APPS } from '../data';
 import { createMockRegistry } from '../utils';
 
 // TODO(wittjosiah): Use proto definitions.
@@ -23,7 +23,7 @@ export type AppResource = ResourceRecord<RegistryDataRecord<App>>;
 const BASE_URL = 'https://enterprise.kube.dxos.network/app/';
 
 export const useShowcaseRecords = () => { 
-  const [resources, setResources] = useState<ShowcaseItem[]>([]);
+  const [resources, setResources] = useState<ShowcaseDemo[]>([]);
   const registry = useMemo(() => createMockRegistry(SHOWCASE_APPS), []);
 
   useEffect(() => {

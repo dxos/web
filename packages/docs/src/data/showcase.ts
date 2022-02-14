@@ -1,4 +1,4 @@
-export interface ShowcaseItem {
+export interface ShowcaseDemo {
   id: string
   title: string
   location?: string

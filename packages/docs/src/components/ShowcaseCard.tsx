@@ -11,10 +11,10 @@ import {
   Chip,
   Stack
 } from '@mui/material';
-import { ShowcaseItem } from "../data/showcase";
+import { ShowcaseDemo } from "../data/showcase";
 
 
-export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
+export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
   return (
     <Card 
       variant="outlined"
