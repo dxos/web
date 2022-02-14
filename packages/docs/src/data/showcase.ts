@@ -1,51 +1,57 @@
-export interface ShowcaseItem {
+export interface ShowcaseDemo {
   id: string
   title: string
-  location: string
+  location?: string
   description?: string
   tags?: string[]
 }
 
-// TODO(zarco): Use registry to fetch this data.
-// TestRegistryClient
-export const examples: ShowcaseItem[] = [
+export interface ShowcaseRecordItem {
+  name: string
+  displayName: string
+  description?: string
+  hash?: string
+  tags?: string[]
+}
+
+export const SHOWCASE_APPS: ShowcaseRecordItem[] = [
   {
-    id: '0001',
-    title: 'Demos',
+    name: 'dxos:app.demos',
+    displayName: 'Demos',
     description: 'Code examples using DXOS Stack.',
-    location: 'https://qa-dxos-demos.netlify.com',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['DXOS']
   },
   {
-    id: '0002',
-    title: 'Braneframe',
+    name: 'dxos:app.braneframe',
+    displayName: 'Braneframe',
     description: 'Collaborative Web3 Platform.',
-    location: 'https://qa-dxos-demos.netlify.com',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['DXOS', 'App']
   },
   {
-    id: '0003',
-    title: 'Chess',
-    location: 'https://qa-dxos-demos.netlify.com',
+    name: 'dxos:app.chess',
+    displayName: 'Chess',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['DXOS', 'App']
   },
   {
-    id: '0004',
-    title: 'Tasks',
-    location: 'https://qa-dxos-demos.netlify.com',
+    name: 'dxos:app.tasks',
+    displayName: 'Tasks',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['DXOS', 'Frame']
   },
   {
-    id: '0005',
-    title: 'Kanban',
-    location: 'https://qa-dxos-demos.netlify.com',
+    name: 'dxos:app.kanban',
+    displayName: 'Kanban',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['DXOS', 'Frame']
   },
   {
-    id: '0006',
-    title: 'Calendar',
+    name: 'dxos:app.calendar',
+    displayName: 'Calendar',
     description: 'Web3 Calendar for everyone.',
-    location: 'https://qa-dxos-demos.netlify.com',
+    hash: 'https://qa-dxos-demos.netlify.com',
     tags: ['Productivity']
   }
 ];

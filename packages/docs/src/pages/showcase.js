@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Layout from '@theme/Layout';
 
 import { 
@@ -7,23 +8,36 @@ import {
   Button
 } from '@mui/material';
 
-import { examples } from '../data/showcase';
-
 import { ShowcaseCard } from '../components';
+
 const Constants = {
   TITLE: 'DXOS Showcase',
   DESCRIPTION: 'List of apps & frames people are building with DXOS',
   EDIT_URL: 'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js'
 }
 
+const ShowcaseList = ({ examples }) => {
+  return (
+    <>
+      {examples.map(example => (
+        <Box
+          key={example.id}
+          sx={{
+            display: 'flex',
+            flex: 1
+          }} 
+          className='col col--4 margin-bottom--md'>
+          <ShowcaseCard
+            data={example}
+          />
+        </Box>
+      ))}
+    </>
+  );
+};
 
-const useShowcaseRecords = () => { 
-  return useMemo(() => examples, []);
-}
 // TODO(zarco): use ThemeProvider to normalize buttons and primary colors.
-
 const Showcase = () => {
-  const examples = useShowcaseRecords();
   return (
     <Layout title={Constants.TITLE} description={Constants.DESCRIPTION}>
       <main>
@@ -43,19 +57,13 @@ const Showcase = () => {
         </Box>
         <Box className='container margin-vert--lg'>
           <Box className='row'>
-            {examples.map(example => (
-              <Box
-                key={example.id}
-                sx={{
-                  display: 'flex',
-                  flex: 1
-                }} 
-                className='col col--4 margin-bottom--md'>
-                <ShowcaseCard
-                  data={example}
-                />
-              </Box>
-            ))}
+            <BrowserOnly fallback={<div>Loading...</div>}>
+              {() => {
+                const { useShowcaseRecords } = require('../hooks');
+                const examples = useShowcaseRecords();
+                return <ShowcaseList examples={examples}/>;
+              }}
+            </BrowserOnly>
           </Box>
         </Box>
       </main>

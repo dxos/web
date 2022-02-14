@@ -11,10 +11,10 @@ import {
   Chip,
   Stack
 } from '@mui/material';
-import { ShowcaseItem } from "../data/showcase";
+import { ShowcaseDemo } from "../data/showcase";
 
 
-export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
+export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
   return (
     <Card 
       variant="outlined"
@@ -35,7 +35,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
           minHeight: '100%',
         }} 
         LinkComponent="a"
-        href={data.location}
+        href={data.location!}
         target="_blank"
       >
         <CardMedia
@@ -56,7 +56,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseItem }) => {
           {data.tags && (
             <Stack sx={{ marginTop: 2 }} direction="row" spacing={1}>
               {data.tags.map((tag) => (
-                <Chip label={tag} variant="outlined" />
+                <Chip key={tag} label={tag} variant="outlined" />
               ))}
             </Stack>
           )}
