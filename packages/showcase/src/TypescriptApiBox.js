@@ -133,6 +133,7 @@ const Code = withProps({
   className: 'language-'
 })('code');
 
+// TODO(wittjosiah): Code syntax highlighting. Docusaurus MDX?
 function mdToReact(text) {
   const sanitized = text.replace(/\{@link (\w*)\}/g, '[$1](#$1)');
   return remark()
