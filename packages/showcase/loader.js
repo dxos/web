@@ -19,7 +19,8 @@ module.exports = async function demoLoader() {
       moduleID
     );
     this.addDependency(moduleFilepath);
-    // TODO(wittjosiah): Trim raw content based on optional comment flags.
+    // TODO(wittjosiah): Load optional preview snippet as well.
+    // TODO(wittjosiah): Load TS and automatically transpile for JS.
     if (moduleID.includes('.js')) {
       rawContent.js = await fs.readFile(moduleFilepath, { encoding: 'utf-8' });
       component = `() => {
