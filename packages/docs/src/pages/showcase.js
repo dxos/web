@@ -7,7 +7,6 @@ import {
   Button
 } from '@mui/material';
 
-// import { examples } from '../data/showcase';
 
 import { ShowcaseCard } from '../components';
 
