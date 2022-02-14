@@ -6,7 +6,7 @@ export interface ShowcaseItem {
   tags?: string[]
 }
 
-export const SHOWCASE_APPS = [
+export const SHOWCASE_APPS: ShowcaseItem[] = [
   {
     name: 'dxos:app.demos',
     displayName: 'Demos',
