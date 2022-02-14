@@ -7,21 +7,19 @@ import {
   Button
 } from '@mui/material';
 
-import { examples } from '../data/showcase';
+// import { examples } from '../data/showcase';
 
 import { ShowcaseCard } from '../components';
+
+import { useShowcaseRecords } from '../hooks';
+
 const Constants = {
   TITLE: 'DXOS Showcase',
   DESCRIPTION: 'List of apps & frames people are building with DXOS',
   EDIT_URL: 'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js'
 }
 
-
-const useShowcaseRecords = () => { 
-  return useMemo(() => examples, []);
-}
 // TODO(zarco): use ThemeProvider to normalize buttons and primary colors.
-
 const Showcase = () => {
   const examples = useShowcaseRecords();
   return (
