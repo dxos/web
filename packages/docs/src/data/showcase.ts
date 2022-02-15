@@ -16,42 +16,93 @@ export interface ShowcaseRecordItem {
 
 export const SHOWCASE_APPS: ShowcaseRecordItem[] = [
   {
-    name: 'dxos:app.demos',
+    name: 'dxos:esbook.demos',
     displayName: 'Demos',
-    description: 'Code examples using DXOS Stack.',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['DXOS']
+    description: 'dxos:esbook.demos',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.react-client',
+    displayName: 'React Client',
+    description: 'dxos:esbook.react-client',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.react-framework',
+    displayName: 'React Framework',
+    description: 'dxos:esbook.react-framework',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.devtools',
+    displayName: 'Devtools',
+    description: 'dxos:esbook.devtools',
+    tags: []
   },
   {
     name: 'dxos:app.braneframe',
     displayName: 'Braneframe',
-    description: 'Collaborative Web3 Platform.',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['DXOS', 'App']
+    description: 'dxos:app.braneframe',
+    tags: []
   },
   {
     name: 'dxos:app.chess',
     displayName: 'Chess',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['DXOS', 'App']
+    description: 'dxos:app.chess',
+    tags: []
   },
   {
-    name: 'dxos:app.tasks',
-    displayName: 'Tasks',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['DXOS', 'Frame']
+    name: 'dxos:esbook.react-appkit',
+    displayName: 'React Appkit',
+    description: 'dxos:esbook.react-appkit',
+    tags: []
   },
   {
-    name: 'dxos:app.kanban',
+    name: 'dxos:esbook.react-framekit',
+    displayName: 'React Framekit',
+    description: 'dxos:esbook.react-framekit',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.canvas',
+    displayName: 'Canvas',
+    description: 'dxos:esbook.canvas',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.document',
+    displayName: 'Document',
+    description: 'dxos:esbook.document',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.kanban',
     displayName: 'Kanban',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['DXOS', 'Frame']
+    description: 'dxos:esbook.kanban',
+    tags: []
   },
   {
-    name: 'dxos:app.calendar',
-    displayName: 'Calendar',
-    description: 'Web3 Calendar for everyone.',
-    hash: 'https://qa-dxos-demos.netlify.com',
-    tags: ['Productivity']
+    name: 'dxos:esbook.messenger',
+    displayName: 'Messenger',
+    description: 'dxos:esbook.messenger',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.pinboard',
+    displayName: 'Pinboard',
+    description: 'dxos:esbook.pinboard',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.table',
+    displayName: 'Table',
+    description: 'dxos:esbook.table',
+    tags: []
+  },
+  {
+    name: 'dxos:esbook.tasks',
+    displayName: 'Tasks',
+    description: 'dxos:esbook.tasks',
+    tags: []
   }
 ];
