@@ -19,90 +19,90 @@ export const SHOWCASE_APPS: ShowcaseRecordItem[] = [
     name: 'dxos:esbook.demos',
     displayName: 'Demos',
     description: 'dxos:esbook.demos',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.react-client',
     displayName: 'React Client',
     description: 'dxos:esbook.react-client',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.react-framework',
     displayName: 'React Framework',
     description: 'dxos:esbook.react-framework',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.devtools',
     displayName: 'Devtools',
     description: 'dxos:esbook.devtools',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:app.braneframe',
     displayName: 'Braneframe',
     description: 'dxos:app.braneframe',
-    tags: []
+    tags: ['DXOS', 'App']
   },
   {
     name: 'dxos:app.chess',
     displayName: 'Chess',
     description: 'dxos:app.chess',
-    tags: []
+    tags: ['DXOS', 'App']
   },
   {
     name: 'dxos:esbook.react-appkit',
     displayName: 'React Appkit',
     description: 'dxos:esbook.react-appkit',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.react-framekit',
     displayName: 'React Framekit',
     description: 'dxos:esbook.react-framekit',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.canvas',
     displayName: 'Canvas',
     description: 'dxos:esbook.canvas',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.document',
     displayName: 'Document',
     description: 'dxos:esbook.document',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.kanban',
     displayName: 'Kanban',
     description: 'dxos:esbook.kanban',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.messenger',
     displayName: 'Messenger',
     description: 'dxos:esbook.messenger',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.pinboard',
     displayName: 'Pinboard',
     description: 'dxos:esbook.pinboard',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.table',
     displayName: 'Table',
     description: 'dxos:esbook.table',
-    tags: []
+    tags: ['DXOS', 'Demos']
   },
   {
     name: 'dxos:esbook.tasks',
     displayName: 'Tasks',
     description: 'dxos:esbook.tasks',
-    tags: []
+    tags: ['DXOS', 'Demos']
   }
 ];
