@@ -82,9 +82,16 @@ const Code = styled(HighlightedCode)(({ theme }) => ({
   },
 }));
 
+const StyledToggleButtons = styled(ToggleButtonGroup)(({ theme }) => ({
+  '& .MuiToggleButton-root': {
+    borderColor: `${alpha(theme.palette.action.active, 0.12)}`
+  }
+}));
+
 const DemoToolbar = ({
   codeMode,
-  exampleUrl,
+  githubUrl,
+  collapeOpen,
   onCodeModeSelect,
   onCollapse,
   showTSButton,
@@ -92,7 +99,6 @@ const DemoToolbar = ({
   showCollapseButton,
   showExampleButton
 }) => {
-  const [firstTimeClicked, setFirstTimeClicked] = React.useState(false);
   const theme = useTheme();
   const toggleButtonStyles = {
     padding: '5px 10px',
@@ -104,11 +110,11 @@ const DemoToolbar = ({
       backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
     }
   };
-  const shouldShowCodeButtons = !showCollapseButton || (showCollapseButton && firstTimeClicked);
+  const shouldShowCodeButtons = collapeOpen;
   return (
     <Box sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between' }}>
       <Box sx={{flex: 1}}>
-        {shouldShowCodeButtons && <ToggleButtonGroup
+        {shouldShowCodeButtons && <StyledToggleButtons
           sx={{ 
             margin: '8px 0'
           }}
@@ -128,7 +134,7 @@ const DemoToolbar = ({
           >
             <TypeScriptIcon sx={{ fontSize: 20 }} />
           </ToggleButton>}
-        </ToggleButtonGroup>}
+        </StyledToggleButtons>}
       </Box>
       <Box>
         {showCollapseButton && (
@@ -140,16 +146,13 @@ const DemoToolbar = ({
               }}
               onClick={() => {
                 onCollapse();
-                if (!firstTimeClicked) {
-                  setFirstTimeClicked(true);
-                }
               }}
             >
               <CodeRoundedIcon />
             </IconButton>
           </Tooltip>
         )}
-        {showExampleButton && exampleUrl && (
+        {showExampleButton && githubUrl && (
           <Tooltip title="Go to Github">
             <IconButton
               sx={{
@@ -157,7 +160,7 @@ const DemoToolbar = ({
                 marginBottom: 1,
                 marginRight: 0.5
               }}
-              href={exampleUrl}
+              href={githubUrl}
               target={'_blank'}
             >
               <GitHubIcon />
@@ -174,9 +177,9 @@ export enum CodeMode {
   TS = 'TS'
 };
 
-export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOpen }) => {
+export const Demo = ({ component, rawContent, collapsible, githubUrl, collapsibleDefaultOpened }) => {
   const [codeMode, setCodeMode] = React.useState<CodeMode>(CodeMode.JS);
-  const [open, setOpen] = React.useState(initialOpen);
+  const [open, setOpen] = React.useState(collapsible && collapsibleDefaultOpened);
   React.useEffect(() => {
     if (!rawContent.js && rawContent.ts) {
       setCodeMode(CodeMode.TS);
@@ -199,11 +202,12 @@ export const Demo = ({ component, rawContent, collapsible, exampleUrl, initialOp
       </DemoRoot>
       <DemoToolbar
         codeMode={codeMode}
-        exampleUrl={exampleUrl}
+        githubUrl={githubUrl}
         showCollapseButton={collapsible}
-        showExampleButton={!!exampleUrl}
+        showExampleButton={!!githubUrl}
         showJSButton={!!rawContent.js}
         showTSButton={!!rawContent.ts}
+        collapeOpen={open}
         onCodeModeSelect={(_, mode) => {
           if (mode && mode !== codeMode) {
               setCodeMode(mode);
