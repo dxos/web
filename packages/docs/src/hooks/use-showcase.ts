@@ -18,9 +18,10 @@ export interface App {
   contentType?: string[];
   extension?: any;
 }
+
 export type AppResource = ResourceRecord<RegistryDataRecord<App>>;
 
-const BASE_URL = 'https://enterprise.kube.dxos.network/app/';
+const BASE_URL = 'https://enterprise.kube.dxos.network/ipfs/';
 
 export const useShowcaseRecords = () => { 
   const [resources, setResources] = useState<ShowcaseDemo[]>([]);
@@ -41,17 +42,17 @@ export const useShowcaseRecords = () => {
       );
       
       const showcaseResources = resourceRecords
-      .filter((resource): resource is AppResource => !!resource)
-      .map(({ resource, record }) => {
-        const id = resource.id.toString();
-        return {
-          id,
-          title: record.data.displayName || id,
-          description: record.meta.description,
-          location: `${BASE_URL}${id}`,
-          tags: record.data.keywords
-        }
-      });
+        .filter((resource): resource is AppResource => !!resource)
+        .map(({ resource, record }) => {
+          return {
+            id: resource.id.toString(),
+            title: record.data.displayName ?? 'Missing name',
+            description: record.meta.description ?? 'Missing description',
+            location: `${BASE_URL}${record.data.hash}`,
+            tags: record.data.keywords ?? []
+          }
+        });
+
       setResources(showcaseResources);
     });
   }, []);

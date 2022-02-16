@@ -1,4 +1,5 @@
 import { DXN, MemoryRegistryClient, createMockResourceRecord } from '@dxos/registry-client';
+
 const TYPE_APP = '.dxos.type.App';
 
 export const createMockRegistry = (apps) => {
