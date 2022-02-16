@@ -9,7 +9,7 @@ import partition from 'lodash/partition';
 import remark from 'remark';
 import remark2react from 'remark-react';
 import styled from '@emotion/styled';
-import withProps from 'recompose/withProps';
+import { HighlightedCode } from './HighlightedCode';
 
 export const smallCaps = {
   letterSpacing: '0.142em',
@@ -129,9 +129,23 @@ function isReadableName(name) {
   return name.substring(0, 2) !== '__';
 }
 
-const Code = withProps({
-  className: 'language-'
-})('code');
+
+/*
+* remark2react uses:
+* <pre>
+*   <code>
+*     Code here...
+*   </code>
+* </pre>
+*/
+const CodeComponent = ({ children }) => {
+  // Parse manually code children to avoid colission with `code` tag.
+  const codeTagChildren = children && children[0];
+  const codeContent = codeTagChildren.props.children?.toString();
+  return (
+    <HighlightedCode code={codeContent} language='tsx' />
+  );
+};
 
 // TODO(wittjosiah): Code syntax highlighting. Docusaurus MDX?
 function mdToReact(text) {
@@ -139,7 +153,7 @@ function mdToReact(text) {
   return remark()
   .use(remark2react, {
     remarkReactComponents: {
-      code: Code
+      pre: CodeComponent // This replaces any `pre` tag with our CodeComponent.
     }
   })
   .processSync(sanitized).contents;
@@ -182,15 +196,14 @@ export class TypescriptApiBox extends Component {
   templateArgs(rawData, isReact = false) {
     const parameters = this._parameters(rawData, this.dataByKey, isReact);
     const split = partition(parameters, 'isOptions');
-
     const groups = [];
-    if (split[1].length > 0) {
+    if (split[1] && split[1].length > 0) {
       groups.push({
         name: 'Arguments',
         members: split[1]
       });
     }
-    if (split[0].length > 0) {
+    if (split[0] && split[0].length > 0) {
       groups.push({
         name: isReact ? 'Props' : 'Options',
         // the properties of the options parameter are the things listed in this group
@@ -230,8 +243,8 @@ export class TypescriptApiBox extends Component {
       repo: 'dxos/protocols',
       // TODO(wittjosiah): point to release tag.
       branch: 'main',
-      filepath: rawData.sources[0].fileName,
-      lineno: rawData.sources[0].line,
+      filepath: rawData.sources?.[0].fileName,
+      lineno: rawData.sources?.[0].line,
       children: {
         properties: children.filter(child => child.kindString === 'Property'),
         accessors: children.filter(child => child.kindString === 'Accessor'),
@@ -454,7 +467,6 @@ export class TypescriptApiBox extends Component {
       // been removed in current version docs.json
       return null;
     }
-
     const args = this.templateArgs(rawData, this.props.react);
     return (
       <>
