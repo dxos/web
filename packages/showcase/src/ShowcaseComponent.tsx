@@ -9,12 +9,12 @@ import { Demo } from './Demo';
 interface ShowcaseComponentProps {
   component: any,
   rawContent: string,
-  exampleUrl: string,
+  githubUrl: string,
   collapsible: boolean,
-  initialOpen: boolean,
+  collapsibleDefaultOpened: boolean,
 }
 
-export const ShowcaseComponent = ({ component, rawContent, exampleUrl, collapsible = true, initialOpen = true }: ShowcaseComponentProps) => {
+export const ShowcaseComponent = ({ component, rawContent, githubUrl, collapsible = true, collapsibleDefaultOpened = true }: ShowcaseComponentProps) => {
   // Get docusaurus theme context and set MUI theme mode.
   const { isDarkTheme } = useThemeContext();
   const theme = React.useMemo(() => {
@@ -31,8 +31,8 @@ export const ShowcaseComponent = ({ component, rawContent, exampleUrl, collapsib
         component={component}
         rawContent={rawContent}
         collapsible={collapsible}
-        initialOpen={initialOpen}
-        exampleUrl={exampleUrl}
+        collapsibleDefaultOpened={collapsibleDefaultOpened}
+        githubUrl={githubUrl}
       />
     </ThemeProvider>
   );
