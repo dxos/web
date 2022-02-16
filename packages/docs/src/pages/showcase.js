@@ -9,8 +9,6 @@ import {
   Button
 } from '@mui/material';
 
-import { RegistryInitializer } from '@dxos/react-registry-client'
-
 import { ShowcaseCard } from '../components';
 
 const DXNS_SERVER = 'wss://dxns1.kube.dxos.network/dxns/ws';
@@ -66,6 +64,8 @@ const Showcase = () => {
           <Box className='row'>
             <BrowserOnly fallback={<div>Loading...</div>}>
               {() => {
+                const { RegistryInitializer } = require('@dxos/react-registry-client');
+
                 return (
                   <RegistryInitializer config={{ services: { dxns: { server: DXNS_SERVER } } }}>
                     <ShowcaseList />
