@@ -172,7 +172,7 @@ export class TypescriptApiBox extends Component {
 
     function traverse(tree, parentName) {
       let {name} = tree;
-      if (['Accessor', 'Constructor', 'Method', 'Property'].includes(tree.kindString)) {
+      if (['Accessor', 'Constructor', 'Interface', 'Method', 'Namespace', 'Property'].includes(tree.kindString)) {
         name = `${parentName}.${tree.name}`;
         // add the parentName to the data so we can reference it for ids
         tree.parentName = parentName;
