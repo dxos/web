@@ -6,6 +6,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 const siteUrl = process.env.DXOS_SITE_URL || 'https://dxos.org/';
+const githubDocsDirectory = 'https://github.com/dxos/web/blob/main/packages/docs/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -31,7 +32,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/dxos/web/edit/main/website/',
+          editUrl: githubDocsDirectory,
           async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
             return sidebarItems.filter(item =>
@@ -42,7 +43,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/dxos/web/edit/main/website/blog/',
+          editUrl: `${githubDocsDirectory}blog/`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
