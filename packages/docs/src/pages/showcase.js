@@ -59,8 +59,8 @@ const Showcase = () => {
           <Box className='row'>
             <BrowserOnly fallback={<div>Loading...</div>}>
               {() => {
-                const { useShowcaseRecords } = require('../hooks');
-                const examples = useShowcaseRecords();
+                const { useShowcaseDemos } = require('../hooks');
+                const examples = useShowcaseDemos();
                 return <ShowcaseList examples={examples}/>;
               }}
             </BrowserOnly>

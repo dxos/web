@@ -4,7 +4,7 @@
 import 'setimmediate';
 import { ResourceRecord, RegistryDataRecord } from '@dxos/registry-client';
 import { useEffect, useMemo, useState } from 'react';
-import { ShowcaseDemo, SHOWCASE_APPS } from '../data';
+import { SHOWCASE_APPS } from '../data';
 import { createMockRegistry } from '../utils';
 
 // TODO(wittjosiah): Use proto definitions.
@@ -18,12 +18,21 @@ export interface App {
   contentType?: string[];
   extension?: any;
 }
+
 export type AppResource = ResourceRecord<RegistryDataRecord<App>>;
 
-const BASE_URL = 'https://enterprise.kube.dxos.network/app/';
+const BASE_URL = 'https://enterprise.kube.dxos.network/ipfs/';
 
-export const useShowcaseRecords = () => { 
-  const [resources, setResources] = useState<ShowcaseDemo[]>([]);
+export interface ShowcaseDemo {
+  id: string
+  location: string
+  title: string
+  description: string
+  tags: string[]
+}
+
+export const useShowcaseDemos = () => { 
+  const [demos, setDemos] = useState<ShowcaseDemo[]>([]);
   const registry = useMemo(() => createMockRegistry(SHOWCASE_APPS), []);
 
   useEffect(() => {
@@ -40,21 +49,21 @@ export const useShowcaseRecords = () => {
         })
       );
       
-      const showcaseResources = resourceRecords
-      .filter((resource): resource is AppResource => !!resource)
-      .map(({ resource, record }) => {
-        const id = resource.id.toString();
-        return {
-          id,
-          title: record.data.displayName || id,
-          description: record.meta.description,
-          location: `${BASE_URL}${id}`,
-          tags: record.data.keywords
-        }
-      });
-      setResources(showcaseResources);
+      const demos = resourceRecords
+        .filter((resource): resource is AppResource => !!resource)
+        .map(({ resource, record }) => {
+          return {
+            id: resource.id.toString(),
+            title: record.data.displayName ?? 'Missing name',
+            description: record.meta.description ?? 'Missing description',
+            location: `${BASE_URL}${record.data.hash}`,
+            tags: record.data.keywords ?? []
+          }
+        });
+
+      setDemos(demos);
     });
   }, []);
 
-  return resources;
+  return demos;
 }
