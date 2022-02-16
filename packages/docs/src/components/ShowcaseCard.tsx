@@ -35,7 +35,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
           minHeight: '100%',
         }} 
         LinkComponent="a"
-        href={data.location!}
+        href={`${data.location!}?code=000000#/`}
         target="_blank"
       >
         <CardMedia
