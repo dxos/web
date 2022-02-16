@@ -1,11 +1,3 @@
-export interface ShowcaseDemo {
-  id: string
-  location: string
-  title: string
-  description: string
-  tags: string[]
-}
-
 export interface ShowcaseRecordItem {
   name: string
   displayName: string
