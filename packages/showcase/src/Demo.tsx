@@ -91,7 +91,7 @@ const StyledToggleButtons = styled(ToggleButtonGroup)(({ theme }) => ({
 const DemoToolbar = ({
   codeMode,
   githubUrl,
-  collapeOpen,
+  collapseOpen,
   onCodeModeSelect,
   onCollapse,
   showTSButton,
@@ -110,11 +110,10 @@ const DemoToolbar = ({
       backgroundColor: () => theme.palette.mode === 'dark' ? theme.palette.grey[500] : theme.palette.grey[200]
     }
   };
-  const shouldShowCodeButtons = collapeOpen;
   return (
     <Box sx={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between' }}>
       <Box sx={{flex: 1}}>
-        {shouldShowCodeButtons && <StyledToggleButtons
+        {collapseOpen && <StyledToggleButtons
           sx={{ 
             margin: '8px 0'
           }}
@@ -207,7 +206,7 @@ export const Demo = ({ component, rawContent, collapsible, githubUrl, collapsibl
         showExampleButton={!!githubUrl}
         showJSButton={!!rawContent.js}
         showTSButton={!!rawContent.ts}
-        collapeOpen={open}
+        collapseOpen={open}
         onCodeModeSelect={(_, mode) => {
           if (mode && mode !== codeMode) {
               setCodeMode(mode);
