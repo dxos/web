@@ -22,6 +22,8 @@
     "@dxos/config": "~2.27.0",
     "@dxos/demo-task-app": "*",
     "@dxos/react-client": "~2.27.0",
+    "@dxos/react-registry-client": "~2.27.0",
+    "@dxos/registry-client": "~2.27.0",
     "@dxos/sanity": "*",
     "@dxos/showcase": "*",
     "@dxos/typedoc": "2.27.0",

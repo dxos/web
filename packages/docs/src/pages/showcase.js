@@ -1,3 +1,4 @@
+import 'setimmediate';
 import React from 'react';
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -8,28 +9,34 @@ import {
   Button
 } from '@mui/material';
 
+import { RegistryInitializer } from '@dxos/react-registry-client'
+
 import { ShowcaseCard } from '../components';
+
+const DXNS_SERVER = 'wss://dxns1.kube.dxos.network/dxns/ws';
 
 const Constants = {
   TITLE: 'DXOS Showcase',
   DESCRIPTION: 'List of apps & frames people are building with DXOS',
-  EDIT_URL: 'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.js'
+  EDIT_URL: 'https://github.com/dxos/web/edit/main/packages/docs/src/data/showcase.ts'
 }
 
-const ShowcaseList = ({ examples }) => {
+const ShowcaseList = () => {
+  const { useShowcaseDemos } = require('../hooks');
+  const demos = useShowcaseDemos();
+
   return (
     <>
-      {examples.map(example => (
+      {demos.map(data => (
         <Box
-          key={example.id}
+          key={data.id}
+          className='col col--4 margin-bottom--md'
           sx={{
             display: 'flex',
             flex: 1
           }} 
-          className='col col--4 margin-bottom--md'>
-          <ShowcaseCard
-            data={example}
-          />
+        >
+          <ShowcaseCard data={data} />
         </Box>
       ))}
     </>
@@ -59,9 +66,11 @@ const Showcase = () => {
           <Box className='row'>
             <BrowserOnly fallback={<div>Loading...</div>}>
               {() => {
-                const { useShowcaseDemos } = require('../hooks');
-                const examples = useShowcaseDemos();
-                return <ShowcaseList examples={examples}/>;
+                return (
+                  <RegistryInitializer config={{ services: { dxns: { server: DXNS_SERVER } } }}>
+                    <ShowcaseList />
+                  </RegistryInitializer>
+                );
               }}
             </BrowserOnly>
           </Box>

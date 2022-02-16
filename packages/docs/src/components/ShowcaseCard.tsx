@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from 'react';
+
 import {
   Box,
   Card,
@@ -11,13 +12,14 @@ import {
   Chip,
   Stack
 } from '@mui/material';
-import { ShowcaseDemo } from "../data/showcase";
+
+import { ShowcaseDemo } from '../hooks';
 
 
 export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
   return (
     <Card 
-      variant="outlined"
+      variant='outlined'
       sx={{
         flex: 1,
         '& .MuiCardActionArea-root:hover': {
@@ -34,36 +36,37 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
           flex: 1,
           minHeight: '100%',
         }} 
-        LinkComponent="a"
-        href={`${data.location!}?code=000000#/`}
-        target="_blank"
+        LinkComponent='a'
+        href={data.location}
+        target='_blank'
       >
+        {/* TODO(wittjosiah): `data.location/preview.png` w/ fallback to DXOS logo? */}
         <CardMedia
-          component="img"
-          height="150"
-          image="/img/showcase/showcase-img-example.png"
-          alt="DXOS Logo"
+          component='img'
+          height='150'
+          image='/img/showcase/showcase-img-example.png'
+          alt='DXOS Logo'
         />
         <CardContent>
-          <Typography variant="h5" component="div">
+          <Typography variant='h5' component='div'>
             {data.title}
           </Typography>
           {data.description && (
-            <Typography sx={{ marginBottom: 1.5 }} color="text.secondary">
+            <Typography sx={{ marginBottom: 1.5 }} color='text.secondary'>
               {data.description}
             </Typography>
           )}
           {data.tags && (
-            <Stack sx={{ marginTop: 2 }} direction="row" spacing={1}>
+            <Stack sx={{ marginTop: 2 }} direction='row' spacing={1}>
               {data.tags.map((tag) => (
-                <Chip key={tag} label={tag} variant="outlined" />
+                <Chip key={tag} label={tag} variant='outlined' />
               ))}
             </Stack>
           )}
         </CardContent>
         <Box sx={{ flex: 1 }} />
         <CardActions>
-          {data.location && (<Button size="small">EXPLORE</Button>)}
+          {data.location && (<Button size='small'>EXPLORE</Button>)}
         </CardActions>
       </CardActionArea>
     </Card>
