@@ -9,7 +9,7 @@ import partition from 'lodash/partition';
 import remark from 'remark';
 import remark2react from 'remark-react';
 import styled from '@emotion/styled';
-import withProps from 'recompose/withProps';
+import { HighlightedCode } from './HighlightedCode';
 
 export const smallCaps = {
   letterSpacing: '0.142em',
@@ -21,15 +21,19 @@ export const TableWrapper = styled.div({
   marginBottom: '1.45rem'
 });
 
-const tableBorder = `1px solid black`;
+const tableBorder = `1px solid var(--ifm-toc-border-color)`;
 
 export const StyledTable = styled.table({
-  border: tableBorder,
+  border: 'none',
   borderSpacing: 0,
-  borderRadius: 4,
+  borderRadius: 0,
   [['th', 'td']]: {
-    padding: 16,
-    borderBottom: tableBorder
+    padding: '5px 10px'
+  },
+  thead: {
+    tr: {
+      border: tableBorder
+    }
   },
   th: {
     ...smallCaps,
@@ -37,6 +41,7 @@ export const StyledTable = styled.table({
     fontWeight: 'normal',
     color: 'black',
     textAlign: 'inherit',
+    padding: '5px 10px',
     '&:last-child': {
       width: '99%'
     }
@@ -56,6 +61,7 @@ export const StyledTable = styled.table({
   },
   '&.field-table': {
     td: {
+      padding: '5px 10px',
       h6: {
         fontSize: 'inherit',
         lineHeight: 'inherit',
@@ -129,9 +135,22 @@ function isReadableName(name) {
   return name.substring(0, 2) !== '__';
 }
 
-const Code = withProps({
-  className: 'language-'
-})('code');
+
+/*
+* remark2react uses:
+* <pre>
+*   <code>
+*     Code here...
+*   </code>
+* </pre>
+*/
+const CodeComponent = ({ children }) => {
+  // Parse manually code children to avoid colission with `code` tag.
+  const codeContent = children?.[0]?.props.children?.toString();
+  return (
+    <HighlightedCode code={codeContent} language='tsx' />
+  );
+};
 
 // TODO(wittjosiah): Code syntax highlighting. Docusaurus MDX?
 function mdToReact(text) {
@@ -139,7 +158,7 @@ function mdToReact(text) {
   return remark()
   .use(remark2react, {
     remarkReactComponents: {
-      code: Code
+      pre: CodeComponent // This replaces any `pre` tag with our CodeComponent.
     }
   })
   .processSync(sanitized).contents;
@@ -158,7 +177,7 @@ export class TypescriptApiBox extends Component {
 
     function traverse(tree, parentName) {
       let {name} = tree;
-      if (['Accessor', 'Constructor', 'Method', 'Property'].includes(tree.kindString)) {
+      if (['Accessor', 'Constructor', 'Interface', 'Method', 'Namespace', 'Property'].includes(tree.kindString)) {
         name = `${parentName}.${tree.name}`;
         // add the parentName to the data so we can reference it for ids
         tree.parentName = parentName;
@@ -182,15 +201,14 @@ export class TypescriptApiBox extends Component {
   templateArgs(rawData, isReact = false) {
     const parameters = this._parameters(rawData, this.dataByKey, isReact);
     const split = partition(parameters, 'isOptions');
-
     const groups = [];
-    if (split[1].length > 0) {
+    if (split[1]?.length > 0) {
       groups.push({
         name: 'Arguments',
         members: split[1]
       });
     }
-    if (split[0].length > 0) {
+    if (split[0]?.length > 0) {
       groups.push({
         name: isReact ? 'Props' : 'Options',
         // the properties of the options parameter are the things listed in this group
@@ -230,8 +248,8 @@ export class TypescriptApiBox extends Component {
       repo: 'dxos/protocols',
       // TODO(wittjosiah): point to release tag.
       branch: 'main',
-      filepath: rawData.sources[0].fileName,
-      lineno: rawData.sources[0].line,
+      filepath: rawData.sources?.[0].fileName,
+      lineno: rawData.sources?.[0].line,
       children: {
         properties: children.filter(child => child.kindString === 'Property'),
         accessors: children.filter(child => child.kindString === 'Accessor'),
@@ -454,7 +472,6 @@ export class TypescriptApiBox extends Component {
       // been removed in current version docs.json
       return null;
     }
-
     const args = this.templateArgs(rawData, this.props.react);
     return (
       <>
