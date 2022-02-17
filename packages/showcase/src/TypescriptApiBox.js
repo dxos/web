@@ -196,7 +196,7 @@ export class TypescriptApiBox extends Component {
     const parameters = this._parameters(rawData, this.dataByKey, isReact);
     const split = partition(parameters, 'isOptions');
     const groups = [];
-    if (split[1] && split[1].length > 0) {
+    if (split[1]?.length > 0) {
       groups.push({
         name: 'Arguments',
         members: split[1]
