@@ -140,8 +140,7 @@ function isReadableName(name) {
 */
 const CodeComponent = ({ children }) => {
   // Parse manually code children to avoid colission with `code` tag.
-  const codeTagChildren = children && children[0];
-  const codeContent = codeTagChildren.props.children?.toString();
+  const codeContent = children?.[0]?.props.children?.toString();
   return (
     <HighlightedCode code={codeContent} language='tsx' />
   );
