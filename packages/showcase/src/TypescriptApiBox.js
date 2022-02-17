@@ -21,15 +21,19 @@ export const TableWrapper = styled.div({
   marginBottom: '1.45rem'
 });
 
-const tableBorder = `1px solid black`;
+const tableBorder = `1px solid var(--ifm-toc-border-color)`;
 
 export const StyledTable = styled.table({
-  border: tableBorder,
+  border: 'none',
   borderSpacing: 0,
-  borderRadius: 4,
+  borderRadius: 0,
   [['th', 'td']]: {
-    padding: 16,
-    borderBottom: tableBorder
+    padding: '5px 10px'
+  },
+  thead: {
+    tr: {
+      border: tableBorder
+    }
   },
   th: {
     ...smallCaps,
@@ -37,6 +41,7 @@ export const StyledTable = styled.table({
     fontWeight: 'normal',
     color: 'black',
     textAlign: 'inherit',
+    padding: '5px 10px',
     '&:last-child': {
       width: '99%'
     }
@@ -56,6 +61,7 @@ export const StyledTable = styled.table({
   },
   '&.field-table': {
     td: {
+      padding: '5px 10px',
       h6: {
         fontSize: 'inherit',
         lineHeight: 'inherit',
