@@ -202,7 +202,7 @@ export class TypescriptApiBox extends Component {
         members: split[1]
       });
     }
-    if (split[0] && split[0].length > 0) {
+    if (split[0]?.length > 0) {
       groups.push({
         name: isReact ? 'Props' : 'Options',
         // the properties of the options parameter are the things listed in this group
