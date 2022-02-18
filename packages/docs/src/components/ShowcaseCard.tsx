@@ -41,6 +41,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
         target='_blank'
       >
         <Box>
+          {/* TODO(zarco): Use Image Fallback package to use a default image. */}
           {/* 300x160 aspect ratio */}
           <CardMedia
             component="img"

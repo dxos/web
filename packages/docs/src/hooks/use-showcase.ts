@@ -21,7 +21,6 @@ export interface App {
   displayName?: string
   contentType?: string[]
   extension?: any
-  imageDataUri: string
 }
 
 export type AppResource = ResourceRecord<RegistryDataRecord<App>>;
@@ -83,10 +82,11 @@ export const useShowcaseDemos = () => {
           return { // TODO(zarco): Add a `imageHash` property for record inside `data`.
             id,
             title: record.data.displayName ?? id,
-            description: record.meta.description ?? '', // use faker sentense
+            description: record.meta.description ?? '',
             location: `${BASE_URL}${CID.from(record.data.hash).toString()}`,
             tags: record.data.keywords ?? [],
-            image: record.data.imageDataUri ?? getDefaultImage(record.data.hash)
+            // TODO(zarco): Assume that an app will have the image in `${BASE_URL}${cid}/preview.png`.
+            image: getDefaultImage(record.data.hash)
           }
         });
 
