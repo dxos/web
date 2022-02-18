@@ -55,9 +55,9 @@ const Showcase = () => {
           <Box className='container'>
               <h1>{Constants.TITLE}</h1>
               <p>{Constants.DESCRIPTION}</p>
-              <Button variant='outlined' href={Constants.EDIT_URL}>
+              {/* <Button variant='outlined' href={Constants.EDIT_URL}>
                 Join us by adding your site!
-              </Button>
+              </Button> */}
           </Box>
         </Box>
         <Box className='container margin-vert--lg'>
