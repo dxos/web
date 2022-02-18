@@ -68,7 +68,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
           )} */}
         </CardContent>
         <Box sx={{ flex: 1 }} />
-        {/* // tags and actions on the same line */}
+        {/* TODO(zarco): Tags and actions on the same line. */}
         <CardActions>
           {data.location && (<Button size='small'>LAUNCH</Button>)}
         </CardActions>
