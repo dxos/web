@@ -12,8 +12,7 @@ import {
   Chip,
   Stack
 } from '@mui/material';
-
-import { ShowcaseDemo } from '../hooks';
+import { ShowcaseDemo } from "../hooks";
 
 
 export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
@@ -22,6 +21,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
       variant='outlined'
       sx={{
         flex: 1,
+        borderRadius: 0,
         '& .MuiCardActionArea-root:hover': {
           color: 'inherit',
           textDecoration: 'none'
@@ -40,13 +40,17 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
         href={data.location}
         target='_blank'
       >
-        {/* TODO(wittjosiah): `data.location/preview.png` w/ fallback to DXOS logo? */}
-        <CardMedia
-          component='img'
-          height='150'
-          image='/img/showcase/showcase-img-example.png'
-          alt='DXOS Logo'
-        />
+        <Box>
+          {/* TODO(zarco): Use Image Fallback package to use a default image. */}
+          {/* 300x160 aspect ratio */}
+          <CardMedia
+            component="img"
+            width="300"
+            height="160"
+            image={data.image}
+            alt="DXOS Logo"
+          />
+        </Box>
         <CardContent>
           <Typography variant='h5' component='div'>
             {data.title}
@@ -56,17 +60,18 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
               {data.description}
             </Typography>
           )}
-          {data.tags && (
-            <Stack sx={{ marginTop: 2 }} direction='row' spacing={1}>
+          {/* {data.tags && (
+            <Stack sx={{ marginTop: 2 }} direction="row" spacing={1}>
               {data.tags.map((tag) => (
                 <Chip key={tag} label={tag} variant='outlined' />
               ))}
             </Stack>
-          )}
+          )} */}
         </CardContent>
         <Box sx={{ flex: 1 }} />
+        {/* TODO(zarco): Tags and actions on the same line. */}
         <CardActions>
-          {data.location && (<Button size='small'>EXPLORE</Button>)}
+          {data.location && (<Button size='small'>LAUNCH</Button>)}
         </CardActions>
       </CardActionArea>
     </Card>

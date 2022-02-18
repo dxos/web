@@ -28,7 +28,7 @@ const ShowcaseList = () => {
       {demos.map(data => (
         <Box
           key={data.id}
-          className='col col--4 margin-bottom--md'
+          className='col col--3 margin-bottom--md'
           sx={{
             display: 'flex',
             flex: 1
@@ -55,9 +55,10 @@ const Showcase = () => {
           <Box className='container'>
               <h1>{Constants.TITLE}</h1>
               <p>{Constants.DESCRIPTION}</p>
-              <Button variant='outlined' href={Constants.EDIT_URL}>
+              {/* TODO: Define how the button should work. */}
+              {/* <Button variant='outlined' href={Constants.EDIT_URL}>
                 Join us by adding your site!
-              </Button>
+              </Button> */}
           </Box>
         </Box>
         <Box className='container margin-vert--lg'>
