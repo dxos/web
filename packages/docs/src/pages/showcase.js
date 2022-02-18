@@ -28,7 +28,7 @@ const ShowcaseList = () => {
       {demos.map(data => (
         <Box
           key={data.id}
-          className='col col--4 margin-bottom--md'
+          className='col col--3 margin-bottom--md'
           sx={{
             display: 'flex',
             flex: 1

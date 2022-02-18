@@ -84,7 +84,7 @@ export const useShowcaseDemos = () => {
             id,
             title: record.data.displayName ?? id,
             description: record.meta.description ?? '', // use faker sentense
-            location: `${BASE_URL}${record.data.hash}`,
+            location: `${BASE_URL}${CID.from(record.data.hash).toString()}`,
             tags: record.data.keywords ?? [],
             image: record.data.imageDataUri ?? getDefaultImage(record.data.hash)
           }

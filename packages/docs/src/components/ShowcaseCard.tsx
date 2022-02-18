@@ -70,7 +70,7 @@ export const ShowcaseCard = ({ data }: { data: ShowcaseDemo }) => {
         <Box sx={{ flex: 1 }} />
         {/* // tags and actions on the same line */}
         <CardActions>
-          {data.location && (<Button size='small'>EXPLORE</Button>)}
+          {data.location && (<Button size='small'>LAUNCH</Button>)}
         </CardActions>
       </CardActionArea>
     </Card>
