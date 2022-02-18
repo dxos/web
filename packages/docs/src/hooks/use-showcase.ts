@@ -1,11 +1,13 @@
 //
 // Copyright 2021 DXOS.org
 //
-import 'setimmediate';
-import { ResourceRecord, RegistryDataRecord } from '@dxos/registry-client';
-import { useEffect, useMemo, useState } from 'react';
+
+import { useEffect, useState } from 'react';
+
+import { ResourceRecord, RegistryDataRecord, CID } from '@dxos/registry-client';
+import { useRegistry } from '@dxos/react-registry-client';
+
 import { SHOWCASE_APPS } from '../data';
-import { createMockRegistry } from '../utils';
 
 // TODO(wittjosiah): Use proto definitions.
 export interface App {
@@ -33,7 +35,7 @@ export interface ShowcaseDemo {
 
 export const useShowcaseDemos = () => { 
   const [demos, setDemos] = useState<ShowcaseDemo[]>([]);
-  const registry = useMemo(() => createMockRegistry(SHOWCASE_APPS), []);
+  const registry = useRegistry();
 
   useEffect(() => {
     setImmediate(async () => {
@@ -51,12 +53,14 @@ export const useShowcaseDemos = () => {
       
       const demos = resourceRecords
         .filter((resource): resource is AppResource => !!resource)
+        .filter(({ resource }) => SHOWCASE_APPS.includes(resource.id.toString()))
         .map(({ resource, record }) => {
           return {
             id: resource.id.toString(),
-            title: record.data.displayName ?? 'Missing name',
-            description: record.meta.description ?? 'Missing description',
-            location: `${BASE_URL}${record.data.hash}`,
+            // TODO(wittjosiah): Display name vs. description.
+            title: record.meta.description ?? 'Missing name',
+            description: resource.id.toString() ?? 'Missing description',
+            location: `${BASE_URL}${CID.from(record.data.hash).toString()}`,
             tags: record.data.keywords ?? []
           }
         });

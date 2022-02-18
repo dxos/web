@@ -2786,7 +2786,7 @@
     url-join "^4.0.1"
     uuid "^8.3.2"
 
-"@dxos/react-registry-client@2.27.4":
+"@dxos/react-registry-client@2.27.4", "@dxos/react-registry-client@~2.27.4":
   version "2.27.4"
   resolved "https://registry.yarnpkg.com/@dxos/react-registry-client/-/react-registry-client-2.27.4.tgz#8d54380d63c7d4ef715b3e85533eb61ea35b4920"
   integrity sha512-w5j2mtVAD5jVrEigPwYSy2olSTObjTNHZbarVyY4+llvyOu+Ir5EX188BgB2PxUmQk8/OblsUEDaAsJbPxT0fw==
@@ -2830,7 +2830,7 @@
     multihashes "^4.0.2"
     protobufjs "^6.9.0"
 
-"@dxos/registry-client@2.27.4":
+"@dxos/registry-client@2.27.4", "@dxos/registry-client@~2.27.4":
   version "2.27.4"
   resolved "https://registry.yarnpkg.com/@dxos/registry-client/-/registry-client-2.27.4.tgz#e5debeb6f492387e28cb3b197936baca31f7fb51"
   integrity sha512-hAJSjxaNCnvYjJjLH7pdCGvHYWDcdyKZGDJfybdy8n+XbhCKRDynBMkHkoyw+Zu0MYxODQ6bWOAh26SDTTkDDA==
