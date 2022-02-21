@@ -1,5 +1,6 @@
 export const SHOWCASE_APPS = [
-  'dxos:esbook.demos',
+  'dxos:esbook.hello-world',
+  'dxos:esbook.kitchen-sink',
   'dxos:esbook.react-client',
   'dxos:esbook.react-framework',
   'dxos:esbook.devtools',
