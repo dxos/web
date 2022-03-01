@@ -9,11 +9,11 @@ Once you've [created your frame](./create-frame), we can move on to the next ste
 
 ## Claim Domain
 
-Circling back to your domain, if you haven't claimed it yet, now you can do so. If you missed that step you'll need to go through [Account Setup](./account-setup) before continuing.
+Circling back to your domain, if you haven't claimed it yet, now you can do so. If you missed that step you'll need to go through [Address and Account Setup](.address-account-setup) before continuing.
 
 ```bash
-dx dxns auction close example
-dx dxns auction claim example
+dx ns auction close example
+dx ns auction claim example
 ```
 
 ## Update Config
@@ -51,7 +51,7 @@ There's a few fields in particular which need to be updated from the template:
 Once you have updated the `dx.yml` file, you can deploy your frame to the registry. This will run the build command, publish the assets from the `out` directory to IPFS and create a new record in the registry tagged as `latest`.
 
 ```bash
-dx dxns deploy --tag latest
+dx ns deploy --tag latest
 ```
 
 > Note: The `latest` tag is a special tag which is the default loaded when no other tags or versions are specified.
