@@ -25,7 +25,7 @@ export interface App {
 
 export type AppResource = ResourceRecord<RegistryDataRecord<App>>;
 
-const BASE_URL = 'https://enterprise.kube.dxos.network/ipfs/';
+const BASE_URL = 'https://ipfs1.kube.dxos.network/ipfs/';
 
 export interface ShowcaseDemo {
   id: string
