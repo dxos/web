@@ -11,7 +11,7 @@ import {
 
 import { ShowcaseCard } from '../components';
 
-const DXNS_SERVER = 'wss://dxns1.kube.dxos.network/dxns/ws';
+const DXNS_SERVER = 'wss://node1.devnet.dxos.network/dxns/ws';
 
 const Constants = {
   TITLE: 'DXOS Showcase',
