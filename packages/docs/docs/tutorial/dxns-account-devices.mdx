@@ -67,12 +67,12 @@ item
 5GhGMyAdWjtiU71uC3TitXTMU2duUniDVXpm8abjWcdKWAGW
 ```
 
-You can invoke `dx ns list` on both terminals to inspect the state of profiles, identities, addresses and accounts.
+You can invoke `dx ns info` on both terminals to inspect the state of profiles, identities, addresses and accounts.
 
 Example output:
 
 ```bash
-dx ns list
+dx ns info
 
 key           value
 ------------  ----------------------------------------------------------------
@@ -85,7 +85,7 @@ cliProfile    devnet
 The second identity is not yet aware that it has been added as a device to our DXNS Account:
 
 ```bash
-dx ns list
+dx ns info
 
 key           value
 ------------  ------------------------------------------------
@@ -102,7 +102,7 @@ dx ns --account 5591834c2a818055a778a5a891e3e652f8ef64e898beb8c4a414218db83cb06e
 
 # or:
 export DX_DXNS_ACCOUNT=5591834c2a818055a778a5a891e3e652f8ef64e898beb8c4a414218db83cb06e
-dx ns list
+dx ns info
 ```
 
 
