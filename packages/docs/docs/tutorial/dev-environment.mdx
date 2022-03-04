@@ -25,26 +25,32 @@ dx version
 
 Profiles contain configuration for connecting with various DXOS services, allowing you to connect to specify which service provider you wish to use and quickly switch between them.
 
+CLI commands related to CLI profiles begin with: `dx profile`.
+The profiles are stored in a form of `.yml` files in `~/.dxos/profile`.
+
 You can initialize our default profile with the following command:
 
 ```bash
-dx profile init --name enterprise --template-url https://bit.ly/3M37HBT
+dx profile init --name devnet --template-url https://bit.ly/3M37HBT
 ```
 
 Once the profile has been initialized, set it as the current profile:
 
 ```bash
-dx profile set enterprise
+dx profile set devnet
 ```
 
 ## Setup HALO
 
 The HALO protocol manages digital identity, collaboration, and access to applications, databases, and network devices. The HALO keychain works across devices and is seamlessly integrated into all DXOS applications.
 
+CLI commands related to CLI profiles begin with: `dx halo`.
+The permanent storage of HALO is stored in `~/.dx/storage`.
+
 You can initialize a new HALO identity with the following command:
 
 ```bash
-dx halo init --name enterprise
+dx halo init --name devnet
 ```
 
 Once HALO has been initialized, it is set as default automatically.
@@ -76,3 +82,33 @@ TODO: Link to devtools overview
 ## HALO Wallet
 
 The HALO Identity can be used in the browser environment, using the [HALO Wallet](https://github.com/dxos/protocols/tree/main/packages/wallet/wallet-extension) extension.
+
+The recent bundle can be downloaded from the [Protocols Releases](https://github.com/dxos/protocols/releases) and loaded in the `chrome://extensions/` page.
+
+![Developer mode extensions](../../static/img/tutorial/dev-extensions.png)
+
+### Invite HALO Wallet as a new device
+
+HALO can be shared between different devices, including different CLI instances on different machines and Wallet instances in browser environments.
+
+The Wallet in the browser can join your new HALO profile as a device, through device invitations:
+
+1. In the terminal:
+
+```bash
+dx device invite
+```
+
+Copy the outputted `code`.
+
+2. Paste the code in the HALO Wallet:
+
+![Developer mode extensions](../../static/img/tutorial/wallet1.png)
+
+3. Insert the pin taken from the terminal:
+
+![Developer mode extensions](../../static/img/tutorial/wallet2.png)
+
+#### Troubleshooting
+
+- If the pin code is not showing up, make sure the Wallet and the CLI Profile are connecting to the same Signal Server.

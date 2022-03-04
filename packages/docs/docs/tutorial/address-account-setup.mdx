@@ -9,10 +9,14 @@ In order to be able to publish anything to the DXNS registry you need to create 
 
 ## Create Registry Address
 
-Once you have setup a CLI profile and HALO identity, you can then create a registry address on the DXNS registry:
+The Address is a native, built-in account in the DXNS blockchain. It can be also generated for example in a Polkadot Wallet extension.
+
+CLI commands related to CLI profiles begin with: `dx ns address`.
+
+Once you have setup a CLI profile and HALO identity, you can then generate a registry address on the DXNS registry:
 
 ```bash
-dx ns address create
+dx ns address generate
 ```
 
 After running this you will see the following output with a unique address and seed phrase:
@@ -43,10 +47,10 @@ dx ns address list
 To fund your address
 
 ```bash
-dx ns balance increase --faucet https://node2.devnet.dxos.network/kube/faucet --account 5EpqhyY9AfHgmrqwFs7tFh3V89ktNamgTP3TWM5zgeQM8y7a
+dx ns balance increase --faucet https://node2.devnet.dxos.network/kube/faucet --address 5EpqhyY9AfHgmrqwFs7tFh3V89ktNamgTP3TWM5zgeQM8y7a
 ```
 
-You can check that your account has a balance by running the following command:
+You can check that your address has a balance by running the following command:
 
 ```bash
 dx ns balance get 5EpqhyY9AfHgmrqwFs7tFh3V89ktNamgTP3TWM5zgeQM8y7a
@@ -61,6 +65,10 @@ balance  1000000000000
 ```
 
 ## Create DXNS Account
+
+The DXNS Account is a blockchain record holding ownership of Domains.
+
+CLI commands related to CLI profiles begin with: `dx ns account`.
 
 With your blockchain Address, you can now create a DXNS Account:
 
