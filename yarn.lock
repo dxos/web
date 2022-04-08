@@ -2027,12 +2027,12 @@
   dependencies:
     "@dxos/debug" "2.28.12"
 
-"@dxos/async@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/async/-/async-2.28.16.tgz#98d38a562d85bb78e454923a7e416251022b5ec8"
-  integrity sha512-IqqWNUc4uKy5DCu2w1fFL61GAtc8grzCULEJsZmYKI2lV6HTfEgocfiZmtsIkIObMMn7nn/hn+LyScZz69rVTg==
+"@dxos/async@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/async/-/async-2.28.19.tgz#48ed4ae9d53515a15baaab63eb4e588c636e3b9b"
+  integrity sha512-FvCW0HJ3gKlqX+WQmLSTK5ZLiub09uuI+G1n0I2qqjK/Mn09ZkLadRrlBVVGyTa/VKYOQZycIz/B62XciCQ9yA==
   dependencies:
-    "@dxos/debug" "2.28.16"
+    "@dxos/debug" "2.28.19"
 
 "@dxos/bot-factory-client@2.28.12":
   version "2.28.12"
@@ -2050,20 +2050,20 @@
     "@dxos/rpc" "2.28.12"
     debug "^4.3.3"
 
-"@dxos/bot-factory-client@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/bot-factory-client/-/bot-factory-client-2.28.16.tgz#061f17ddf46b3418b130ff7e6a5a64e77e722e58"
-  integrity sha512-jbol0XQcIna3eDikiPl8suuO0gckFbddmViZPEEvBqaY6OpaQmNKBWItKvwe/FlOYJkRlIHFIwj1Y4WfYL1HDQ==
+"@dxos/bot-factory-client@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/bot-factory-client/-/bot-factory-client-2.28.19.tgz#6f8bae1f03a6542f95b4eb47c4d0714f784f0191"
+  integrity sha512-zwWDo0YYYLRYeHAE5JHwmqNym7bdiX3obPFL/IbGSdfkFovhBhpxHxnZOwMY/GxHVj2B2k2R6wOF/eMrQ8pSbA==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/echo-db" "2.28.16"
-    "@dxos/network-manager" "2.28.16"
-    "@dxos/protocol-plugin-rpc" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/rpc" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/echo-db" "2.28.19"
+    "@dxos/network-manager" "2.28.19"
+    "@dxos/protocol-plugin-rpc" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/rpc" "2.28.19"
     debug "^4.3.3"
 
 "@dxos/broadcast@2.28.12":
@@ -2077,14 +2077,14 @@
     debug "^4.3.3"
     tiny-lru "^7.0.6"
 
-"@dxos/broadcast@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/broadcast/-/broadcast-2.28.16.tgz#0126e8870fb864341796bd927026c777134c354d"
-  integrity sha512-piGxrmP6cGAXHCHarELwgplZi4q1Gt4BwZS/++8cUu334X0KuMSi+iMXy/pYfDguAHiK2JBENkRZwXgHLbLLGA==
+"@dxos/broadcast@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/broadcast/-/broadcast-2.28.19.tgz#bfdd44c329f5b86abe0434ceaf71141f1eac3553"
+  integrity sha512-VvUGjXeo+mNsfiQ8xpyd2Uc1JH0MyMPjWj7cDAJcgHJhOBdC2G8SgBVAEPSRGNCSFkY8e0S+XEaZO7RSJWHskA==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
     debug "^4.3.3"
     tiny-lru "^7.0.6"
 
@@ -2123,26 +2123,26 @@
     readable-stream "^3.6.0"
     uuid "^8.3.2"
 
-"@dxos/client@2.28.16", "@dxos/client@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/client/-/client-2.28.16.tgz#4d7e633258d30a18f1bbbf264ec44933b2db1a2a"
-  integrity sha512-vDcgVQgSkpXAJb/oDQJeL1cnGw/dc6pJ38TRLINc4J+7HaejHVtP7k2RPWFumlb9fMjkpL98lAErtWN0uqrVaw==
+"@dxos/client@2.28.19", "@dxos/client@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/client/-/client-2.28.19.tgz#4aeb5d907966cc1616359f6dcd024619f35c6fb6"
+  integrity sha512-WGaifeoZg3fnutj7QrG5SmGV5ABUagO1GeYgCjd9b69kD3dMlobmV08cSEekaZZrsNZeEpWSIHHvCDtxMc6RWQ==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/config" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/echo-db" "2.28.16"
-    "@dxos/echo-protocol" "2.28.16"
-    "@dxos/feed-store" "2.28.16"
-    "@dxos/model-factory" "2.28.16"
-    "@dxos/network-manager" "2.28.16"
-    "@dxos/object-model" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/rpc" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/config" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/echo-db" "2.28.19"
+    "@dxos/echo-protocol" "2.28.19"
+    "@dxos/feed-store" "2.28.19"
+    "@dxos/model-factory" "2.28.19"
+    "@dxos/network-manager" "2.28.19"
+    "@dxos/object-model" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/rpc" "2.28.19"
+    "@dxos/util" "2.28.19"
     "@polkadot/keyring" "6.11.1"
     "@polkadot/util" "6.11.1"
     "@polkadot/util-crypto" "6.11.1"
@@ -2168,10 +2168,10 @@
     lodash.merge "^4.6.2"
     protobufjs "^6.9.0"
 
-"@dxos/codec-protobuf@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/codec-protobuf/-/codec-protobuf-2.28.16.tgz#5ff567b7b227261cdbca0e6d4bdddb8df5feab98"
-  integrity sha512-RDkGEbsz43XWavnHgiVdQAdwH7zljAW/E72RfWcWWi1thHR+MY3tXpv7rAuLytsov2B5OjASmbfg5onUZkdmfQ==
+"@dxos/codec-protobuf@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/codec-protobuf/-/codec-protobuf-2.28.19.tgz#c698ef13bf50b0e980412177c24a0b1ddadc423c"
+  integrity sha512-9WRMaCFwlPkdhDbPaPCmh9iLjOVCJTWwQMfPDAQa13PPbLE7foHFv69GCCuhGg41tlekUwGnF2sbFWou/uOqEg==
   dependencies:
     assert "^2.0.0"
     debug "^4.3.3"
@@ -2196,15 +2196,15 @@
     node-fetch "^2.6.0"
     protobufjs "^6.9.0"
 
-"@dxos/config@2.28.16", "@dxos/config@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/config/-/config-2.28.16.tgz#4a1fe27a6808da57f6a5944882b68a1f1f340de6"
-  integrity sha512-Ed74aF4/YPLnsbFEM4tHXLGChhCHRsQ/DkT7aMoQ2Tmu8ggRi0H0oTRzZ+wsa3AZJQ3Bg27eEeqgmXk6XFgp3g==
+"@dxos/config@2.28.19", "@dxos/config@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/config/-/config-2.28.19.tgz#84d5af4a924776cde4f4596aef971672f9d67eba"
+  integrity sha512-7HXOJBrdb4GvjqZYbH2DE5dFxTCg4K1DeTwOl9nvQBPLy4POM22tCPCV7UN2oEj4afnoYL0uOfrFEKSZwoHJzw==
   dependencies:
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/util" "2.28.19"
     boolean "^3.0.1"
     debug "^4.3.3"
     js-yaml "^3.13.1"
@@ -2241,19 +2241,19 @@
     pump "^3.0.0"
     stream-to-array "^2.3.0"
 
-"@dxos/credentials@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/credentials/-/credentials-2.28.16.tgz#0fe7cf7ab3faa4b6ad7ff17b86f841d715c00803"
-  integrity sha512-dBKb3U/ap/X63zfwvNAtMCrdngbreQ+/t050Uzl5lHdFEdTsk3FmAAvzkIbxQQWaRMQxds1Duk2frtV5Y7LF7Q==
+"@dxos/credentials@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/credentials/-/credentials-2.28.19.tgz#2d60a9c430f6635a4f990af82e9dd6f5ee191d51"
+  integrity sha512-vnPsXDm63O4IgkLQtFP7xKsyW8H3HNK1Ym7cedDdQiddIO9aOmkWMqVtmxZXR4gI5Cer61zA/lRWEYbp7tHAwg==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/feed-store" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/feed-store" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/util" "2.28.19"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
     encoding-down "^6.3.0"
@@ -2277,10 +2277,10 @@
     crypto-js "^3.1.9-1"
     hypercore-crypto "^2.3.0"
 
-"@dxos/crypto@2.28.16", "@dxos/crypto@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/crypto/-/crypto-2.28.16.tgz#de82aba080eeaef7b2f3454bcf84b8d16dbdb8ee"
-  integrity sha512-sARNFl7ZYjW0PYhjn7yqddhVO9YMZU9VMRySeIN/KPQ166pYNtc/qULiNHId9S3yaLrlDDJGAVhVNtYNxx0NJw==
+"@dxos/crypto@2.28.19", "@dxos/crypto@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/crypto/-/crypto-2.28.19.tgz#af42e6afb176b06c444ece400ce79c18a70c5b82"
+  integrity sha512-EKTrl7wpBk/yNxtImXb/wpEA9mkg70r4S7JzHB5jGsEhP/PZfloXLDNE/8awQXJMFJTvlYWVksmRfdrf2Sy/2g==
   dependencies:
     bip39 "^3.0.2"
     crypto-js "^3.1.9-1"
@@ -2293,10 +2293,10 @@
   dependencies:
     debug "^4.3.3"
 
-"@dxos/debug@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/debug/-/debug-2.28.16.tgz#a70c0d30c063b8629c4a7cd9060a0fd1238d0b0c"
-  integrity sha512-jrqik2XJAG5fHrGCoIdaiQwoFRW9qhdoeN46/aGapSluZFlQtyb2MGDP6GrqnxFeABLGgvg4bi6BqYhM6egA+A==
+"@dxos/debug@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/debug/-/debug-2.28.19.tgz#2b8659af042d0516d49505f6028bf7a0452476be"
+  integrity sha512-lCcid2oWTiNCfZmx6MztKLipjIN6fItMLR9SpVD0iFR2BjtKsuI5IV9WbEZ/LwX3/s4SvOsHNUMvZC5VX4c/vQ==
   dependencies:
     debug "^4.3.3"
 
@@ -2331,35 +2331,33 @@
     json-stable-stringify "^1.0.1"
     pify "~5.0.0"
 
-"@dxos/echo-db@2.28.16", "@dxos/echo-db@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/echo-db/-/echo-db-2.28.16.tgz#d6bcb96a223083c9dddf8d76276bf867855dd02a"
-  integrity sha512-lnBaMJPs/vaF8cIxI03SHFSKW1Q8U+iOaVH9gMIf2Y277wUcGoJm+WIanAG1F/vPJ1ze98pNz8SVKVtAbuqg9g==
+"@dxos/echo-db@2.28.19", "@dxos/echo-db@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/echo-db/-/echo-db-2.28.19.tgz#5fa9399bd18484eb8372e74a410d8b8d562b620a"
+  integrity sha512-4zOCzdxgd58V+WgkEzETppzj1mA8oSmwT/VNstRjhFjo0oaaKvW5Oy4Tg4nqwc/u3xo4XtCFmqphMn94ICwWiA==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/echo-protocol" "2.28.16"
-    "@dxos/feed-store" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
-    "@dxos/model-factory" "2.28.16"
-    "@dxos/network-manager" "2.28.16"
-    "@dxos/object-model" "2.28.16"
-    "@dxos/protocol-plugin-presence" "2.28.16"
-    "@dxos/protocol-plugin-replicator" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/random-access-multi-storage" "2.28.16"
-    "@dxos/util" "2.28.16"
-    "@types/debug" "^4.1.7"
-    "@types/json-stable-stringify" "^1.0.32"
-    "@types/lodash" "^4.14.175"
-    "@types/node" "^14.0.9"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/echo-protocol" "2.28.19"
+    "@dxos/feed-store" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
+    "@dxos/model-factory" "2.28.19"
+    "@dxos/network-manager" "2.28.19"
+    "@dxos/object-model" "2.28.19"
+    "@dxos/protocol-plugin-presence" "2.28.19"
+    "@dxos/protocol-plugin-replicator" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/random-access-multi-storage" "2.28.19"
+    "@dxos/util" "2.28.19"
     base-x "~3.0.9"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
     json-stable-stringify "^1.0.1"
+    lodash.defaultsdeep "^4.6.1"
+    lodash.unionwith "^4.6.0"
     pify "~5.0.0"
 
 "@dxos/echo-protocol@2.28.12":
@@ -2378,18 +2376,18 @@
     pify "~5.0.0"
     readable-stream "^3.6.0"
 
-"@dxos/echo-protocol@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/echo-protocol/-/echo-protocol-2.28.16.tgz#fa5f8df141668f721c858ad94f74a5f2a9e63f21"
-  integrity sha512-w86EI+EAFOT4RwGXOpwXcSuoQyC4yYvQYpsBdBqNJzITN90uIsGqVMYWF7PqoPzTZ2P9AMGcASvw7MiJidy7XA==
+"@dxos/echo-protocol@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/echo-protocol/-/echo-protocol-2.28.19.tgz#db95abac57a5ecd1ea12807793aaa6962232facb"
+  integrity sha512-FSNdXo0FlyU2PmsFfZFIZKX9vM27pTP8Hvkvexss/anN6z+DzyurTjCSv4PMIXNAXUiIoO3/SzFujihD3i4LbQ==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/feed-store" "2.28.16"
-    "@dxos/protocols" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/feed-store" "2.28.19"
+    "@dxos/protocols" "2.28.19"
+    "@dxos/util" "2.28.19"
     debug "^4.3.3"
     pify "~5.0.0"
     readable-stream "^3.6.0"
@@ -2410,13 +2408,13 @@
     pump "^3.0.0"
     through2 "^3.0.1"
 
-"@dxos/feed-store@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/feed-store/-/feed-store-2.28.16.tgz#dbf64b4db5394d8e0559e4152a4165f82278a814"
-  integrity sha512-lTO3kwLRd0wfpu/tb2fMnz0W6AWkmk8dZV/H8elzSqf0m8hn7iDoLnGXnDYmIqqPnBLWWD9nRr/zBm9RRVho9Q==
+"@dxos/feed-store@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/feed-store/-/feed-store-2.28.19.tgz#51b02c5a5852dc8c5d91d337f527d79c5c630c2f"
+  integrity sha512-WFWRb0yWGNa+3fk9v1cpj6XMAhWeR0LsnRk0qfdOtwGHIGcNj2oLdMkIxDkKYDv34ptw/Qv6TNYepRfXQtM9/g==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/util" "2.28.19"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
     end-of-stream "^1.4.1"
@@ -2484,14 +2482,14 @@
     nanomessage "^8.4.0"
     signal-promise "^1.0.3"
 
-"@dxos/mesh-protocol@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/mesh-protocol/-/mesh-protocol-2.28.16.tgz#14773baea3658d7eb0e4d4fd76b4616bd7735de6"
-  integrity sha512-V7EamHt/a4wIAAZ/HrR4SH/gRpU+R2bH3oTxf7FO3wQazWSeVilb6ADiKf6mcpYu3jtd2GByKDNWEMCZNRuQkg==
+"@dxos/mesh-protocol@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/mesh-protocol/-/mesh-protocol-2.28.19.tgz#6225abd3f0c73298829d3d791598640f577a7f9c"
+  integrity sha512-tR6CKDXyUNveEGZsuy4s5BRJIVJXKMrwEFQXzzkWwBFmIVMNc/a0LFMp9X5rUC1WuPEEMSoZB+/kE/UNoEO7Cw==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
     assert "^2.0.0"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
@@ -2517,18 +2515,18 @@
     "@types/node" "^14.0.9"
     debug "^4.3.3"
 
-"@dxos/model-factory@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/model-factory/-/model-factory-2.28.16.tgz#4d3ec3bc8885b6253d607b8a048dca8fd78f9898"
-  integrity sha512-EdpEiwZvC1/UUCVcVqKVdIVFlvYa9/xjniQGZ249FcWqpR3dOaY1mNQ/gdC5TMNGvgrecJZptmuDVZayvleBWw==
+"@dxos/model-factory@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/model-factory/-/model-factory-2.28.19.tgz#4d6de80ebf9fa68724b207d738455b9542d4bef3"
+  integrity sha512-BmkzqRvuLew1NxwgtzYIjpCPuU3G0G6WfrX5WcaptW+j7uogoRpSolcTQvV2iUqavtd8F7qKdPTprYyS5M3bow==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/echo-protocol" "2.28.16"
-    "@dxos/feed-store" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/echo-protocol" "2.28.19"
+    "@dxos/feed-store" "2.28.19"
+    "@dxos/util" "2.28.19"
     "@types/debug" "^4.1.7"
     "@types/node" "^14.0.9"
     debug "^4.3.3"
@@ -2556,18 +2554,18 @@
     ws "^7.4.4"
     xor-distance "^2.0.0"
 
-"@dxos/network-manager@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/network-manager/-/network-manager-2.28.16.tgz#ee474dbb0c4770d454a5e461db0fff3fa447986b"
-  integrity sha512-bd+cyjrk+DNto/AgLSYsxGyjLQZ2OCRxe2+j0iamYfP7NgZo/bRCzAZv+WmyP0tJ49CpkGP71k4uS/bPRQZy4w==
+"@dxos/network-manager@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/network-manager/-/network-manager-2.28.19.tgz#41d2fc0e022d2e271274c6922494fb522455a28d"
+  integrity sha512-2avqQivlnR8iez3MHfortQ2SThEBL9ifDUx8U999/4jyJirF7jXWn7nXzhhYWr8CKWNEOPrulhDAh6IsvyyJFw==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
-    "@dxos/protocol-plugin-presence" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
+    "@dxos/protocol-plugin-presence" "2.28.19"
+    "@dxos/util" "2.28.19"
     "@types/simple-peer" "9.11.3"
     "@types/ws" "^7.4.0"
     assert "^2.0.0"
@@ -2596,21 +2594,20 @@
     lodash "4.17.21"
     minisearch "^3.0.2"
 
-"@dxos/object-model@2.28.16", "@dxos/object-model@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/object-model/-/object-model-2.28.16.tgz#b57310a589b5f7dcdaa2e62beded79be0d2a0340"
-  integrity sha512-jOLDD0Rlwn0o9ixIjMSzrEkuS7rkcpeDd+HApIVMCa0tAWFrjOERxu80hvIUg1MJZlre+MPFnkYnE+Q+bdDIcg==
+"@dxos/object-model@2.28.19", "@dxos/object-model@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/object-model/-/object-model-2.28.19.tgz#3dbc16123329875df9d360c9d6b27bb93303470e"
+  integrity sha512-ONHzzntYl7zQdFURmdhzn6fm+ml2qQtleCkNm3/kxUv3lzfM4X6Zdcf6fCZ/yKGeLkVTtzAmcSs8bWoSXcqHeQ==
   dependencies:
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/echo-protocol" "2.28.16"
-    "@dxos/model-factory" "2.28.16"
-    "@dxos/util" "2.28.16"
-    "@types/debug" "^4.1.7"
-    "@types/lodash" "^4.14.175"
-    "@types/node" "^14.0.9"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/echo-protocol" "2.28.19"
+    "@dxos/model-factory" "2.28.19"
+    "@dxos/util" "2.28.19"
     debug "^4.3.3"
-    lodash "4.17.21"
+    lodash.clonedeep "^4.5.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
     minisearch "^3.0.2"
 
 "@dxos/protocol-plugin-presence@2.28.12":
@@ -2630,15 +2627,15 @@
     p-limit "^3.1.0"
     queue-microtask "^1.1.2"
 
-"@dxos/protocol-plugin-presence@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-presence/-/protocol-plugin-presence-2.28.16.tgz#09fcb917ad92a80e95f8a55215cd33e16c23cb96"
-  integrity sha512-7t5cu09/eNKey4Jr3Sj85u8iYADpTW3EHwZGlW6vmzXB37/RbGtZjXmVmhO93QsbpwChO0CHJy6A3gk/MTFUsw==
+"@dxos/protocol-plugin-presence@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-presence/-/protocol-plugin-presence-2.28.19.tgz#aa9ef0fe63ce5121a72b05c9df1d24e57b04de15"
+  integrity sha512-0G3//eszZ88FSIryNbe++2taf6ah077xnBoNVYzGt0fCpQ9w1CHj6OiCDbQhUrEB7mvuu1asNIccwVmDmc/efQ==
   dependencies:
-    "@dxos/broadcast" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
+    "@dxos/broadcast" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
     "@types/debug" "^4.1.7"
     "@types/node" "^14.0.9"
     buffer-json-encoding "^1.0.2"
@@ -2659,15 +2656,15 @@
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
 
-"@dxos/protocol-plugin-replicator@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-replicator/-/protocol-plugin-replicator-2.28.16.tgz#bbe7e3e5c7602ea27c3db7c1778c091f7836c6bf"
-  integrity sha512-8PG7Oui00s6frqflKUB7KHmbz1cuuuzBjIAFmKeL1PaM9l6rmGA51Wt3sKfEgT5Dj1srBQPuYXKbzoDccyq72A==
+"@dxos/protocol-plugin-replicator@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-replicator/-/protocol-plugin-replicator-2.28.19.tgz#72d7ab2be80bd4d0efbab58dc01abb9e2a887831"
+  integrity sha512-Z3W9ko3zI7nbQ4bsXevxany4qgJHyzfju+uJu6W6J3qbrzjg1yBn7xyD33yvLlpHdQivFm81SB7A/zsWAagaMQ==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
+    "@dxos/util" "2.28.19"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
 
@@ -2682,16 +2679,16 @@
     "@dxos/rpc" "2.28.12"
     "@dxos/util" "2.28.12"
 
-"@dxos/protocol-plugin-rpc@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-rpc/-/protocol-plugin-rpc-2.28.16.tgz#b3eebb5da89169ec3241c99c0fff55ab1bb2a6d4"
-  integrity sha512-quzMN+xoPOrd3S+HEGSB5ox29uK0ZYTkl6RNcG3RVI+zTvAtM3EWPikdYqTjA6zi5Eb6DMZ0d4hc1TuIissZ6Q==
+"@dxos/protocol-plugin-rpc@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-rpc/-/protocol-plugin-rpc-2.28.19.tgz#d50b5897639e056759b471f64843eff0375c7c3d"
+  integrity sha512-/EaPh4OSCv6yPdK/CqHwdvD+Yx6zHkwLKZ+7vsTjz5XjS7fVU2cRHq1ShyoA5rNH/cwpw7DIPeSze30Uk8uIqQ==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/mesh-protocol" "2.28.16"
-    "@dxos/rpc" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/mesh-protocol" "2.28.19"
+    "@dxos/rpc" "2.28.19"
+    "@dxos/util" "2.28.19"
 
 "@dxos/protocols@2.28.12":
   version "2.28.12"
@@ -2700,12 +2697,12 @@
   dependencies:
     "@dxos/codec-protobuf" "2.28.12"
 
-"@dxos/protocols@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/protocols/-/protocols-2.28.16.tgz#ccfaa7b43cbf4ad7f0b11b7e12cee3e031dce34c"
-  integrity sha512-D2enD9RIOR5MqamFsiMz9DfPs/1GZmxp8zxDLU9/MRcor70wyaDFgKxq1BPfD8v0WkpcrES47mz3Gv+/tO4CNQ==
+"@dxos/protocols@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/protocols/-/protocols-2.28.19.tgz#9da65d4b66b8937d20616d0a9110a30be3777441"
+  integrity sha512-0MtXC0aYziZrzoh3TlrTRNoBLQKKjSiavOqKvw4YFbifVyltU9FX5DjvW6GU4JWQlGvqRIM8+zuvmfvfnXdQKw==
   dependencies:
-    "@dxos/codec-protobuf" "2.28.16"
+    "@dxos/codec-protobuf" "2.28.19"
 
 "@dxos/random-access-multi-storage@2.28.12":
   version "2.28.12"
@@ -2719,10 +2716,10 @@
     random-access-memory "~3.1.2"
     random-access-web "^2.0.3"
 
-"@dxos/random-access-multi-storage@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/random-access-multi-storage/-/random-access-multi-storage-2.28.16.tgz#d082762ab42c3baa922647e39119b4f6e1e7e06d"
-  integrity sha512-tsWoywFogIZFmb/tKKuYV/+XDwBQCpFoWz72V0cnP77XCPo6QXU/yDDPeeWATRJe81CKJiNal35e2+F+j2c2qw==
+"@dxos/random-access-multi-storage@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/random-access-multi-storage/-/random-access-multi-storage-2.28.19.tgz#950c951e4272078c3af7b16175fb8a99f2503cb8"
+  integrity sha512-PzNbswMGKq5B0FWk7i5zORjLEqffHIP0eE++c5EX4k29Ni2iZt6+64udVZzRWUKC228mD8agxVib1mpAokwUIg==
   dependencies:
     del "^5.1.0"
     pify "~5.0.0"
@@ -2731,10 +2728,10 @@
     random-access-memory "~3.1.2"
     random-access-web "^2.0.3"
 
-"@dxos/react-async@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/react-async/-/react-async-2.28.16.tgz#c1fd91960ac4db8a5b6878f523db1964cdf5b386"
-  integrity sha512-keBPQRjl/EKyRj4W+ZWMdCeFmZXT2YV5/a0bIrDXnFQUCnEJYNW0udIgSZ2bxuOduHTsX4CiFKHnU8A7j7IMtA==
+"@dxos/react-async@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/react-async/-/react-async-2.28.19.tgz#66af98a10d08485dc1633bb542232aa885f6c9e3"
+  integrity sha512-zxpEWriv6Z1EwJzortivTqNOGn+faf7jeeyt9o9iqJEBONGIyYaFvMX6fGqcwZkGI+FuBNsTXQKBQO3WxayTKg==
   dependencies:
     immutability-helper "^3.0.2"
 
@@ -2757,33 +2754,33 @@
     debug "^4.3.3"
     use-subscription "^1.4.1"
 
-"@dxos/react-client@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/react-client/-/react-client-2.28.16.tgz#e5346be4c69eb28fd84d97b634401b54a83a90c7"
-  integrity sha512-LaT/ihHvFDsQB2+3DWz9ynXwXMhMm/Y0+GFPxn6DoFfCFTV0tJ+S8r7SaZFNYmfBklIFe+0US8J4U20544niYA==
+"@dxos/react-client@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/react-client/-/react-client-2.28.19.tgz#4cc8f357facda7bde77e3407caef97a11b50c4e8"
+  integrity sha512-nMZj2nkreZKhiXlZveKAmPlmyKGFtpq5dWzCF5X+WCYhlXoq7xGWS/qoe6IOpwANHGsGyi6w6QD2CjlDo6Zjjw==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/bot-factory-client" "2.28.16"
-    "@dxos/client" "2.28.16"
-    "@dxos/config" "2.28.16"
-    "@dxos/credentials" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/echo-db" "2.28.16"
-    "@dxos/network-manager" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/bot-factory-client" "2.28.19"
+    "@dxos/client" "2.28.19"
+    "@dxos/config" "2.28.19"
+    "@dxos/credentials" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/echo-db" "2.28.19"
+    "@dxos/network-manager" "2.28.19"
+    "@dxos/util" "2.28.19"
     assert "^2.0.0"
     debug "^4.3.3"
     use-subscription "^1.4.1"
 
-"@dxos/react-components@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/react-components/-/react-components-2.28.16.tgz#d84f33fdb51568f44707ad7c027449b43a9a5fa5"
-  integrity sha512-VNl0AJOEFYj+31v7O3BwOHhS66ojHDER72d20oCXCzL2GrHSRdNbJIEnfcwYnr1+C60OITKX9fc50nYIhH9y6w==
+"@dxos/react-components@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/react-components/-/react-components-2.28.19.tgz#e3a1252179d096cbab9e226eac833a62691322cb"
+  integrity sha512-MFSfNvHAArTfjLTaDE9tqvZdzHY0qBo5SI7eD009sguNphU3vHmIIFXn6hGefAd82VWyh4zTWTnEQbIqBbWqzw==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
     "@dxos/gem-core" "~2.2.1-beta.11"
     "@dxos/gem-spore" "~2.2.1-beta.11"
     "@emotion/css" "^11.7.1"
@@ -2807,15 +2804,15 @@
     debug "^4.3.3"
     minimatch "~3.0.4"
 
-"@dxos/react-framework@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/react-framework/-/react-framework-2.28.16.tgz#afa14c217424247f423eb6da776a6e78c579beab"
-  integrity sha512-/8JU3grx8tXzIa21E1sS/vYP5OLXROwoUoPqQGMLX43qe+lfNXqzmDnUOWl9GyL/i5aycxax+G/58ot1O8sk1w==
+"@dxos/react-framework@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/react-framework/-/react-framework-2.28.19.tgz#34cd6f9af76b35b16f73b270b54724092c1a36e7"
+  integrity sha512-5Ypba63kXuhJk4j0NqwiNrr7nHlG0+eg5GnN4ktFp8HNkorSrRrs9BssyKsmZ5ozqMtg0+qr3/bMSwPgYpomNA==
   dependencies:
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/react-async" "2.28.16"
-    "@dxos/react-registry-client" "2.28.16"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/react-async" "2.28.19"
+    "@dxos/react-registry-client" "2.28.19"
     "@emotion/css" "^11.7.1"
     assert "^2.0.0"
     debug "^4.3.3"
@@ -2826,15 +2823,15 @@
     url-join "^4.0.1"
     uuid "^8.3.2"
 
-"@dxos/react-registry-client@2.28.16", "@dxos/react-registry-client@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/react-registry-client/-/react-registry-client-2.28.16.tgz#d8d0c48fff102155afbf3baae64e6d45c08b0055"
-  integrity sha512-WjkOttL/g0kesD/+aFCvBi62hCV+9US/Tc6fX0u3If7589+meJiiXXwOl9edA/H0V+QpCMb9NcCKZNiuWrk+Hg==
+"@dxos/react-registry-client@2.28.19", "@dxos/react-registry-client@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/react-registry-client/-/react-registry-client-2.28.19.tgz#4a5ac276814ded48004aa7fbb970ac2efcd54a58"
+  integrity sha512-BTDK4fjTjhj/EmcbIUXiwXH1dKVpUxUH7GbvtAMDjUVeyZ/tlC0A0R8oo0i27u9rnnh0jvmrBEs0GTYcdGjJcg==
   dependencies:
-    "@dxos/config" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/registry-client" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/config" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/registry-client" "2.28.19"
+    "@dxos/util" "2.28.19"
     assert "^2.0.0"
     debug "^4.3.3"
 
@@ -2872,15 +2869,15 @@
     multihashes "^4.0.2"
     protobufjs "^6.9.0"
 
-"@dxos/registry-client@2.28.16", "@dxos/registry-client@~2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/registry-client/-/registry-client-2.28.16.tgz#0c03af7f81ce3e04892b27987102efa790a5db21"
-  integrity sha512-UUBTClxzS7Os6yceM/7O79VdXlREAsLme1LgsOEjoEyVyykfa/j4lMK8RBcVgMlov5++bQN3fikqeP8CcZhQjw==
+"@dxos/registry-client@2.28.19", "@dxos/registry-client@~2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/registry-client/-/registry-client-2.28.19.tgz#2cb32aeb3fb8514accccc6790a4d0c89e54460f0"
+  integrity sha512-tRPbebqBA4Y85K/vpJD9c8bydKAwYzEPUdF/E7SOgh+TVtwz6ePnkw1qcEKWYLAm8QKYknKuVZSkVTEChm3vfQ==
   dependencies:
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/util" "2.28.16"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/util" "2.28.19"
     "@polkadot/api" "4.17.1"
     "@polkadot/keyring" "6.11.1"
     "@polkadot/metadata" "4.17.1"
@@ -2905,15 +2902,15 @@
     "@dxos/protocols" "2.28.12"
     debug "^4.3.3"
 
-"@dxos/rpc@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/rpc/-/rpc-2.28.16.tgz#2817487500b5a747e3a00f19f99bfc46ce973ea4"
-  integrity sha512-bWQh6gIaDZRrYO/dfhZQXB0Wx41id30/vYVcAC6f/jf3zAw174zUFaIhag5TYKiOity0w5U73gKjwRliRT8eHA==
+"@dxos/rpc@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/rpc/-/rpc-2.28.19.tgz#3b721ed372c529af212363125e3cb616a8ab350e"
+  integrity sha512-baFy0DPCITsOJOj/v31d66XfCTWhO8AxA0WFDZSJLdIZ28c5LdGfo/Nzprw7Q4+XB3DhjyrVNG3+/n8A9dCbhQ==
   dependencies:
-    "@dxos/async" "2.28.16"
-    "@dxos/codec-protobuf" "2.28.16"
-    "@dxos/debug" "2.28.16"
-    "@dxos/protocols" "2.28.16"
+    "@dxos/async" "2.28.19"
+    "@dxos/codec-protobuf" "2.28.19"
+    "@dxos/debug" "2.28.19"
+    "@dxos/protocols" "2.28.19"
     debug "^4.3.3"
 
 "@dxos/tasks-frame@2.15.6":
@@ -2923,10 +2920,10 @@
   dependencies:
     react-device-detect "~2.1.2"
 
-"@dxos/typedoc@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/typedoc/-/typedoc-2.28.16.tgz#e593d1151805f4f82091e23f3b85e2d9dd4d644f"
-  integrity sha512-tq/U/YblRnNyoNNZTwKtj6pfLY4UhqvxfvCrV/l2y1nfboCbUrsdbElgYyz3InCpqDGmJhSz955i1yjuPMwlgQ==
+"@dxos/typedoc@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/typedoc/-/typedoc-2.28.19.tgz#419125d10f111b406fee95d9058a8905117cbb14"
+  integrity sha512-Dp8hEZK6PvFYfFRSuvKPcVaeHPUiDARSzmWBp6BY1bS6zsBxYM7AsVUHMaI0Lr6Vse4lD4F37xGuk7JMhz7kEw==
 
 "@dxos/typefaces@1.0.0":
   version "1.0.0"
@@ -2942,13 +2939,13 @@
     "@dxos/debug" "2.28.12"
     "@types/node" "^14.0.9"
 
-"@dxos/util@2.28.16":
-  version "2.28.16"
-  resolved "https://registry.yarnpkg.com/@dxos/util/-/util-2.28.16.tgz#df8b201149d2447d98ce1ee1bfe0f78dd1e91d1d"
-  integrity sha512-yNKl7W/6lK9voEFjb2D20dadCrZG+Q7zH1HEe4KRR+xcSow3EsjdJ9SWMbXbvcEQDYrXejBY8FDx4QEPIy9NLA==
+"@dxos/util@2.28.19":
+  version "2.28.19"
+  resolved "https://registry.yarnpkg.com/@dxos/util/-/util-2.28.19.tgz#3b310276ab768cf23099296a6f49718528498b69"
+  integrity sha512-ezTJjvXzYBJE2UCn3KvvZSgGYaa+xvHwr4DrRtOv/NtlHYH6cPugvd0EyAPPwnVXQ2vKUl5KWs3mBcN3H+qMJA==
   dependencies:
-    "@dxos/crypto" "2.28.16"
-    "@dxos/debug" "2.28.16"
+    "@dxos/crypto" "2.28.19"
+    "@dxos/debug" "2.28.19"
     "@types/node" "^14.0.9"
 
 "@emotion/babel-plugin@^11.3.0", "@emotion/babel-plugin@^11.7.1":
@@ -10495,6 +10492,11 @@ lodash.bind@^4.1.4:
   resolved "https://registry.yarnpkg.com/lodash.bind/-/lodash.bind-4.2.1.tgz#7ae3017e939622ac31b7d7d7dcb1b34db1690d35"
   integrity sha1-euMBfpOWIqwxt9fX3LGzTbFpDTU=
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
+
 lodash.curry@^4.0.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.curry/-/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
@@ -10614,6 +10616,11 @@ lodash.templatesettings@^4.0.0:
   integrity sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==
   dependencies:
     lodash._reinterpolate "^3.0.0"
+
+lodash.unionwith@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.unionwith/-/lodash.unionwith-4.6.0.tgz#74d140b5ca8146e6c643c3724f5152538d9ac1f0"
+  integrity sha1-dNFAtcqBRubGQ8NyT1FSU42awfA=
 
 lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   version "4.5.0"
