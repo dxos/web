@@ -2020,6 +2020,13 @@
   dependencies:
     "@dxos/debug" "2.31.7"
 
+"@dxos/async@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/async/-/async-2.32.0.tgz#f47f484d906295bb382bd115163cb99f2f9ac1a2"
+  integrity sha512-9DaNnheuGKPXOY+SLdRQX+QOe7X+PVZAmLlQcAq6Hvu8Rzsrz60Sj0jNaMJjdQbNK335LUfCIDp1kOxkOx/Nsw==
+  dependencies:
+    "@dxos/debug" "2.32.0"
+
 "@dxos/bot-factory-client@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/bot-factory-client/-/bot-factory-client-2.31.7.tgz#817324b285ba6977d2c63aab1f63763a5b09edc9"
@@ -2036,6 +2043,22 @@
     "@dxos/rpc" "2.31.7"
     debug "^4.3.3"
 
+"@dxos/bot-factory-client@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/bot-factory-client/-/bot-factory-client-2.32.0.tgz#d9b13e54b9d78e4089443aa4310bf937ad4b12e0"
+  integrity sha512-oqh62hN8bk0rYOhsdyNF3XnO85BBJMsLHGbVWGIWzifKCbQs+26fbD1zfMMEWtjh0yQaBAVX5UmtBhR4I+RacQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/echo-db" "2.32.0"
+    "@dxos/network-manager" "2.32.0"
+    "@dxos/protocol-plugin-rpc" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/rpc" "2.32.0"
+    debug "^4.3.3"
+
 "@dxos/broadcast@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/broadcast/-/broadcast-2.31.7.tgz#d805754b7eaf2a96de5cd23dd8d99e7d661b6c24"
@@ -2044,6 +2067,17 @@
     "@dxos/async" "2.31.7"
     "@dxos/codec-protobuf" "2.31.7"
     "@dxos/crypto" "2.31.7"
+    debug "^4.3.3"
+    tiny-lru "^7.0.6"
+
+"@dxos/broadcast@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/broadcast/-/broadcast-2.32.0.tgz#b6318a7faea500856ce4cee7020b08307cc62c9b"
+  integrity sha512-J/sjTzFRw8gU4EHWm4CA9ueJdCAr2EGRcGXoHt0SB1//GKi0ScPqgOqPiMc9X1vj2u4rjUP02J34HJqsEhnWaA==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
     debug "^4.3.3"
     tiny-lru "^7.0.6"
 
@@ -2078,10 +2112,51 @@
     readable-stream "^3.6.0"
     uuid "^8.3.2"
 
+"@dxos/client@2.32.0", "@dxos/client@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/client/-/client-2.32.0.tgz#40199ce43813b138facc095329346c8df1a4ba30"
+  integrity sha512-Nj1V1BaaC6aZdJw9xITbhLhmxxMCZmPwg9jwRQfNG/X9h2THb8ZrEF+SQng08GadD8ybpswNGp5kYhOhJNEkJg==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/config" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/echo-db" "2.32.0"
+    "@dxos/echo-protocol" "2.32.0"
+    "@dxos/feed-store" "2.32.0"
+    "@dxos/model-factory" "2.32.0"
+    "@dxos/network-manager" "2.32.0"
+    "@dxos/object-model" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/rpc" "2.32.0"
+    "@dxos/util" "2.32.0"
+    abstract-leveldown "~7.0.0"
+    assert "^2.0.0"
+    debug "^4.3.3"
+    del "^5.1.0"
+    jsondown dxos/jsondown#main
+    level-js "^5.0.2"
+    lodash.defaultsdeep "^4.6.1"
+    memdown "^5.1.0"
+    readable-stream "^3.6.0"
+    uuid "^8.3.2"
+
 "@dxos/codec-protobuf@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/codec-protobuf/-/codec-protobuf-2.31.7.tgz#4db9fdc6a404e27c74cc0a29d711b2a8cd14dbd8"
   integrity sha512-VMOBKQiZSyFQL2rnG4IcMo5y+Q8K8wKb0SwZNr7/bFW9i3IeYNlq5+wBRJkWiY7+sUhndOxgTNiWjlemjc9+iQ==
+  dependencies:
+    assert "^2.0.0"
+    debug "^4.3.3"
+    lodash.merge "^4.6.2"
+    protobufjs "^6.9.0"
+
+"@dxos/codec-protobuf@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/codec-protobuf/-/codec-protobuf-2.32.0.tgz#ccfefa21648ca0df01208734afa80f6ca9ce76b7"
+  integrity sha512-ix53+D1OcK6Bhu+fToqgxmQ5tnHKweI/EEXWlMYLvlxUJtkPkdGCGZd32PcewGjWrMaee8FkaUSeL/mVrpo/AA==
   dependencies:
     assert "^2.0.0"
     debug "^4.3.3"
@@ -2097,6 +2172,24 @@
     "@dxos/debug" "2.31.7"
     "@dxos/protocols" "2.31.7"
     "@dxos/util" "2.31.7"
+    boolean "^3.0.1"
+    debug "^4.3.3"
+    js-yaml "^4.1.0"
+    lodash.defaultsdeep "^4.6.1"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    node-fetch "^2.6.0"
+    protobufjs "^6.9.0"
+
+"@dxos/config@2.32.0", "@dxos/config@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/config/-/config-2.32.0.tgz#34d8bf903d15233a2a111ce50f49f2d388b97e40"
+  integrity sha512-kz0I1ClcVc17wzouKq8QASveofl8JnXmkCdnNqAoBZtTJs9y9lpGP2eFejL6FqL5F54UQLcGbOj+6ME/71O8FQ==
+  dependencies:
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/util" "2.32.0"
     boolean "^3.0.1"
     debug "^4.3.3"
     js-yaml "^4.1.0"
@@ -2133,6 +2226,33 @@
     pump "^3.0.0"
     stream-to-array "^2.3.0"
 
+"@dxos/credentials@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/credentials/-/credentials-2.32.0.tgz#15e9248e2983cf8867f25829aa0c7d65928ce860"
+  integrity sha512-mNsWGbJWqzOtjrlHV2a6xKrl4XV+fNy8F9AF7ATQ5/5n1WgzuEHj+AY9u4oYdtY0FzlfLLHp54dRBJs/MDlPpQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/feed-store" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/util" "2.32.0"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+    encoding-down "^6.3.0"
+    end-of-stream "^1.4.1"
+    json-stable-stringify "^1.0.1"
+    leveldown "^5.4.1"
+    levelup "^4.3.2"
+    lodash.matches "^4.6.0"
+    memdown "^5.1.0"
+    moment "^2.24.0"
+    performance-now "^2.1.0"
+    pump "^3.0.0"
+    stream-to-array "^2.3.0"
+
 "@dxos/crypto@2.31.7", "@dxos/crypto@~2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/crypto/-/crypto-2.31.7.tgz#83652c2bc0a680d839b8621104839cec9ad7657e"
@@ -2142,10 +2262,26 @@
     crypto-js "^3.1.9-1"
     hypercore-crypto "^2.3.0"
 
+"@dxos/crypto@2.32.0", "@dxos/crypto@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/crypto/-/crypto-2.32.0.tgz#58d2d59ed9f2c1255c02c1af10b4513e176b510b"
+  integrity sha512-UhgMnmrwVk/fqyOA0vTa/NHpNC16Kvsl6CgXbG04O69xKG3Uj4ZCbY5OUux6oN8+bt2hKDG+zTUMOdlBNjIEiw==
+  dependencies:
+    bip39 "^3.0.2"
+    crypto-js "^3.1.9-1"
+    hypercore-crypto "^2.3.0"
+
 "@dxos/debug@2.31.7", "@dxos/debug@~2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/debug/-/debug-2.31.7.tgz#2df97430d77c1bb7ec6df320631125c4a32cf041"
   integrity sha512-UaG+Q4nH+ApUVljoEGkBvY/aRPNJ/T5ad14C99rcu7Rex/GY4HbtaVrsOCRbBeTv/CIoXxjJzS82JeXlYw0Q8w==
+  dependencies:
+    debug "^4.3.3"
+
+"@dxos/debug@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/debug/-/debug-2.32.0.tgz#2c00ca6dce21ae78bf1297a71d0bb32e617680a1"
+  integrity sha512-UGSvjiVUuh0XYkNzmrB1/smEmnfuQNmlmkv3439RLYRgb00S6tkNU3e6eDvZWSn8EKafySlM1bxB58HEmnasyA==
   dependencies:
     debug "^4.3.3"
 
@@ -2178,6 +2314,35 @@
     lodash.unionwith "^4.6.0"
     pify "~5.0.0"
 
+"@dxos/echo-db@2.32.0", "@dxos/echo-db@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/echo-db/-/echo-db-2.32.0.tgz#87f2bdadeb680e22426eb749365cfd4dc8ebc0a9"
+  integrity sha512-f7eb4JvQev+x6GDjKwtpBemwtWPbAnnqDX9KjuJvP7SrhD5zXNlypvGiLJ117oQPRZftvBrv5gGIIk7GUa9auQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/echo-protocol" "2.32.0"
+    "@dxos/feed-store" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
+    "@dxos/model-factory" "2.32.0"
+    "@dxos/network-manager" "2.32.0"
+    "@dxos/object-model" "2.32.0"
+    "@dxos/protocol-plugin-presence" "2.32.0"
+    "@dxos/protocol-plugin-replicator" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/random-access-multi-storage" "2.32.0"
+    "@dxos/util" "2.32.0"
+    base-x "~3.0.9"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+    json-stable-stringify "^1.0.1"
+    lodash.defaultsdeep "^4.6.1"
+    lodash.unionwith "^4.6.0"
+    pify "~5.0.0"
+
 "@dxos/echo-protocol@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/echo-protocol/-/echo-protocol-2.31.7.tgz#68237c1b332f10455ef69a4579e1a7bbb1bd99fc"
@@ -2194,6 +2359,22 @@
     pify "~5.0.0"
     readable-stream "^3.6.0"
 
+"@dxos/echo-protocol@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/echo-protocol/-/echo-protocol-2.32.0.tgz#ca2d0c8b0f57df1b547c13267b45a05d87bc5345"
+  integrity sha512-PPl7ASY1CXN6tpl8Cbtt7G3zcP2HaC9WSsCZof+VLWD3LUSub2N7x/r/Vx7DVXoLE3M4O1k/vYGCNGYw8Iot3w==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/feed-store" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    "@dxos/util" "2.32.0"
+    debug "^4.3.3"
+    pify "~5.0.0"
+    readable-stream "^3.6.0"
+
 "@dxos/feed-store@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/feed-store/-/feed-store-2.31.7.tgz#fa9182549feae66c41cf875b2747ec164e1da1e6"
@@ -2201,6 +2382,22 @@
   dependencies:
     "@dxos/async" "2.31.7"
     "@dxos/util" "2.31.7"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+    end-of-stream "^1.4.1"
+    from2 "^2.3.0"
+    hypercore "^9.10.0"
+    pify "~5.0.0"
+    pump "^3.0.0"
+    through2 "^3.0.1"
+
+"@dxos/feed-store@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/feed-store/-/feed-store-2.32.0.tgz#7b67a637b64b0240e8a0c727e21be543e1f26d54"
+  integrity sha512-FJwc/JuZKbuRgFT5o1Gr1+yJYFnVDHIfzTmj8v9CY+Aak4u6cXguFLLKfUpV8IXrF7T2oaP9N+reTpGkVcPtdA==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/util" "2.32.0"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
     end-of-stream "^1.4.1"
@@ -2229,31 +2426,6 @@
     protobufjs "^6.11.2"
     serve-handler "~6.1.3"
 
-"@dxos/gem-core@2.2.1-beta.11", "@dxos/gem-core@~2.2.1-beta.11":
-  version "2.2.1-beta.11"
-  resolved "https://registry.yarnpkg.com/@dxos/gem-core/-/gem-core-2.2.1-beta.11.tgz#70639d56cb52b60737c28f6cdc533132562b880d"
-  integrity sha512-6Y963BY9YhJ+GbOh43Vb18RHNhPrlK1SIUFWp8pTsOz1pnHRKwpuIQmP5HsItIZ/v8VdvslHhMoIJhzYk+bpHw==
-  dependencies:
-    assert "^2.0.0"
-    csstype "^3.0.10"
-    d3 "^7.2.1"
-    debug "^4.1.1"
-    use-resize-observer "^8.0.0"
-
-"@dxos/gem-spore@~2.2.1-beta.11":
-  version "2.2.1-beta.11"
-  resolved "https://registry.yarnpkg.com/@dxos/gem-spore/-/gem-spore-2.2.1-beta.11.tgz#b819d1a659a320f42c0a0cac10bbf015ff561d26"
-  integrity sha512-YIPVo8zIS/AyOQwDvt5pnI0RbiwMK1N3PP0bnnlTvLsDcuHpd8CwWF1Vu9N5vKx/fHOPB1ZI+ZyRH1309L5GjA==
-  dependencies:
-    "@dxos/gem-core" "2.2.1-beta.11"
-    clsx "~1.1.1"
-    csstype "^3.0.10"
-    d3 "^7.2.1"
-    d3-force "~3.0.0"
-    debug "^4.1.1"
-    immutability-helper "~3.1.1"
-    use-resize-observer "^8.0.0"
-
 "@dxos/mesh-protocol@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/mesh-protocol/-/mesh-protocol-2.31.7.tgz#a9ccbdc039dc8feb2b7e53c000e701f0dc3c4e55"
@@ -2262,6 +2434,23 @@
     "@dxos/async" "2.31.7"
     "@dxos/codec-protobuf" "2.31.7"
     "@dxos/crypto" "2.31.7"
+    assert "^2.0.0"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+    end-of-stream "^1.4.1"
+    hypercore-protocol dxos/hypercore-protocol#05513f9266f8bec4d29b144b72c59257c2d7bd60
+    nanoerror "^1.2.1"
+    nanomessage "^8.4.0"
+    signal-promise "^1.0.3"
+
+"@dxos/mesh-protocol@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/mesh-protocol/-/mesh-protocol-2.32.0.tgz#f9409e4f201f33d3345403d7b1fce841d000fd4d"
+  integrity sha512-zHBixfnOoweu17HgC4JRNKHMHTpd++NAzevjsnFp547+s37XrVT3T9XgbkDBMlkLrX8X4/NmHaxmdRb/qbCIHQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
     assert "^2.0.0"
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
@@ -2287,6 +2476,22 @@
     "@types/node" "^14.0.9"
     debug "^4.3.3"
 
+"@dxos/model-factory@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/model-factory/-/model-factory-2.32.0.tgz#9619bafdc648d8f65d72c3133087f707f228cde2"
+  integrity sha512-eizdyyT3MjWx18XsVP4yy3/tzF3gmTv+R6Nb7sLFyCwMeg+xlPjphmrscK5VY+2Y7NDjP5cvcBYVv9vvud0vJQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/echo-protocol" "2.32.0"
+    "@dxos/feed-store" "2.32.0"
+    "@dxos/util" "2.32.0"
+    "@types/debug" "^4.1.7"
+    "@types/node" "^14.0.9"
+    debug "^4.3.3"
+
 "@dxos/network-manager@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/network-manager/-/network-manager-2.31.7.tgz#50f0f7fcf1fcf869a4801ff2138a1cc1a6c749ea"
@@ -2299,6 +2504,27 @@
     "@dxos/mesh-protocol" "2.31.7"
     "@dxos/protocol-plugin-presence" "2.31.7"
     "@dxos/util" "2.31.7"
+    "@koush/wrtc" "^0.5.3"
+    assert "^2.0.0"
+    debug "^4.3.3"
+    isomorphic-ws "^4.0.1"
+    nanomessage-rpc "^3.0.0"
+    simple-peer "9.11.0"
+    ws "^7.4.4"
+    xor-distance "^2.0.0"
+
+"@dxos/network-manager@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/network-manager/-/network-manager-2.32.0.tgz#0dce08dd6d5de49b83021c2e96566364d07acbc6"
+  integrity sha512-An2ug1tlIA1AUNhZ/CO84rYfkeE6iBvDDyBC/5NBAINVToDb5F49ZBShYteI2xm5nnXKImfm1ynKo9HCqjenrg==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
+    "@dxos/protocol-plugin-presence" "2.32.0"
+    "@dxos/util" "2.32.0"
     "@koush/wrtc" "^0.5.3"
     assert "^2.0.0"
     debug "^4.3.3"
@@ -2324,6 +2550,22 @@
     lodash.set "^4.3.2"
     minisearch "^3.0.2"
 
+"@dxos/object-model@2.32.0", "@dxos/object-model@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/object-model/-/object-model-2.32.0.tgz#de0372d83f24490b31d944d6c2c3b8c9de67ac77"
+  integrity sha512-1Vycek+/PHFdPdH0bm+6rWis51f0I1OrqUsp5053qUH7w1CXHcKQT6MObtYH/0KYhvD1Cpd3EFKwwNSbksMu3g==
+  dependencies:
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/echo-protocol" "2.32.0"
+    "@dxos/model-factory" "2.32.0"
+    "@dxos/util" "2.32.0"
+    debug "^4.3.3"
+    lodash.clonedeep "^4.5.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    minisearch "^3.0.2"
+
 "@dxos/protocol-plugin-presence@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-presence/-/protocol-plugin-presence-2.31.7.tgz#9060461974a661016eb8f0123ba602633bef4367"
@@ -2333,6 +2575,23 @@
     "@dxos/codec-protobuf" "2.31.7"
     "@dxos/crypto" "2.31.7"
     "@dxos/mesh-protocol" "2.31.7"
+    "@types/debug" "^4.1.7"
+    "@types/node" "^14.0.9"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+    ngraph.graph "^19.0.1"
+    p-limit "^3.1.0"
+    queue-microtask "^1.1.2"
+
+"@dxos/protocol-plugin-presence@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-presence/-/protocol-plugin-presence-2.32.0.tgz#f6bffb47ad13bd195dd52add5c23df8a98251257"
+  integrity sha512-4w9zLmXtqoPivL2SVJ7Qi30Y9mcK5CcmQGvGXgoSb72VvDfsQePIbEEAeRP3qIG3R333tSpnna1wb0cijmQOJw==
+  dependencies:
+    "@dxos/broadcast" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
     "@types/debug" "^4.1.7"
     "@types/node" "^14.0.9"
     buffer-json-encoding "^1.0.2"
@@ -2353,6 +2612,18 @@
     buffer-json-encoding "^1.0.2"
     debug "^4.3.3"
 
+"@dxos/protocol-plugin-replicator@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-replicator/-/protocol-plugin-replicator-2.32.0.tgz#e71aba70b4d501ed74474375f4886fb88b41e414"
+  integrity sha512-IXY+Ij1ELLgblNRUfJnyYe1S/3aIfXNpR//xmOvwjRFm8AyBKXQ6xcy2IP7xrL+iSXgen8WVtfxims0qBPCVww==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
+    "@dxos/util" "2.32.0"
+    buffer-json-encoding "^1.0.2"
+    debug "^4.3.3"
+
 "@dxos/protocol-plugin-rpc@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-rpc/-/protocol-plugin-rpc-2.31.7.tgz#37d9e982e7f49acc003fc4012c13d3fd6ef50ebc"
@@ -2364,12 +2635,30 @@
     "@dxos/rpc" "2.31.7"
     "@dxos/util" "2.31.7"
 
+"@dxos/protocol-plugin-rpc@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/protocol-plugin-rpc/-/protocol-plugin-rpc-2.32.0.tgz#2d7d4728505368451b048ae88c92ec32ae93c11f"
+  integrity sha512-yWJ14Etgf8dPW90NmqoCZRdtG7cUE1W7nuyZCtIq68mDmPeYb/7AfHpJoqzVnc5orFMB5fzpDv4nAR7ZBaapeQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/mesh-protocol" "2.32.0"
+    "@dxos/rpc" "2.32.0"
+    "@dxos/util" "2.32.0"
+
 "@dxos/protocols@2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/protocols/-/protocols-2.31.7.tgz#2f7f9dd37d6b532b82cc04d1407bae3c8bb6088b"
   integrity sha512-wyG8R7jgbUoZ83IkTiseI4qplgq7/6zXqs5Kh1xrH2n7lKRAmFJF2gRAL0sYtaQFOMt3k+0aGK0AMZyb4yImrA==
   dependencies:
     "@dxos/codec-protobuf" "2.31.7"
+
+"@dxos/protocols@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/protocols/-/protocols-2.32.0.tgz#44ebf213b9551b0547070443fab5acd3d2cfb7c5"
+  integrity sha512-yfnnW0ILEzX/8oR1Nj4ZO2SGZ70pK98lr9qL3jkFCJQfhCxRXroARhsTEHpWkgrZeP7uZsUmQql8+1odKJF5Wg==
+  dependencies:
+    "@dxos/codec-protobuf" "2.32.0"
 
 "@dxos/random-access-multi-storage@2.31.7":
   version "2.31.7"
@@ -2383,10 +2672,29 @@
     random-access-memory "~3.1.2"
     random-access-web "^2.0.3"
 
+"@dxos/random-access-multi-storage@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/random-access-multi-storage/-/random-access-multi-storage-2.32.0.tgz#633e813a09c067ecd17a776003e37359b5b92919"
+  integrity sha512-FhqA1rZ5WCfTBfAl7MO38QhUaHkj/EaeJc1J6d9uPfql/PO9FIII7aiSC2umVkXRPiDYyaHZIQbQ4hlo+iEohQ==
+  dependencies:
+    del "^5.1.0"
+    pify "~5.0.0"
+    random-access-file "^2.1.0"
+    random-access-idb "^1.2.1"
+    random-access-memory "~3.1.2"
+    random-access-web "^2.0.3"
+
 "@dxos/react-async@2.31.7", "@dxos/react-async@~2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/react-async/-/react-async-2.31.7.tgz#55f3e6ef5222d8d2d0ec73f16b234acc3e7fe403"
   integrity sha512-TJPQoWPThsT1ZImDHSMsY8DreXEG4A0dmgjRJbuDIXz0HkjEHi/PiN4mRegXmHea4Nxme+XKT919Wt+BXqV0Ig==
+  dependencies:
+    immutability-helper "^3.0.2"
+
+"@dxos/react-async@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/react-async/-/react-async-2.32.0.tgz#1b2a71e71aca46f0ebe7915e381990142c7fded3"
+  integrity sha512-/Lqn7W60mbRa9mK/ywY+jitpGJWwIjImC4o36c1p62lIGXLwqpy4Sz3D+QvpoAKtx7wpitKWu/JFblRL+OxQtA==
   dependencies:
     immutability-helper "^3.0.2"
 
@@ -2409,16 +2717,34 @@
     debug "^4.3.3"
     use-subscription "^1.4.1"
 
-"@dxos/react-components@~2.31.7":
-  version "2.31.7"
-  resolved "https://registry.yarnpkg.com/@dxos/react-components/-/react-components-2.31.7.tgz#762401cc5f468a1162115578a61acc968b066392"
-  integrity sha512-UoVE780EEtrtj/+RbgpBKN7TyykA57hM73Mt7qMvsAyi7FNKScw4zB1HlxVb8/dZYWdPIQw5/yPAfNZI4kuqag==
+"@dxos/react-client@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/react-client/-/react-client-2.32.0.tgz#e75dde66dfa72fd22bf3182730ea1b912f5af0ea"
+  integrity sha512-ErRoNaVpygRABZhg+9w7HBfOxO7bTwq2qeBxTJQ+Bgi9JlWCelXAvPJMYifhfz/Uj6iSmG+sUOjZN4qqgUH/Vw==
   dependencies:
-    "@dxos/async" "2.31.7"
-    "@dxos/crypto" "2.31.7"
-    "@dxos/debug" "2.31.7"
-    "@dxos/gem-core" "~2.2.1-beta.11"
-    "@dxos/gem-spore" "~2.2.1-beta.11"
+    "@dxos/async" "2.32.0"
+    "@dxos/bot-factory-client" "2.32.0"
+    "@dxos/client" "2.32.0"
+    "@dxos/config" "2.32.0"
+    "@dxos/credentials" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/echo-db" "2.32.0"
+    "@dxos/network-manager" "2.32.0"
+    "@dxos/react-async" "2.32.0"
+    "@dxos/util" "2.32.0"
+    assert "^2.0.0"
+    debug "^4.3.3"
+    use-subscription "^1.4.1"
+
+"@dxos/react-components@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/react-components/-/react-components-2.32.0.tgz#dc26564b69861652d0ae5d5aa389495c586170d4"
+  integrity sha512-mmcMPSo/2GIhzI/7bSo4y14ppLZFhQ077b0Nfqp0P7POVwWoVpHqbYhokyzOG4D2bgsv/WY437tsim8osJ18Cg==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
     "@emotion/css" "^11.7.1"
     debug "^4.3.3"
     lodash.defaultsdeep "^4.6.1"
@@ -2470,6 +2796,18 @@
     assert "^2.0.0"
     debug "^4.3.3"
 
+"@dxos/react-registry-client@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/react-registry-client/-/react-registry-client-2.32.0.tgz#07c12a0c80d16e72a5f52e91f9005194a86f7a91"
+  integrity sha512-agTP6Dw9N0HSGmhJy9ilbvnImWIH2s2rxv6MjdGr4pEJ2ya47hOTFTBjPr15zbKGAkPlmbaeZL4eVQ87EYTrgQ==
+  dependencies:
+    "@dxos/config" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/registry-client" "2.32.0"
+    "@dxos/util" "2.32.0"
+    assert "^2.0.0"
+    debug "^4.3.3"
+
 "@dxos/registry-client@2.31.7", "@dxos/registry-client@~2.31.7":
   version "2.31.7"
   resolved "https://registry.yarnpkg.com/@dxos/registry-client/-/registry-client-2.31.7.tgz#768316b3eca699667df718499bc18f0118fb67bd"
@@ -2480,6 +2818,29 @@
     "@dxos/crypto" "2.31.7"
     "@dxos/debug" "2.31.7"
     "@dxos/util" "2.31.7"
+    "@polkadot/api" "4.17.1"
+    "@polkadot/keyring" "6.11.1"
+    "@polkadot/metadata" "4.17.1"
+    "@polkadot/rpc-core" "4.17.1"
+    "@polkadot/types" "4.17.1"
+    "@polkadot/util" "6.11.1"
+    "@polkadot/util-crypto" "6.11.1"
+    bn.js "4.12.0"
+    faker "^5.1.0"
+    fs-extra "^8.1.0"
+    multihashes "^4.0.2"
+    protobufjs "^6.9.0"
+
+"@dxos/registry-client@2.32.0", "@dxos/registry-client@~2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/registry-client/-/registry-client-2.32.0.tgz#45e2cc8acbb7dc0d583fb032d4f52a6420499825"
+  integrity sha512-QwZ/fY4//34scsZSGBfQfVeBsVZERsCPv67DWjZKS25SjQ3Nc/0vIVE5VfMGqm8hOPJWN5/chYrCUS4HUcrf4A==
+  dependencies:
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/config" "2.32.0"
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/util" "2.32.0"
     "@polkadot/api" "4.17.1"
     "@polkadot/keyring" "6.11.1"
     "@polkadot/metadata" "4.17.1"
@@ -2504,6 +2865,17 @@
     "@dxos/protocols" "2.31.7"
     debug "^4.3.3"
 
+"@dxos/rpc@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/rpc/-/rpc-2.32.0.tgz#93a7e68af6374db66c4a1cb265471f21f83d5e35"
+  integrity sha512-47aI6uAu1Gz6OzL4pOwfujqMTwxygyboU7HBWZoGwznnWHpm7zWz5ew5fFW+miENVIbAsviWswp4nH8bKU7EAQ==
+  dependencies:
+    "@dxos/async" "2.32.0"
+    "@dxos/codec-protobuf" "2.32.0"
+    "@dxos/debug" "2.32.0"
+    "@dxos/protocols" "2.32.0"
+    debug "^4.3.3"
+
 "@dxos/tasks-frame@2.16.1":
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/@dxos/tasks-frame/-/tasks-frame-2.16.1.tgz#5c281f02136a5b39a395436939f686f6df46a8f0"
@@ -2511,10 +2883,10 @@
   dependencies:
     react-device-detect "~2.1.2"
 
-"@dxos/typedoc@2.31.7":
-  version "2.31.7"
-  resolved "https://registry.yarnpkg.com/@dxos/typedoc/-/typedoc-2.31.7.tgz#4023e7ab6a0b5e88cba69ce7b624078dda793d72"
-  integrity sha512-9yxtIJYvkqdV2caEmxJ9BOEQ4zF4jAp6VzKNYWm6cpficG5qtZ6PZnx/E5IDgv+mTK8nvq6CLwmct/oCkRgE9w==
+"@dxos/typedoc@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/typedoc/-/typedoc-2.32.0.tgz#78647a38cdc77007a552b3560a8e477cad56c8fc"
+  integrity sha512-82RGvtxRAWZgBWAQ/+gaofKVyFep2G6XUZ1CPYdyC3rH/30GROYQFxTKHbn+c6zZ8jtMnaNpkkRC0iruHNVutw==
 
 "@dxos/typefaces@1.0.0":
   version "1.0.0"
@@ -2528,6 +2900,15 @@
   dependencies:
     "@dxos/crypto" "2.31.7"
     "@dxos/debug" "2.31.7"
+    "@types/node" "^14.0.9"
+
+"@dxos/util@2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@dxos/util/-/util-2.32.0.tgz#49e675c0d2c21b02a37969c04524aa5d46a4f189"
+  integrity sha512-D8Vcg0thJTz4N+GOiuMMWW3XrKVSL0cxFTJcpq5SL+PkBohLYpMNYkFuC7VlxGsAKbJjE8pWbeLN0pvnvn0IzA==
+  dependencies:
+    "@dxos/crypto" "2.32.0"
+    "@dxos/debug" "2.32.0"
     "@types/node" "^14.0.9"
 
 "@emotion/babel-plugin@^11.3.0", "@emotion/babel-plugin@^11.7.1":
@@ -2663,11 +3044,6 @@
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
-
-"@juggle/resize-observer@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
-  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
 "@koush/wrtc@^0.5.3":
   version "0.5.3"
@@ -5946,7 +6322,7 @@ clone@^2.1.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-clsx@^1.1.1, clsx@~1.1.1:
+clsx@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
@@ -6037,11 +6413,6 @@ comma-separated-tokens@^1.0.0:
   resolved "https://registry.yarnpkg.com/comma-separated-tokens/-/comma-separated-tokens-1.0.8.tgz#632b80b6117867a158f1080ad498b2fbe7e3f5ea"
   integrity sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==
 
-commander@7, commander@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
-  integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
-
 commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
@@ -6051,6 +6422,11 @@ commander@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+
+commander@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
+  integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
 
 commander@^8.3.0:
   version "8.3.0"
@@ -6589,250 +6965,6 @@ cuint@^0.2.2:
   resolved "https://registry.yarnpkg.com/cuint/-/cuint-0.2.2.tgz#408086d409550c2631155619e9fa7bcadc3b991b"
   integrity sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs=
 
-"d3-array@2 - 3", "d3-array@2.10.0 - 3", "d3-array@2.5.0 - 3", d3-array@3:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-3.1.1.tgz#7797eb53ead6b9083c75a45a681e93fc41bc468c"
-  integrity sha512-33qQ+ZoZlli19IFiQx4QEpf2CBEayMRzhlisJHSCsSUbDXv6ZishqS1x7uFVClKG4Wr7rZVHvaAttoLow6GqdQ==
-  dependencies:
-    internmap "1 - 2"
-
-d3-axis@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-axis/-/d3-axis-3.0.0.tgz#c42a4a13e8131d637b745fc2973824cfeaf93322"
-  integrity sha512-IH5tgjV4jE/GhHkRV0HiVYPDtvfjHQlQfJHs0usq7M30XcSBvOotpmH1IgkcXsO/5gEQZD43B//fc7SRT5S+xw==
-
-d3-brush@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-brush/-/d3-brush-3.0.0.tgz#6f767c4ed8dcb79de7ede3e1c0f89e63ef64d31c"
-  integrity sha512-ALnjWlVYkXsVIGlOsuWH1+3udkYFI48Ljihfnh8FZPF2QS9o+PzGLBslO0PjzVoHLZ2KCVgAM8NVkXPJB2aNnQ==
-  dependencies:
-    d3-dispatch "1 - 3"
-    d3-drag "2 - 3"
-    d3-interpolate "1 - 3"
-    d3-selection "3"
-    d3-transition "3"
-
-d3-chord@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-chord/-/d3-chord-3.0.1.tgz#d156d61f485fce8327e6abf339cb41d8cbba6966"
-  integrity sha512-VE5S6TNa+j8msksl7HwjxMHDM2yNK3XCkusIlpX5kwauBfXuyLAtNg9jCp/iHH61tgI4sb6R/EIMWCqEIdjT/g==
-  dependencies:
-    d3-path "1 - 3"
-
-"d3-color@1 - 3", d3-color@3:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-3.1.0.tgz#395b2833dfac71507f12ac2f7af23bf819de24e2"
-  integrity sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==
-
-d3-contour@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-contour/-/d3-contour-3.0.1.tgz#2c64255d43059599cd0dba8fe4cc3d51ccdd9bbd"
-  integrity sha512-0Oc4D0KyhwhM7ZL0RMnfGycLN7hxHB8CMmwZ3+H26PWAG0ozNuYG5hXSDNgmP1SgJkQMrlG6cP20HoaSbvcJTQ==
-  dependencies:
-    d3-array "2 - 3"
-
-d3-delaunay@6:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/d3-delaunay/-/d3-delaunay-6.0.2.tgz#7fd3717ad0eade2fc9939f4260acfb503f984e92"
-  integrity sha512-IMLNldruDQScrcfT+MWnazhHbDJhcRJyOEBAJfwQnHle1RPh6WDuLvxNArUju2VSMSUuKlY5BGHRJ2cYyoFLQQ==
-  dependencies:
-    delaunator "5"
-
-"d3-dispatch@1 - 3", d3-dispatch@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-3.0.1.tgz#5fc75284e9c2375c36c839411a0cf550cbfc4d5e"
-  integrity sha512-rzUyPU/S7rwUflMyLc1ETDeBj0NRuHKKAcvukozwhshr6g6c5d8zh4c2gQjY2bZ0dXeGLWc1PF174P2tVvKhfg==
-
-"d3-drag@2 - 3", d3-drag@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-3.0.0.tgz#994aae9cd23c719f53b5e10e3a0a6108c69607ba"
-  integrity sha512-pWbUJLdETVA8lQNJecMxoXfH6x+mO2UQo8rSmZ+QqxcbyA3hfeprFgIT//HW2nlHChWeIIMwS2Fq+gEARkhTkg==
-  dependencies:
-    d3-dispatch "1 - 3"
-    d3-selection "3"
-
-"d3-dsv@1 - 3", d3-dsv@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-dsv/-/d3-dsv-3.0.1.tgz#c63af978f4d6a0d084a52a673922be2160789b73"
-  integrity sha512-UG6OvdI5afDIFP9w4G0mNq50dSOsXHJaRE8arAS5o9ApWnIElp8GZw1Dun8vP8OyHOZ/QJUKUJwxiiCCnUwm+Q==
-  dependencies:
-    commander "7"
-    iconv-lite "0.6"
-    rw "1"
-
-"d3-ease@1 - 3", d3-ease@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-3.0.1.tgz#9658ac38a2140d59d346160f1f6c30fda0bd12f4"
-  integrity sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==
-
-d3-fetch@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-fetch/-/d3-fetch-3.0.1.tgz#83141bff9856a0edb5e38de89cdcfe63d0a60a22"
-  integrity sha512-kpkQIM20n3oLVBKGg6oHrUchHM3xODkTzjMoj7aWQFq5QEM+R6E4WkzT5+tojDY7yjez8KgCBRoj4aEr99Fdqw==
-  dependencies:
-    d3-dsv "1 - 3"
-
-d3-force@3, d3-force@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-3.0.0.tgz#3e2ba1a61e70888fe3d9194e30d6d14eece155c4"
-  integrity sha512-zxV/SsA+U4yte8051P4ECydjD/S+qeYtnaIyAs9tgHCqfguma/aAQDjo85A9Z6EKhBirHRJHXIgJUlffT4wdLg==
-  dependencies:
-    d3-dispatch "1 - 3"
-    d3-quadtree "1 - 3"
-    d3-timer "1 - 3"
-
-"d3-format@1 - 3", d3-format@3:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.0.tgz#9260e23a28ea5cb109e93b21a06e24e2ebd55641"
-  integrity sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==
-
-d3-geo@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-3.0.1.tgz#4f92362fd8685d93e3b1fae0fd97dc8980b1ed7e"
-  integrity sha512-Wt23xBych5tSy9IYAM1FR2rWIBFWa52B/oF/GYe5zbdHrg08FU8+BuI6X4PvTwPDdqdAdq04fuWJpELtsaEjeA==
-  dependencies:
-    d3-array "2.5.0 - 3"
-
-d3-hierarchy@3:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/d3-hierarchy/-/d3-hierarchy-3.1.1.tgz#9cbb0ffd2375137a351e6cfeed344a06d4ff4597"
-  integrity sha512-LtAIu54UctRmhGKllleflmHalttH3zkfSi4NlKrTAoFKjC+AFBJohsCAdgCBYQwH0F8hIOGY89X1pPqAchlMkA==
-
-"d3-interpolate@1 - 3", "d3-interpolate@1.2.0 - 3", d3-interpolate@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-3.0.1.tgz#3c47aa5b32c5b3dfb56ef3fd4342078a632b400d"
-  integrity sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==
-  dependencies:
-    d3-color "1 - 3"
-
-"d3-path@1 - 3", d3-path@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-3.0.1.tgz#f09dec0aaffd770b7995f1a399152bf93052321e"
-  integrity sha512-gq6gZom9AFZby0YLduxT1qmrp4xpBA1YZr19OI717WIdKE2OM5ETq5qrHLb301IgxhLwcuxvGZVLeeWc/k1I6w==
-
-d3-polygon@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-polygon/-/d3-polygon-3.0.1.tgz#0b45d3dd1c48a29c8e057e6135693ec80bf16398"
-  integrity sha512-3vbA7vXYwfe1SYhED++fPUQlWSYTTGmFmQiany/gdbiWgU/iEyQzyymwL9SkJjFFuCS4902BSzewVGsHHmHtXg==
-
-"d3-quadtree@1 - 3", d3-quadtree@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-3.0.1.tgz#6dca3e8be2b393c9a9d514dabbd80a92deef1a4f"
-  integrity sha512-04xDrxQTDTCFwP5H6hRhsRcb9xxv2RzkcsygFzmkSIOJy3PeRJP7sNk3VRIbKXcog561P9oU0/rVH6vDROAgUw==
-
-d3-random@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-random/-/d3-random-3.0.1.tgz#d4926378d333d9c0bfd1e6fa0194d30aebaa20f4"
-  integrity sha512-FXMe9GfxTxqd5D6jFsQ+DJ8BJS4E/fT5mqqdjovykEB2oFbTMDVdg1MGFxfQW+FBOGoB++k8swBrgwSHT1cUXQ==
-
-d3-scale-chromatic@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-scale-chromatic/-/d3-scale-chromatic-3.0.0.tgz#15b4ceb8ca2bb0dcb6d1a641ee03d59c3b62376a"
-  integrity sha512-Lx9thtxAKrO2Pq6OO2Ua474opeziKr279P/TKZsMAhYyNDD3EnCffdbgeSYN5O7m2ByQsxtuP2CSDczNUIZ22g==
-  dependencies:
-    d3-color "1 - 3"
-    d3-interpolate "1 - 3"
-
-d3-scale@4:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-4.0.2.tgz#82b38e8e8ff7080764f8dcec77bd4be393689396"
-  integrity sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==
-  dependencies:
-    d3-array "2.10.0 - 3"
-    d3-format "1 - 3"
-    d3-interpolate "1.2.0 - 3"
-    d3-time "2.1.1 - 3"
-    d3-time-format "2 - 4"
-
-"d3-selection@2 - 3", d3-selection@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-3.0.0.tgz#c25338207efa72cc5b9bd1458a1a41901f1e1b31"
-  integrity sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ==
-
-d3-shape@3:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-3.1.0.tgz#c8a495652d83ea6f524e482fca57aa3f8bc32556"
-  integrity sha512-tGDh1Muf8kWjEDT/LswZJ8WF85yDZLvVJpYU9Nq+8+yW1Z5enxrmXOhTArlkaElU+CTn0OTVNli+/i+HP45QEQ==
-  dependencies:
-    d3-path "1 - 3"
-
-"d3-time-format@2 - 4", d3-time-format@4:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-4.1.0.tgz#7ab5257a5041d11ecb4fe70a5c7d16a195bb408a"
-  integrity sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==
-  dependencies:
-    d3-time "1 - 3"
-
-"d3-time@1 - 3", "d3-time@2.1.1 - 3", d3-time@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-3.0.0.tgz#65972cb98ae2d4954ef5c932e8704061335d4975"
-  integrity sha512-zmV3lRnlaLI08y9IMRXSDshQb5Nj77smnfpnd2LrBa/2K281Jijactokeak14QacHs/kKq0AQ121nidNYlarbQ==
-  dependencies:
-    d3-array "2 - 3"
-
-"d3-timer@1 - 3", d3-timer@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-timer/-/d3-timer-3.0.1.tgz#6284d2a2708285b1abb7e201eda4380af35e63b0"
-  integrity sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==
-
-"d3-transition@2 - 3", d3-transition@3:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/d3-transition/-/d3-transition-3.0.1.tgz#6869fdde1448868077fdd5989200cb61b2a1645f"
-  integrity sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==
-  dependencies:
-    d3-color "1 - 3"
-    d3-dispatch "1 - 3"
-    d3-ease "1 - 3"
-    d3-interpolate "1 - 3"
-    d3-timer "1 - 3"
-
-d3-zoom@3:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/d3-zoom/-/d3-zoom-3.0.0.tgz#d13f4165c73217ffeaa54295cd6969b3e7aee8f3"
-  integrity sha512-b8AmV3kfQaqWAuacbPuNbL6vahnOJflOhexLzMMNLga62+/nh0JzvJ0aO/5a5MVgUFGS7Hu1P9P03o3fJkDCyw==
-  dependencies:
-    d3-dispatch "1 - 3"
-    d3-drag "2 - 3"
-    d3-interpolate "1 - 3"
-    d3-selection "2 - 3"
-    d3-transition "2 - 3"
-
-d3@^7.2.1:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-7.4.0.tgz#8755620b9a63eca698718f8d0e2eeaa9dc699e35"
-  integrity sha512-/xKyIYpKzd+I2DhiS2ANYJtEfHkE9lHKBFwqsplKsazPcXy2N1KIJSMTJsRk42jHbHCH0KPJGd0RnBt6NBJ1MA==
-  dependencies:
-    d3-array "3"
-    d3-axis "3"
-    d3-brush "3"
-    d3-chord "3"
-    d3-color "3"
-    d3-contour "3"
-    d3-delaunay "6"
-    d3-dispatch "3"
-    d3-drag "3"
-    d3-dsv "3"
-    d3-ease "3"
-    d3-fetch "3"
-    d3-force "3"
-    d3-format "3"
-    d3-geo "3"
-    d3-hierarchy "3"
-    d3-interpolate "3"
-    d3-path "3"
-    d3-polygon "3"
-    d3-quadtree "3"
-    d3-random "3"
-    d3-scale "4"
-    d3-scale-chromatic "3"
-    d3-selection "3"
-    d3-shape "3"
-    d3-time "3"
-    d3-time-format "4"
-    d3-timer "3"
-    d3-transition "3"
-    d3-zoom "3"
-
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -7002,13 +7134,6 @@ del@^6.0.0:
     p-map "^4.0.0"
     rimraf "^3.0.2"
     slash "^3.0.0"
-
-delaunator@5:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/delaunator/-/delaunator-5.0.0.tgz#60f052b28bd91c9b4566850ebf7756efe821d81b"
-  integrity sha512-AyLvtyJdbv/U1GkiS6gUUzclRoAY4Gs75qkMygJJhU75LW4DNuSF2RMzpxs9jw9Oz1BobHjTdkG3zdP55VxAqw==
-  dependencies:
-    robust-predicates "^3.0.0"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -8857,7 +8982,7 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@0.6, iconv-lite@^0.6.2:
+iconv-lite@^0.6.2:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
   integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
@@ -8901,7 +9026,7 @@ immer@^9.0.6:
   resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.7.tgz#b6156bd7db55db7abc73fd2fdadf4e579a701075"
   integrity sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==
 
-immutability-helper@^3.0.2, immutability-helper@~3.1.1:
+immutability-helper@^3.0.2:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-3.1.1.tgz#2b86b2286ed3b1241c9e23b7b21e0444f52f77b7"
   integrity sha512-Q0QaXjPjwIju/28TsugCHNEASwoCcJSyJV3uO1sOIQGI0jKgm9f41Lvz0DZj3n46cNCyAZTsEYoY4C2bVRUzyQ==
@@ -9030,11 +9155,6 @@ internal-slot@^1.0.3:
     get-intrinsic "^1.1.0"
     has "^1.0.3"
     side-channel "^1.0.4"
-
-"internmap@1 - 2":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/internmap/-/internmap-2.0.3.tgz#6685f23755e43c524e251d29cbc97248e3061009"
-  integrity sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==
 
 interpret@^1.0.0:
   version "1.4.0"
@@ -13261,11 +13381,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-robust-predicates@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/robust-predicates/-/robust-predicates-3.0.1.tgz#ecde075044f7f30118682bd9fb3f123109577f9a"
-  integrity sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==
-
 rtl-detect@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/rtl-detect/-/rtl-detect-1.0.4.tgz#40ae0ea7302a150b96bc75af7d749607392ecac6"
@@ -13292,11 +13407,6 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
-
-rw@1:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/rw/-/rw-1.3.3.tgz#3f862dfa91ab766b14885ef4d01124bfda074fb4"
-  integrity sha1-P4Yt+pGrdmsUiF700BEkv9oHT7Q=
 
 rxjs@^6.6.0, rxjs@^6.6.7:
   version "6.6.7"
@@ -14948,13 +15058,6 @@ use-latest@^1.0.0:
   integrity sha512-d2TEuG6nSLKQLAfW3By8mKr8HurOlTkul0sOpxbClIv4SQ4iOd7BYr7VIzdbktUCnv7dua/60xzd8igMU6jmyw==
   dependencies:
     use-isomorphic-layout-effect "^1.0.0"
-
-use-resize-observer@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/use-resize-observer/-/use-resize-observer-8.0.0.tgz#69bd80c1ddd94f3758563fe107efb25fed85067a"
-  integrity sha512-n0iKSeiQpJCyaFh5JA0qsVLBIovsF4EIIR1G6XiBwKJN66ZrD4Oj62bjcuTAATPKiSp6an/2UZZxCf/67fk3sQ==
-  dependencies:
-    "@juggle/resize-observer" "^3.3.1"
 
 use-subscription@^1.4.1:
   version "1.5.1"
