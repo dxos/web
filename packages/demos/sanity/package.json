@@ -16,8 +16,8 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@dxos/react-client": "~2.33.3",
-    "@dxos/react-components": "~2.33.3",
+    "@dxos/react-client": "~2.33.4",
+    "@dxos/react-components": "~2.33.4",
     "@mui/material": "^5.0.1",
     "typescript": "^4.5.4"
   },
